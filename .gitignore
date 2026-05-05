@@ -13,5 +13,5 @@ models/
 test_images/
 *.jpg
 *.png
-!logosemescrita.png
-!logosemfundo.png
+!sam2/logosemescrita.png
+!sam2/logosemfundo.png
