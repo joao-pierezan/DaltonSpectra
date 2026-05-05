@@ -376,7 +376,7 @@
 
             try {
                 // Rota original mantida!
-                const resposta = await fetch("http://127.0.0.1:8000/analisar", { method: "POST", body: formData });
+                const resposta = await fetch(" https://winking-rinsing-trophy.ngrok-free.dev/analisar", { method: "POST", body: formData });
                 const dados = await resposta.json();
                 
                 imagemFundo.classList.remove('pulso');

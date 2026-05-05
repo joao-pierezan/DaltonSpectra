@@ -1,4 +1,5 @@
 # Ignorar ambientes virtuais
+.venv/
 venv/
 env/
 __pycache__/
