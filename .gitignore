@@ -1,0 +1,15 @@
+# Ignorar ambientes virtuais
+venv/
+env/
+__pycache__/
+
+# Ignorar os pesos da IA (MUITO IMPORTANTE)
+*.pt
+*.pth
+checkpoints/
+models/
+
+# Ignorar imagens de teste
+test_images/
+*.jpg
+*.png

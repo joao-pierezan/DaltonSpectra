@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaltonSpectra|ColorFinder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon"  href="logosemescrita.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Reset e Base */
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #ffffff; 
+            color: #f8fafc; 
+            margin: 0; 
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        /* Cabeçalho */
+        h1 { font-weight: 800; font-size: 2rem; margin-bottom: 5px; color: #38bdf8; text-align: center;}
+        p.subtitulo { color: #94a3b8; margin-bottom: 30px; font-size: 0.9rem; text-align: center;}
+
+        /* Área de Botões (Nunca somem) */
+        .botoes-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 5px 0;
+            z-index: 50;
+        }
+
+        input[type="file"] { display: none; }
+
+        .btn-acao {
+            background: #4a5a7d; /* Cor azulada das suas imagens */
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-acao:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); }
+
+        /* O Card (Contêiner da Imagem e do Vídeo) */
+        #area-imagem { 
+            position: relative; 
+            display: none; 
+            cursor: crosshair; 
+            max-width: 100%;
+            width: fit-content; 
+            border-radius: 16px;
+            overflow: hidden; 
+        }
+
+        /* Proporções do Vídeo e Imagem */
+        #imagem-fundo, #video-camera { 
+            max-width: 100%; 
+            max-height: 45vh; 
+            width: auto; 
+            height: auto; 
+        }
+
+        #imagem-fundo { 
+            display: block; 
+            transition: filter 1s ease-in-out; 
+        }
+
+        #video-camera {
+            display: none; 
+            object-fit: cover;
+        }
+
+        #imagem-objeto { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            pointer-events: none; 
+            opacity: 0; 
+            transition: opacity 1s ease-in-out; 
+            object-fit: contain;
+        }
+        
+        #tela-desenho { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            pointer-events: none; 
+        }
+
+        .linha-magica {
+            fill: none;
+            stroke: #ffffff; 
+            stroke-width: 4;
+            filter: drop-shadow(0px 0px 6px rgba(56, 189, 248, 0.9));
+            stroke-dasharray: var(--tamanho-caminho);
+            stroke-dashoffset: var(--tamanho-caminho);
+            transition: stroke-dashoffset 1.5s ease-out;
+        }
+
+        .efeito-blur { filter: blur(8px) brightness(0.3); }
+        .pulso { animation: pulsar 1.5s infinite; filter: brightness(0.6); pointer-events: none; }
+        @keyframes pulsar { 0%, 100% { filter: brightness(0.6); } 50% { filter: brightness(1); } }
+        
+        /* Display de Resultado */
+        #resultado-container { margin-top: 30px; height: 50px; margin-bottom: 40px; }
+        #resultado { 
+            background-color: rgba(8, 32, 82, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f8fafc;
+            display: none; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        #resultado span { color:white }
+        .logo { width: 100%; max-width: 500px; margin-bottom: -5px; margin-top: -20px; } 
+
+        /* =========================================
+           BOTÕES SOBREPOSTOS DA CÂMERA (BOLA E X)
+           ========================================= */
+        .btn-overlay {
+            position: absolute;
+            z-index: 1000;
+            display: none;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        #btn-fechar-x {
+            top: 10px;
+            right: 10px;
+            padding: 5px;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8)); 
+            transition: transform 0.2s;
+        }
+        #btn-fechar-x:active { transform: scale(0.8); }
+
+        #btn-capturar-bola {
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border: 4px solid rgba(255, 255, 255, 0.4); 
+            border-radius: 50%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.1s ease, background-color 0.1s;
+        }
+        #btn-capturar-bola:active { 
+            transform: translateX(-50%) scale(0.9); 
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="logosemfundo.png" class="logo" alt="DaltonSpectra Logo">
+    <p class="subtitulo">Escolha um objeto de sua imagem e descubra sua cor em segundos</p>
+
+    <div class="botoes-container" id="botoes-iniciais">
+        <label for="input-arquivo" class="btn-acao">
+            <i class="fa-solid fa-folder" style="margin-right: 5px;"></i> Galeria
+        </label>
+        <button id="btn-abrir-camera" class="btn-acao">
+            <i class="fa-solid fa-camera" style="margin-right: 5px;"></i> Câmera
+        </button>
+    </div>
+
+    <input type="file" id="input-arquivo" accept="image/*">
+
+    <p>aaaaaaaaaaaaaaaaa</p>
+    
+    <div id="area-imagem">
+        <video id="video-camera" autoplay playsinline></video>
+        <img id="imagem-fundo">
+        <img id="imagem-objeto">
+        <svg id="tela-desenho" preserveAspectRatio="none">
+            <path id="linha-contorno" class="linha-magica"></path>
+        </svg>
+
+        <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <button id="btn-capturar-bola" class="btn-overlay" title="Tirar Foto"></button>
+    </div>
+    
+    <div id="resultado-container">
+        <div id="resultado"></div>
+    </div>
+
+    <div>
+        <p class="copyright">© DaltonSpectra | IFSC Campus Chapecó | 2026/1</p>
+    </div>
+
+    <script>
+        // --- Variáveis Globais ---
+        const inputArquivo = document.getElementById('input-arquivo');
+        const btnAbrirCamera = document.getElementById('btn-abrir-camera');
+        
+        // Botões sobrepostos da câmera
+        const btnCapturarBola = document.getElementById('btn-capturar-bola');
+        const btnFecharX = document.getElementById('btn-fechar-x');
+        
+        // Elementos visuais
+        const areaImagem = document.getElementById('area-imagem');
+        const videoCamera = document.getElementById('video-camera');
+        const imagemFundo = document.getElementById('imagem-fundo');
+        const imagemObjeto = document.getElementById('imagem-objeto');
+        const telaDesenho = document.getElementById('tela-desenho');
+        const linhaContorno = document.getElementById('linha-contorno');
+        const resultado = document.getElementById('resultado');
+        
+        let arquivoAtual = null;
+        let streamCameraAtual = null;
+
+        // --- FUNÇÃO CENTRAL: Carrega a foto no palco ---
+        function carregarFotoNoPalco(arquivo) {
+            arquivoAtual = arquivo;
+            
+            areaImagem.style.display = 'inline-block';
+            imagemFundo.src = URL.createObjectURL(arquivoAtual);
+            
+            // Exibe a imagem e garante que o vídeo/botões da câmera sumam
+            imagemFundo.style.display = 'block';
+            videoCamera.style.display = 'none';
+            btnCapturarBola.style.display = 'none';
+            btnFecharX.style.display = 'none';
+            telaDesenho.style.display = 'block';
+            
+            // Limpeza instantânea
+            imagemFundo.classList.remove('efeito-blur');
+            imagemObjeto.style.opacity = '0';
+            linhaContorno.style.transition = 'none';
+            linhaContorno.setAttribute("d", ""); 
+            
+            imagemFundo.onload = () => {
+                telaDesenho.setAttribute("viewBox", `0 0 ${imagemFundo.naturalWidth} ${imagemFundo.naturalHeight}`);
+            };
+            
+            resultado.innerText = "Pronto! Clique em um objeto.";
+            resultado.style.display = 'inline-block';
+        }
+
+        // --- Desliga a câmera se estiver ligada ---
+        function desligarCamera() {
+            if (streamCameraAtual) {
+                streamCameraAtual.getTracks().forEach(track => track.stop());
+                streamCameraAtual = null;
+            }
+            videoCamera.style.display = 'none';
+            btnCapturarBola.style.display = 'none';
+            btnFecharX.style.display = 'none';
+        }
+
+        // --- Evento 1: Upload de Arquivo (Botão Galeria) ---
+        inputArquivo.addEventListener('change', (evento) => {
+            if (evento.target.files[0]) {
+                desligarCamera(); // Se a câmera estiver aberta, fecha ela
+                carregarFotoNoPalco(evento.target.files[0]);
+            }
+        });
+
+        // --- Evento 2: Abrir a Câmera ---
+        btnAbrirCamera.addEventListener('click', async () => {
+            try {
+                streamCameraAtual = await navigator.mediaDevices.getUserMedia({ 
+                    video: { facingMode: 'environment' } 
+                });
+                videoCamera.srcObject = streamCameraAtual;
+                
+                resultado.style.display = 'none';
+                
+                // Prepara o quadro: Mostra o vídeo e os botões flutuantes, esconde a foto antiga
+                areaImagem.style.display = 'inline-block';
+                imagemFundo.style.display = 'none';
+                imagemObjeto.style.opacity = '0';
+                telaDesenho.style.display = 'none'; 
+                
+                // Os botões principais (Galeria/Câmera) continuam onde estão!
+                
+                videoCamera.style.display = 'block'; 
+                btnCapturarBola.style.display = 'block'; 
+                btnFecharX.style.display = 'block'; 
+                
+            } catch (erro) {
+                alert("Não foi possível acessar a câmera. Verifique as permissões.");
+                console.error(erro);
+            }
+        });
+
+        // --- Evento 3: Cancelar a Câmera (Botão X) ---
+        btnFecharX.addEventListener('click', () => {
+            desligarCamera();
+            
+            // Se já existia uma foto antes, traz ela de volta. Se não, oculta o quadro.
+            if (arquivoAtual) {
+                imagemFundo.style.display = 'block';
+                telaDesenho.style.display = 'block';
+                resultado.style.display = 'inline-block';
+            } else {
+                areaImagem.style.display = 'none';
+            }
+        });
+
+        // --- Evento 4: Tirar a Foto (Bola Branca) ---
+        btnCapturarBola.addEventListener('click', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = videoCamera.videoWidth;
+            canvas.height = videoCamera.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(videoCamera, 0, 0, canvas.width, canvas.height);
+
+            canvas.toBlob((blob) => {
+                const arquivoFoto = new File([blob], "foto_camera.jpg", { type: "image/jpeg" });
+                desligarCamera();
+                carregarFotoNoPalco(arquivoFoto); 
+            }, 'image/jpeg', 0.9);
+        });
+
+        // --- Evento 5: Clicar na Imagem (A Mágica da IA) ---
+        imagemFundo.addEventListener('click', async (evento) => {
+            if (!arquivoAtual) return;
+
+            imagemFundo.classList.remove('efeito-blur');
+            imagemObjeto.style.opacity = '0';
+            linhaContorno.style.transition = 'none';
+            linhaContorno.setAttribute("d", ""); 
+
+            const x = Math.round((evento.offsetX / imagemFundo.clientWidth) * imagemFundo.naturalWidth);
+            const y = Math.round((evento.offsetY / imagemFundo.clientHeight) * imagemFundo.naturalHeight);
+
+            imagemFundo.classList.add('pulso');
+            resultado.innerText = "Processando IA...";
+
+            const formData = new FormData();
+            formData.append("arquivo", arquivoAtual);
+            formData.append("x", x);
+            formData.append("y", y);
+
+            try {
+                // Rota original mantida!
+                const resposta = await fetch("http://127.0.0.1:8000/analisar", { method: "POST", body: formData });
+                const dados = await resposta.json();
+                
+                imagemFundo.classList.remove('pulso');
+                resultado.innerHTML = "Cor detectada: <span>" + dados.cor_predominante + "</span>";
+
+                imagemFundo.classList.add('efeito-blur');
+                imagemObjeto.src = "data:image/png;base64," + dados.imagem_resultado;
+                imagemObjeto.style.opacity = '1';
+                
+                linhaContorno.setAttribute("d", dados.caminho_svg); 
+                linhaContorno.style.transition = 'none';
+                const comprimentoLinha = linhaContorno.getTotalLength();
+                linhaContorno.style.setProperty('--tamanho-caminho', comprimentoLinha);
+                linhaContorno.style.strokeDasharray = comprimentoLinha;
+                linhaContorno.style.strokeDashoffset = comprimentoLinha;
+
+                linhaContorno.getBoundingClientRect(); 
+                linhaContorno.style.transition = 'stroke-dashoffset 1.5s ease-out';
+                linhaContorno.style.strokeDashoffset = '0';
+
+            } catch (erro) {
+                imagemFundo.classList.remove('pulso');
+                resultado.innerText = "Erro no servidor.";
+                console.error(erro);
+            }
+        });
+    </script>
+</body>
+</html>
