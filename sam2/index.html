@@ -149,7 +149,7 @@
         .logo { width: 100%; max-width: 500px; margin-bottom: -5px; margin-top: -20px; } 
 
         /* =========================================
-           BOTÕES SOBREPOSTOS DA CÂMERA (BOLA E X)
+            BOTÕES SOBREPOSTOS DA CÂMERA
            ========================================= */
         .btn-overlay {
             position: absolute;
@@ -169,6 +169,16 @@
             transition: transform 0.2s;
         }
         #btn-fechar-x:active { transform: scale(0.8); }
+
+        #btn-flash {
+            top: 10px;
+            left: 10px;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+            display: none; /* Só aparece com a câmera */
+            transition: background 0.3s;
+        }
 
         #btn-capturar-bola {
             bottom: 15px;
@@ -212,12 +222,19 @@
             <path id="linha-contorno" class="linha-magica"></path>
         </svg>
 
+        <button id="btn-flash" class="btn-overlay" title="Ligar/Desligar Flash">
+            <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+        </button>
+
         <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
         </button>
+
         <button id="btn-capturar-bola" class="btn-overlay" title="Tirar Foto"></button>
     </div>
     
@@ -234,11 +251,11 @@
         const inputArquivo = document.getElementById('input-arquivo');
         const btnAbrirCamera = document.getElementById('btn-abrir-camera');
         
-        // Botões sobrepostos da câmera
         const btnCapturarBola = document.getElementById('btn-capturar-bola');
         const btnFecharX = document.getElementById('btn-fechar-x');
+        const btnFlash = document.getElementById('btn-flash');
+        const iconFlash = document.getElementById('icon-flash');
         
-        // Elementos visuais
         const areaImagem = document.getElementById('area-imagem');
         const videoCamera = document.getElementById('video-camera');
         const imagemFundo = document.getElementById('imagem-fundo');
@@ -249,22 +266,21 @@
         
         let arquivoAtual = null;
         let streamCameraAtual = null;
+        let flashAtivo = false;
 
         // --- FUNÇÃO CENTRAL: Carrega a foto no palco ---
         function carregarFotoNoPalco(arquivo) {
             arquivoAtual = arquivo;
-            
             areaImagem.style.display = 'inline-block';
             imagemFundo.src = URL.createObjectURL(arquivoAtual);
             
-            // Exibe a imagem e garante que o vídeo/botões da câmera sumam
             imagemFundo.style.display = 'block';
             videoCamera.style.display = 'none';
             btnCapturarBola.style.display = 'none';
             btnFecharX.style.display = 'none';
+            btnFlash.style.display = 'none';
             telaDesenho.style.display = 'block';
             
-            // Limpeza instantânea
             imagemFundo.classList.remove('efeito-blur');
             imagemObjeto.style.opacity = '0';
             linhaContorno.style.transition = 'none';
@@ -284,15 +300,20 @@
                 streamCameraAtual.getTracks().forEach(track => track.stop());
                 streamCameraAtual = null;
             }
+            flashAtivo = false;
+            iconFlash.setAttribute('fill', 'none');
+            iconFlash.setAttribute('stroke', '#ffffff');
+            
             videoCamera.style.display = 'none';
             btnCapturarBola.style.display = 'none';
             btnFecharX.style.display = 'none';
+            btnFlash.style.display = 'none';
         }
 
-        // --- Evento 1: Upload de Arquivo (Botão Galeria) ---
+        // --- Evento 1: Galeria ---
         inputArquivo.addEventListener('change', (evento) => {
             if (evento.target.files[0]) {
-                desligarCamera(); // Se a câmera estiver aberta, fecha ela
+                desligarCamera();
                 carregarFotoNoPalco(evento.target.files[0]);
             }
         });
@@ -306,18 +327,15 @@
                 videoCamera.srcObject = streamCameraAtual;
                 
                 resultado.style.display = 'none';
-                
-                // Prepara o quadro: Mostra o vídeo e os botões flutuantes, esconde a foto antiga
                 areaImagem.style.display = 'inline-block';
                 imagemFundo.style.display = 'none';
                 imagemObjeto.style.opacity = '0';
                 telaDesenho.style.display = 'none'; 
                 
-                // Os botões principais (Galeria/Câmera) continuam onde estão!
-                
                 videoCamera.style.display = 'block'; 
                 btnCapturarBola.style.display = 'block'; 
                 btnFecharX.style.display = 'block'; 
+                btnFlash.style.display = 'block'; 
                 
             } catch (erro) {
                 alert("Não foi possível acessar a câmera. Verifique as permissões.");
@@ -325,11 +343,34 @@
             }
         });
 
-        // --- Evento 3: Cancelar a Câmera (Botão X) ---
+        // --- Lógica do Flash ---
+        btnFlash.addEventListener('click', async () => {
+            if (!streamCameraAtual) return;
+            const track = streamCameraAtual.getVideoTracks()[0];
+            const capabilities = track.getCapabilities();
+
+            if (!capabilities.torch) {
+                alert("Flash não disponível nesta câmera.");
+                return;
+            }
+
+            try {
+                flashAtivo = !flashAtivo;
+                await track.applyConstraints({
+                    advanced: [{ torch: flashAtivo }]
+                });
+
+                // Feedback visual no ícone
+                iconFlash.setAttribute('fill', flashAtivo ? '#fbbf24' : 'none');
+                iconFlash.setAttribute('stroke', flashAtivo ? '#fbbf24' : '#ffffff');
+            } catch (e) {
+                console.error("Erro ao acionar flash", e);
+            }
+        });
+
+        // --- Evento 3: Fechar Câmera (X) ---
         btnFecharX.addEventListener('click', () => {
             desligarCamera();
-            
-            // Se já existia uma foto antes, traz ela de volta. Se não, oculta o quadro.
             if (arquivoAtual) {
                 imagemFundo.style.display = 'block';
                 telaDesenho.style.display = 'block';
@@ -339,7 +380,7 @@
             }
         });
 
-        // --- Evento 4: Tirar a Foto (Bola Branca) ---
+        // --- Evento 4: Capturar Foto ---
         btnCapturarBola.addEventListener('click', () => {
             const canvas = document.createElement('canvas');
             canvas.width = videoCamera.videoWidth;
@@ -354,13 +395,12 @@
             }, 'image/jpeg', 0.9);
         });
 
-        // --- Evento 5: Clicar na Imagem (A Mágica da IA) ---
+        // --- Evento 5: IA de Cores ---
         imagemFundo.addEventListener('click', async (evento) => {
             if (!arquivoAtual) return;
 
             imagemFundo.classList.remove('efeito-blur');
             imagemObjeto.style.opacity = '0';
-            linhaContorno.style.transition = 'none';
             linhaContorno.setAttribute("d", ""); 
 
             const x = Math.round((evento.offsetX / imagemFundo.clientWidth) * imagemFundo.naturalWidth);
@@ -375,8 +415,8 @@
             formData.append("y", y);
 
             try {
-                // Rota original mantida!
-                const resposta = await fetch(" https://winking-rinsing-trophy.ngrok-free.dev/analisar", { method: "POST", body: formData });
+                // Link do seu Ngrok atualizado
+                const resposta = await fetch("https://winking-rinsing-trophy.ngrok-free.dev/analisar", { method: "POST", body: formData });
                 const dados = await resposta.json();
                 
                 imagemFundo.classList.remove('pulso');
