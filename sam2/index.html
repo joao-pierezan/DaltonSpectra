@@ -318,23 +318,51 @@
             }
         });
 
-        // --- Evento 2: Abrir a Câmera (Alterado para forçar lente Principal) ---
+        // --- Evento 2: Abrir a Câmera (Com Raio-X de Hardware) ---
         btnAbrirCamera.addEventListener('click', async () => {
             try {
-                // ALTERAÇÃO AQUI: Em vez de pedir apenas 'environment', pedimos resolução ideal.
-                // Isso costuma forçar o Android a escolher a lente principal ( Wide/1x).
-                const constraints = {
-                    video: { 
-                        facingMode: 'environment',
-                        // Resolução HD padrão ajuda a selecionar a lente principal
-                        width: { ideal: 1280 }, 
-                        height: { ideal: 720 }
-                    } 
-                };
+                // Passo 1: Abrimos uma câmera qualquer rapidamente só para o navegador
+                // nos dar permissão de ler os nomes verdadeiros das lentes.
+                let streamTemporario = await navigator.mediaDevices.getUserMedia({ video: true });
                 
-                streamCameraAtual = await navigator.mediaDevices.getUserMedia(constraints);
+                // Passo 2: Listamos TODOS os hardwares conectados ao celular
+                const dispositivos = await navigator.mediaDevices.enumerateDevices();
+                
+                // Passo 3: Filtramos apenas as câmeras (ignoramos microfones)
+                const cameras = dispositivos.filter(d => d.kind === 'videoinput');
+                
+                // Passo 4: Procuramos as câmeras traseiras (o Android costuma chamá-las de "back")
+                const camerasTraseiras = cameras.filter(c => c.label.toLowerCase().includes('back'));
+                
+                let idLentePrincipal = null;
+
+                if (camerasTraseiras.length > 0) {
+                    // O pulo do gato: A câmera principal (com flash e sem distorção) quase sempre
+                    // é nomeada como "0" no sistema interno do Android (ex: "camera2 0, facing back").
+                    // A lente ultrawide costuma ser a "2" e a macro a "3".
+                    let cameraCerta = camerasTraseiras.find(c => c.label.includes('0'));
+                    
+                    if (!cameraCerta) {
+                        // Se não achar o "0", pega a primeira da lista (que também costuma ser a principal)
+                        cameraCerta = camerasTraseiras[0];
+                    }
+                    
+                    idLentePrincipal = cameraCerta.deviceId;
+                    console.log("Câmera principal forçada:", cameraCerta.label);
+                }
+
+                // Desliga a câmera rápida que usamos só para ler as permissões
+                streamTemporario.getTracks().forEach(track => track.stop());
+
+                // Passo 5: Agora sim, ligamos a câmera definitiva FORÇANDO o ID da lente certa
+                const restricoes = idLentePrincipal 
+                    ? { video: { deviceId: { exact: idLentePrincipal } } } 
+                    : { video: { facingMode: 'environment' } }; // Fallback caso não encontre
+
+                streamCameraAtual = await navigator.mediaDevices.getUserMedia(restricoes);
                 videoCamera.srcObject = streamCameraAtual;
                 
+                // Interface Visual
                 resultado.style.display = 'none';
                 areaImagem.style.display = 'inline-block';
                 imagemFundo.style.display = 'none';
@@ -397,8 +425,7 @@
                 } else if (e.name === 'NotAllowedError') {
                     alert("Permissão negada pelo sistema operacional.");
                 } else if (e.name === 'OverconstrainedError') {
-                    // Se cairmos aqui, mesmo com o fallback, é porque a lente atual não tem flash.
-                    alert("A câmera atual não possui flash físico ou o navegador não permite ativá-lo neste formato (Talvez você esteja na lente ultra-wide).");
+                    alert("A câmera atual não possui flash físico ou o navegador não permite ativá-lo neste formato.");
                 } else {
                     alert("Erro ao ligar o flash: " + e.name);
                 }
@@ -453,7 +480,6 @@
             formData.append("y", y);
 
             try {
-                // Link do seu Ngrok atualizado
                 const resposta = await fetch("https://winking-rinsing-trophy.ngrok-free.dev/analisar", { method: "POST", body: formData });
                 const dados = await resposta.json();
                 
@@ -482,5 +508,4 @@
             }
         });
     </script>
-</body>
 </html>
