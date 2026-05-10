@@ -52,14 +52,14 @@ def obter_nome_cor(rgb_tuple):
     # Aumentamos de 45 para 50 para perdoar um pouco mais de cor na luz
     if s < 50: 
         if v > 200: return "Branco"
-        elif v > 160: return "Branco Gelo / Cinza Claro"
+        elif v > 160: return "Branco / Cinza Claro"
         else: return "Cinza Escuro" if v < 100 else "Cinza"
 
     # 2. Identificação da Cor Real pela Matiz (Roda de Cores)
     # No OpenCV o H (Matiz) vai de 0 a 179. S e V vão de 0 a 255.
     
     if (h < 10) or (h >= 170): 
-        if s < 150 and v > 150: return "Salmão / Rosa Chá"
+        if s < 150 and v > 150: return "Salmão"
         return "Vinho / Vermelho Escuro" if v < 120 else "Vermelho"
         
     elif 10 <= h < 22: 
@@ -71,15 +71,15 @@ def obter_nome_cor(rgb_tuple):
         
     elif 22 <= h < 35: 
         # Área dos amarelos
-        if v > 180 and s < 120: return "Bege Amarelado / Areia"
-        if v < 180: return "Mostarda / Ouro"
+        if v > 180 and s < 120: return "Amarelo Claro"
+        if v < 180: return "Amarelo Escuro/ Queimado"
         return "Amarelo"
         
     elif 35 <= h < 85: 
         # Área dos verdes
         if h > 70 and s < 100 and v > 150: return "Verde Água"
-        if v < 100: return "Verde Escuro / Musgo"
-        if h < 45: return "Verde Limão"
+        if v < 100: return "Verde Escuro"
+        if h < 45: return "Verde Neon"
         return "Verde"
         
     elif 85 <= h < 100: 
@@ -90,7 +90,7 @@ def obter_nome_cor(rgb_tuple):
     elif 100 <= h < 135: 
         # Azuis
         # ARMADILHA: Se a saturação for baixa (mesmo passando de 50), é só a luz fria enganando a câmera!
-        if s < 75: return "Cinza / Cinza Frio" 
+        if s < 75: return "Cinza" 
         
         if v < 100: return "Azul Marinho"
         if s < 120 and v > 180: return "Azul Claro"
@@ -98,13 +98,13 @@ def obter_nome_cor(rgb_tuple):
         
     elif 135 <= h < 155: 
         # Roxos / Lilás
-        if v > 180 and s < 120: return "Lavanda / Lilás"
+        if v > 180 and s < 120: return "Lilás"
         return "Roxo Escuro" if v < 120 else "Roxo"
         
     elif 155 <= h < 170: 
         # Rosas
-        if v < 150: return "Rosa Escuro / Magenta"
-        if s > 180: return "Pink / Rosa Choque"
+        if v < 150: return "Rosa Escuro"
+        if s > 180: return "Rosa Choque"
         return "Rosa Claro"
 
     return "Cor Indefinida"
