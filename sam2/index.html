@@ -246,7 +246,7 @@
         <p class="copyright">© DaltonSpectra | IFSC Campus Chapecó | 2026/1</p>
     </div>
 
-    <script>
+<script>
         // --- Variáveis Globais ---
         const inputArquivo = document.getElementById('input-arquivo');
         const btnAbrirCamera = document.getElementById('btn-abrir-camera');
@@ -318,7 +318,7 @@
             }
         });
 
-        // --- Evento 2: Abrir a Câmera ---
+        // --- Evento 2: Abrir a Câmera (Código Original Mantido) ---
         btnAbrirCamera.addEventListener('click', async () => {
             try {
                 streamCameraAtual = await navigator.mediaDevices.getUserMedia({ 
@@ -343,43 +343,58 @@
             }
         });
 
-        // --- Lógica do Flash (Versão Robusta) ---
+        // --- Lógica do Flash (Tentativa Dupla para evitar OverconstrainedError) ---
         btnFlash.addEventListener('click', async () => {
-    if (!streamCameraAtual) {
-        alert("A câmera precisa estar ligada primeiro!");
-        return;
-    }
-    
-    const track = streamCameraAtual.getVideoTracks()[0];
-    
-    try {
-        // Inverte o estado do flash
-        flashAtivo = !flashAtivo;
-        
-        // Vamos forçar a ativação direto, sem pedir "com licença"
-        await track.applyConstraints({
-            advanced: [{ torch: flashAtivo }]
-        });
+            if (!streamCameraAtual) {
+                alert("A câmera precisa estar ligada primeiro!");
+                return;
+            }
+            
+            const track = streamCameraAtual.getVideoTracks()[0];
+            
+            try {
+                flashAtivo = !flashAtivo;
+                const restricoesAtuais = track.getConstraints();
+                
+                try {
+                    // Tentativa 1: Formato padrão da Web (em "advanced")
+                    await track.applyConstraints({
+                        ...restricoesAtuais,
+                        advanced: [{ torch: flashAtivo }]
+                    });
+                } catch (err1) {
+                    // Se o erro for o Overconstrained, disparamos a Tentativa 2
+                    if (err1.name === 'OverconstrainedError') {
+                        // Tentativa 2: Formato exigido por algumas marcas de Android (na raiz)
+                        await track.applyConstraints({
+                            ...restricoesAtuais,
+                            torch: flashAtivo
+                        });
+                    } else {
+                        throw err1; // Repassa o erro se for algo diferente
+                    }
+                }
 
-        // Se passar da linha acima sem dar erro, funcionou! Atualiza o ícone:
-        iconFlash.setAttribute('fill', flashAtivo ? '#fbbf24' : 'none');
-        iconFlash.setAttribute('stroke', flashAtivo ? '#fbbf24' : '#ffffff');
-        
-    } catch (e) {
-        // Se der erro, desfazemos a variável
-        flashAtivo = !flashAtivo; 
-        
-        // Aqui vamos descobrir o verdadeiro motivo do bloqueio
-        if (e.name === 'NotSupportedError') {
-            alert("O seu navegador não suporta ligar o flash (Comum em iPhones).");
-        } else if (e.name === 'NotAllowedError') {
-            alert("Permissão negada pelo sistema operacional.");
-        } else {
-            alert("Erro ao ligar o flash: " + e.name);
-        }
-        console.error("Erro detalhado do Flash:", e);
-    }
-});
+                // Se chegou aqui sem cair no catch principal, funcionou!
+                iconFlash.setAttribute('fill', flashAtivo ? '#fbbf24' : 'none');
+                iconFlash.setAttribute('stroke', flashAtivo ? '#fbbf24' : '#ffffff');
+                
+            } catch (e) {
+                // Desfaz a variável se falhou nas duas tentativas
+                flashAtivo = !flashAtivo; 
+                
+                if (e.name === 'NotSupportedError') {
+                    alert("O seu navegador não suporta ligar o flash.");
+                } else if (e.name === 'NotAllowedError') {
+                    alert("Permissão negada pelo sistema operacional.");
+                } else if (e.name === 'OverconstrainedError') {
+                    alert("A câmera atual não possui flash físico ou não permite ativá-lo neste formato.");
+                } else {
+                    alert("Erro ao ligar o flash: " + e.name);
+                }
+                console.error("Erro detalhado do Flash:", e);
+            }
+        });
 
         // --- Evento 3: Fechar Câmera (X) ---
         btnFecharX.addEventListener('click', () => {
