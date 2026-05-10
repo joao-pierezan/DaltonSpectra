@@ -213,6 +213,14 @@
             transform: translate(-50%, -50%) scale(0.9); 
             background-color: #e0e0e0;
         }
+        #btn-voltar-seta {
+            top: 10px;
+            left: 10px; /* Canto superior esquerdo */
+            padding: 5px;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8)); 
+            transition: transform 0.2s;
+        }
+        #btn-voltar-seta:active { transform: scale(0.8); }
     </style>
 </head>
 <body>
@@ -246,6 +254,13 @@
         </svg>
     </button>
 
+    <button id="btn-voltar-seta" class="btn-overlay" title="Voltar e escolher outro objeto">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </button>
+
     <div id="controles-inferiores">
         <button id="btn-flash" title="Ligar/Desligar Flash">
             <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -254,6 +269,8 @@
         </button>
 
         <button id="btn-capturar-bola" title="Tirar Foto"></button>
+
+        
     </div>
 </div>
     
@@ -274,6 +291,7 @@
         const btnFecharX = document.getElementById('btn-fechar-x');
         const btnFlash = document.getElementById('btn-flash');
         const iconFlash = document.getElementById('icon-flash');
+        const btnVoltarSeta = document.getElementById('btn-voltar-seta');
         
         // NOVO: Pegando a caixa que guarda os botões inferiores
         const controlesInferiores = document.getElementById('controles-inferiores');
@@ -299,6 +317,7 @@
             imagemFundo.style.display = 'block';
             videoCamera.style.display = 'none';
             btnFecharX.style.display = 'none';
+            btnVoltarSeta.style.display = 'none'; // Garante que a seta suma ao carregar nova foto
             
             // NOVO: Esconde a caixa inteira
             controlesInferiores.style.display = 'none';
@@ -330,6 +349,7 @@
             
             videoCamera.style.display = 'none';
             btnFecharX.style.display = 'none';
+            btnVoltarSeta.style.display = 'none'; // Prevenção
             
             // NOVO: Esconde a caixa inteira
             controlesInferiores.style.display = 'none';
@@ -376,12 +396,13 @@
                 imagemFundo.style.display = 'none';
                 imagemObjeto.style.opacity = '0';
                 telaDesenho.style.display = 'none'; 
+                btnVoltarSeta.style.display = 'none'; // Esconde na câmera
                 
                 videoCamera.style.display = 'block'; 
                 btnFecharX.style.display = 'block'; 
                 
-                // NOVO: Mostra a caixa dos botões inferiores com 'flex' para ficarem lado a lado
-                controlesInferiores.style.display = 'flex'; 
+                // NOVO: Mostra a caixa dos botões inferiores com 'block' (já que estamos usando absolute agora)
+                controlesInferiores.style.display = 'block'; 
                 
             } catch (erro) {
                 alert("Não foi possível acessar a câmera. Verifique as permissões.");
@@ -457,6 +478,7 @@
         imagemFundo.addEventListener('click', async (evento) => {
             if (!arquivoAtual) return;
 
+            btnVoltarSeta.style.display = 'none'; // Garante que a seta suma se o usuário clicar de novo
             imagemFundo.classList.remove('efeito-blur');
             imagemObjeto.style.opacity = '0';
             linhaContorno.setAttribute("d", ""); 
@@ -495,11 +517,29 @@
                 linhaContorno.style.transition = 'stroke-dashoffset 1.5s ease-out';
                 linhaContorno.style.strokeDashoffset = '0';
 
+                // MOSTRA A SETA APÓS O SUCESSO DA IA
+                btnVoltarSeta.style.display = 'block';
+
             } catch (erro) {
                 imagemFundo.classList.remove('pulso');
                 resultado.innerText = "Erro no servidor.";
                 console.error(erro);
             }
+        });
+
+        // --- Evento 6: Voltar imagem ao normal para nova seleção ---
+        btnVoltarSeta.addEventListener('click', () => {
+            // Esconde a seta novamente
+            btnVoltarSeta.style.display = 'none'; 
+            
+            // Remove os efeitos da imagem antiga
+            imagemFundo.classList.remove('efeito-blur');
+            imagemObjeto.style.opacity = '0';
+            linhaContorno.style.transition = 'none';
+            linhaContorno.setAttribute("d", ""); 
+            
+            // Atualiza a mensagem para o usuário
+            resultado.innerHTML = "Pronto! Clique em outro objeto.";
         });
     </script>
 </html>
