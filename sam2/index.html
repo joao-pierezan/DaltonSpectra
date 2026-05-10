@@ -345,39 +345,41 @@
 
         // --- Lógica do Flash (Versão Robusta) ---
         btnFlash.addEventListener('click', async () => {
-            if (!streamCameraAtual) return;
-            
-            const track = streamCameraAtual.getVideoTracks()[0];
-            
-            // Pequeno truque: alguns navegadores só mostram as capacidades após um milissegundo
-            const capabilities = track.getCapabilities();
-
-            // Debug para você ver no console do celular o que está acontecendo
-            console.log("Capacidades da câmera:", capabilities);
-
-            if (!capabilities.torch) {
-                // Se cair aqui, o navegador está dizendo que não tem acesso ao hardware
-                alert("O seu navegador ou sistema bloqueou o acesso ao flash.");
-                return;
-            }
-
-            try {
-                flashAtivo = !flashAtivo;
-                
-                // Tentamos aplicar o modo 'torch'
-                await track.applyConstraints({
-                    advanced: [{ torch: flashAtivo }]
-                });
-
-                // Feedback visual no ícone
-                iconFlash.setAttribute('fill', flashAtivo ? '#fbbf24' : 'none');
-                iconFlash.setAttribute('stroke', flashAtivo ? '#fbbf24' : '#ffffff');
-                
-            } catch (e) {
-                alert("Erro técnico ao ligar o flash: " + e.message);
-                console.error(e);
-            }
+    if (!streamCameraAtual) {
+        alert("A câmera precisa estar ligada primeiro!");
+        return;
+    }
+    
+    const track = streamCameraAtual.getVideoTracks()[0];
+    
+    try {
+        // Inverte o estado do flash
+        flashAtivo = !flashAtivo;
+        
+        // Vamos forçar a ativação direto, sem pedir "com licença"
+        await track.applyConstraints({
+            advanced: [{ torch: flashAtivo }]
         });
+
+        // Se passar da linha acima sem dar erro, funcionou! Atualiza o ícone:
+        iconFlash.setAttribute('fill', flashAtivo ? '#fbbf24' : 'none');
+        iconFlash.setAttribute('stroke', flashAtivo ? '#fbbf24' : '#ffffff');
+        
+    } catch (e) {
+        // Se der erro, desfazemos a variável
+        flashAtivo = !flashAtivo; 
+        
+        // Aqui vamos descobrir o verdadeiro motivo do bloqueio
+        if (e.name === 'NotSupportedError') {
+            alert("O seu navegador não suporta ligar o flash (Comum em iPhones).");
+        } else if (e.name === 'NotAllowedError') {
+            alert("Permissão negada pelo sistema operacional.");
+        } else {
+            alert("Erro ao ligar o flash: " + e.name);
+        }
+        console.error("Erro detalhado do Flash:", e);
+    }
+});
 
         // --- Evento 3: Fechar Câmera (X) ---
         btnFecharX.addEventListener('click', () => {
