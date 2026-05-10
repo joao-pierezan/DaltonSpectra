@@ -318,12 +318,21 @@
             }
         });
 
-        // --- Evento 2: Abrir a Câmera (Código Original Mantido) ---
+        // --- Evento 2: Abrir a Câmera (Alterado para forçar lente Principal) ---
         btnAbrirCamera.addEventListener('click', async () => {
             try {
-                streamCameraAtual = await navigator.mediaDevices.getUserMedia({ 
-                    video: { facingMode: 'environment' } 
-                });
+                // ALTERAÇÃO AQUI: Em vez de pedir apenas 'environment', pedimos resolução ideal.
+                // Isso costuma forçar o Android a escolher a lente principal ( Wide/1x).
+                const constraints = {
+                    video: { 
+                        facingMode: 'environment',
+                        // Resolução HD padrão ajuda a selecionar a lente principal
+                        width: { ideal: 1280 }, 
+                        height: { ideal: 720 }
+                    } 
+                };
+                
+                streamCameraAtual = await navigator.mediaDevices.getUserMedia(constraints);
                 videoCamera.srcObject = streamCameraAtual;
                 
                 resultado.style.display = 'none';
@@ -388,7 +397,8 @@
                 } else if (e.name === 'NotAllowedError') {
                     alert("Permissão negada pelo sistema operacional.");
                 } else if (e.name === 'OverconstrainedError') {
-                    alert("A câmera atual não possui flash físico ou não permite ativá-lo neste formato.");
+                    // Se cairmos aqui, mesmo com o fallback, é porque a lente atual não tem flash.
+                    alert("A câmera atual não possui flash físico ou o navegador não permite ativá-lo neste formato (Talvez você esteja na lente ultra-wide).");
                 } else {
                     alert("Erro ao ligar o flash: " + e.name);
                 }
