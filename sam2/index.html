@@ -170,33 +170,34 @@
         }
         #btn-fechar-x:active { transform: scale(0.8); }
 
-        /* NOVO: Container para agrupar o flash e o botão de captura */
-        #controles-inferiores {
+       #controles-inferiores {
             position: absolute;
-            bottom: 15px;
+            bottom: 0;
             left: 0;
             width: 100%;
-            display: none; /* O JS vai mudar para 'flex' quando abrir a câmera */
-            justify-content: center;
-            align-items: center;
-            gap: 30px; /* Espaçamento entre o flash e o botão central */
+            height: 80px; /* Altura da área de botões */
+            display: none; /* O JS vai mudar para 'block' */
             z-index: 1000;
         }
 
         #btn-flash {
-            /* Removido o top/left absoluto. Agora ele flui no flexbox */
-            position: static; 
+            position: absolute;
+            left: 20px; /* Distância da borda esquerda */
+            top: 50%;
+            transform: translateY(-50%); /* Centraliza verticalmente na caixa */
             padding: 8px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 50%;
-            display: block; /* Modificado de none para block, o container esconde */
-            transition: background 0.3s;
+            background: transparent; /* REMOVIDO O FUNDO ESCURO */
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: block;
         }
 
         #btn-capturar-bola {
-            /* Removido o bottom/left absoluto e o translateX. Agora ele flui no flexbox */
-            position: static; 
-            transform: none; 
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); /* Garante o centro EXATO */
             width: 50px;
             height: 50px;
             background-color: white;
@@ -204,9 +205,12 @@
             border-radius: 50%;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.1s ease, background-color 0.1s;
+            padding: 0;
         }
+        
         #btn-capturar-bola:active { 
-            transform: scale(0.9); /* Apenas reduz, sem precisar do translateX */
+            /* Mantém o translate para não sair do centro ao encolher */
+            transform: translate(-50%, -50%) scale(0.9); 
             background-color: #e0e0e0;
         }
     </style>
