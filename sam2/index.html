@@ -333,7 +333,7 @@
                 telaDesenho.setAttribute("viewBox", `0 0 ${imagemFundo.naturalWidth} ${imagemFundo.naturalHeight}`);
             };
             
-            resultado.innerText = "Pronto! Clique em um objeto.";
+            resultado.innerText = "Clique em um objeto";
             resultado.style.display = 'inline-block';
         }
 
@@ -487,7 +487,7 @@
             const y = Math.round((evento.offsetY / imagemFundo.clientHeight) * imagemFundo.naturalHeight);
 
             imagemFundo.classList.add('pulso');
-            resultado.innerText = "Processando IA...";
+            resultado.innerText = "Processando...";
 
             const formData = new FormData();
             formData.append("arquivo", arquivoAtual);
@@ -539,7 +539,7 @@
             linhaContorno.setAttribute("d", ""); 
             
             // Atualiza a mensagem para o usuário
-            resultado.innerHTML = "Pronto! Clique em outro objeto.";
+            resultado.innerHTML = "Clique em um objeto";
         });
     </script>
 </html>
