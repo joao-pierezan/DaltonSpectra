@@ -271,6 +271,9 @@
         const btnFlash = document.getElementById('btn-flash');
         const iconFlash = document.getElementById('icon-flash');
         
+        // NOVO: Pegando a caixa que guarda os botões inferiores
+        const controlesInferiores = document.getElementById('controles-inferiores');
+        
         const areaImagem = document.getElementById('area-imagem');
         const videoCamera = document.getElementById('video-camera');
         const imagemFundo = document.getElementById('imagem-fundo');
@@ -291,9 +294,11 @@
             
             imagemFundo.style.display = 'block';
             videoCamera.style.display = 'none';
-            btnCapturarBola.style.display = 'none';
             btnFecharX.style.display = 'none';
-            btnFlash.style.display = 'none';
+            
+            // NOVO: Esconde a caixa inteira
+            controlesInferiores.style.display = 'none';
+            
             telaDesenho.style.display = 'block';
             
             imagemFundo.classList.remove('efeito-blur');
@@ -320,9 +325,10 @@
             iconFlash.setAttribute('stroke', '#ffffff');
             
             videoCamera.style.display = 'none';
-            btnCapturarBola.style.display = 'none';
             btnFecharX.style.display = 'none';
-            btnFlash.style.display = 'none';
+            
+            // NOVO: Esconde a caixa inteira
+            controlesInferiores.style.display = 'none';
         }
 
         // --- Evento 1: Galeria ---
@@ -333,7 +339,7 @@
             }
         });
 
-        // --- Evento 2: Abrir a Câmera (Com Raio-X de Hardware - MANTIDO) ---
+        // --- Evento 2: Abrir a Câmera ---
         btnAbrirCamera.addEventListener('click', async () => {
             try {
                 let streamTemporario = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -368,9 +374,10 @@
                 telaDesenho.style.display = 'none'; 
                 
                 videoCamera.style.display = 'block'; 
-                btnCapturarBola.style.display = 'block'; 
                 btnFecharX.style.display = 'block'; 
-                btnFlash.style.display = 'block'; 
+                
+                // NOVO: Mostra a caixa dos botões inferiores com 'flex' para ficarem lado a lado
+                controlesInferiores.style.display = 'flex'; 
                 
             } catch (erro) {
                 alert("Não foi possível acessar a câmera. Verifique as permissões.");
@@ -378,7 +385,7 @@
             }
         });
 
-        // --- Lógica do Flash (Atualizado para cores Brancas) ---
+        // --- Lógica do Flash ---
         btnFlash.addEventListener('click', async () => {
             if (!streamCameraAtual) return;
             
@@ -389,13 +396,11 @@
                 const restricoesAtuais = track.getConstraints();
                 
                 try {
-                    // Tentativa 1: Formato padrão da Web
                     await track.applyConstraints({
                         ...restricoesAtuais,
                         advanced: [{ torch: flashAtivo }]
                     });
                 } catch (err1) {
-                    // Fallback para OverconstrainedError
                     if (err1.name === 'OverconstrainedError') {
                         await track.applyConstraints({
                             ...restricoesAtuais,
@@ -406,11 +411,9 @@
                     }
                 }
 
-                // --- MUDANÇA AQUI: Cores do ícone ---
-                // Quando ativo, vira um raio totalmente branco (fill e stroke brancos)
-                // Quando inativo, volta ao padrão (centro transparente e borda branca)
+                // Cores do ícone
                 iconFlash.setAttribute('fill', flashAtivo ? '#ffffff' : 'none');
-                iconFlash.setAttribute('stroke', '#ffffff'); // Mantém a borda branca sempre
+                iconFlash.setAttribute('stroke', '#ffffff');
                 
             } catch (e) {
                 flashAtivo = !flashAtivo; 
@@ -466,7 +469,6 @@
             formData.append("y", y);
 
             try {
-                // Mudei para let para facilitar se o Ngrok mudar
                 let ngrokUrl = "https://winking-rinsing-trophy.ngrok-free.dev";
                 const resposta = await fetch(`${ngrokUrl}/analisar`, { method: "POST", body: formData });
                 const dados = await resposta.json();
