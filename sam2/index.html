@@ -478,7 +478,7 @@
         imagemFundo.addEventListener('click', async (evento) => {
             if (!arquivoAtual) return;
 
-            btnVoltarSeta.style.display = 'none'; // Garante que a seta suma se o usuário clicar de novo
+            btnVoltarSeta.style.display = 'flex'; // Garante que a seta suma se o usuário clicar de novo
             imagemFundo.classList.remove('efeito-blur');
             imagemObjeto.style.opacity = '0';
             linhaContorno.setAttribute("d", ""); 
