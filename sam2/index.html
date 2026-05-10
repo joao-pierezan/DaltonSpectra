@@ -246,7 +246,7 @@
         <p class="copyright">© DaltonSpectra | IFSC Campus Chapecó | 2026/1</p>
     </div>
 
-<script>
+    <script>
         // --- Variáveis Globais ---
         const inputArquivo = document.getElementById('input-arquivo');
         const btnAbrirCamera = document.getElementById('btn-abrir-camera');
@@ -318,35 +318,13 @@
             }
         });
 
-        // --- Evento 2: Abrir a Câmera (Atualizado para corrigir distorção) ---
+        // --- Evento 2: Abrir a Câmera ---
         btnAbrirCamera.addEventListener('click', async () => {
             try {
-                // 1. Pedindo resolução ideal para evitar lente ultrawide
-                const constraints = {
-                    video: {
-                        facingMode: "environment",
-                        width: { ideal: 1920 },
-                        height: { ideal: 1080 }
-                    }
-                };
-
-                streamCameraAtual = await navigator.mediaDevices.getUserMedia(constraints);
+                streamCameraAtual = await navigator.mediaDevices.getUserMedia({ 
+                    video: { facingMode: 'environment' } 
+                });
                 videoCamera.srcObject = streamCameraAtual;
-                
-                // 2. O Truque do Zoom para cortar o efeito "Olho de Peixe"
-                const track = streamCameraAtual.getVideoTracks()[0];
-                const capabilities = track.getCapabilities();
-
-                if (capabilities.zoom) {
-                    try {
-                        await track.applyConstraints({
-                            advanced: [{ zoom: 1.5 }] // Corta as bordas distorcidas
-                        });
-                        console.log("Zoom aplicado para corrigir distorção!");
-                    } catch (e) {
-                        console.log("Não foi possível aplicar o zoom", e);
-                    }
-                }
                 
                 resultado.style.display = 'none';
                 areaImagem.style.display = 'inline-block';
