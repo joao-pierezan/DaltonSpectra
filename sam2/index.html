@@ -8,7 +8,7 @@
     <link rel="icon"  href="logosemescrita.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <style>
+<style>
         /* Reset e Base */
         * { box-sizing: border-box; }
         body { 
@@ -170,20 +170,33 @@
         }
         #btn-fechar-x:active { transform: scale(0.8); }
 
+        /* NOVO: Container para agrupar o flash e o botão de captura */
+        #controles-inferiores {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            display: none; /* O JS vai mudar para 'flex' quando abrir a câmera */
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Espaçamento entre o flash e o botão central */
+            z-index: 1000;
+        }
+
         #btn-flash {
-            top: 10px;
-            left: 10px;
+            /* Removido o top/left absoluto. Agora ele flui no flexbox */
+            position: static; 
             padding: 8px;
             background: rgba(0, 0, 0, 0.4);
             border-radius: 50%;
-            display: none; /* Só aparece com a câmera */
+            display: block; /* Modificado de none para block, o container esconde */
             transition: background 0.3s;
         }
 
         #btn-capturar-bola {
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
+            /* Removido o bottom/left absoluto e o translateX. Agora ele flui no flexbox */
+            position: static; 
+            transform: none; 
             width: 50px;
             height: 50px;
             background-color: white;
@@ -193,7 +206,7 @@
             transition: transform 0.1s ease, background-color 0.1s;
         }
         #btn-capturar-bola:active { 
-            transform: translateX(-50%) scale(0.9); 
+            transform: scale(0.9); /* Apenas reduz, sem precisar do translateX */
             background-color: #e0e0e0;
         }
     </style>
@@ -215,28 +228,30 @@
     <input type="file" id="input-arquivo" accept="image/*">
     
     <div id="area-imagem">
-        <video id="video-camera" autoplay playsinline></video>
-        <img id="imagem-fundo">
-        <img id="imagem-objeto">
-        <svg id="tela-desenho" preserveAspectRatio="none">
-            <path id="linha-contorno" class="linha-magica"></path>
-        </svg>
+    <video id="video-camera" autoplay playsinline></video>
+    <img id="imagem-fundo">
+    <img id="imagem-objeto">
+    <svg id="tela-desenho" preserveAspectRatio="none">
+        <path id="linha-contorno" class="linha-magica"></path>
+    </svg>
 
-        <button id="btn-flash" class="btn-overlay" title="Ligar/Desligar Flash">
+    <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+
+    <div id="controles-inferiores">
+        <button id="btn-flash" title="Ligar/Desligar Flash">
             <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
             </svg>
         </button>
 
-        <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-
-        <button id="btn-capturar-bola" class="btn-overlay" title="Tirar Foto"></button>
+        <button id="btn-capturar-bola" title="Tirar Foto"></button>
     </div>
+</div>
     
     <div id="resultado-container">
         <div id="resultado"></div>
@@ -318,46 +333,29 @@
             }
         });
 
-        // --- Evento 2: Abrir a Câmera (Com Raio-X de Hardware) ---
+        // --- Evento 2: Abrir a Câmera (Com Raio-X de Hardware - MANTIDO) ---
         btnAbrirCamera.addEventListener('click', async () => {
             try {
-                // Passo 1: Abrimos uma câmera qualquer rapidamente só para o navegador
-                // nos dar permissão de ler os nomes verdadeiros das lentes.
                 let streamTemporario = await navigator.mediaDevices.getUserMedia({ video: true });
-                
-                // Passo 2: Listamos TODOS os hardwares conectados ao celular
                 const dispositivos = await navigator.mediaDevices.enumerateDevices();
-                
-                // Passo 3: Filtramos apenas as câmeras (ignoramos microfones)
                 const cameras = dispositivos.filter(d => d.kind === 'videoinput');
-                
-                // Passo 4: Procuramos as câmeras traseiras (o Android costuma chamá-las de "back")
                 const camerasTraseiras = cameras.filter(c => c.label.toLowerCase().includes('back'));
                 
                 let idLentePrincipal = null;
 
                 if (camerasTraseiras.length > 0) {
-                    // O pulo do gato: A câmera principal (com flash e sem distorção) quase sempre
-                    // é nomeada como "0" no sistema interno do Android (ex: "camera2 0, facing back").
-                    // A lente ultrawide costuma ser a "2" e a macro a "3".
                     let cameraCerta = camerasTraseiras.find(c => c.label.includes('0'));
-                    
                     if (!cameraCerta) {
-                        // Se não achar o "0", pega a primeira da lista (que também costuma ser a principal)
                         cameraCerta = camerasTraseiras[0];
                     }
-                    
                     idLentePrincipal = cameraCerta.deviceId;
-                    console.log("Câmera principal forçada:", cameraCerta.label);
                 }
 
-                // Desliga a câmera rápida que usamos só para ler as permissões
                 streamTemporario.getTracks().forEach(track => track.stop());
 
-                // Passo 5: Agora sim, ligamos a câmera definitiva FORÇANDO o ID da lente certa
                 const restricoes = idLentePrincipal 
                     ? { video: { deviceId: { exact: idLentePrincipal } } } 
-                    : { video: { facingMode: 'environment' } }; // Fallback caso não encontre
+                    : { video: { facingMode: 'environment' } }; 
 
                 streamCameraAtual = await navigator.mediaDevices.getUserMedia(restricoes);
                 videoCamera.srcObject = streamCameraAtual;
@@ -380,12 +378,9 @@
             }
         });
 
-        // --- Lógica do Flash (Tentativa Dupla para evitar OverconstrainedError) ---
+        // --- Lógica do Flash (Atualizado para cores Brancas) ---
         btnFlash.addEventListener('click', async () => {
-            if (!streamCameraAtual) {
-                alert("A câmera precisa estar ligada primeiro!");
-                return;
-            }
+            if (!streamCameraAtual) return;
             
             const track = streamCameraAtual.getVideoTracks()[0];
             
@@ -394,41 +389,32 @@
                 const restricoesAtuais = track.getConstraints();
                 
                 try {
-                    // Tentativa 1: Formato padrão da Web (em "advanced")
+                    // Tentativa 1: Formato padrão da Web
                     await track.applyConstraints({
                         ...restricoesAtuais,
                         advanced: [{ torch: flashAtivo }]
                     });
                 } catch (err1) {
-                    // Se o erro for o Overconstrained, disparamos a Tentativa 2
+                    // Fallback para OverconstrainedError
                     if (err1.name === 'OverconstrainedError') {
-                        // Tentativa 2: Formato exigido por algumas marcas de Android (na raiz)
                         await track.applyConstraints({
                             ...restricoesAtuais,
                             torch: flashAtivo
                         });
                     } else {
-                        throw err1; // Repassa o erro se for algo diferente
+                        throw err1;
                     }
                 }
 
-                // Se chegou aqui sem cair no catch principal, funcionou!
-                iconFlash.setAttribute('fill', flashAtivo ? '#fbbf24' : 'none');
-                iconFlash.setAttribute('stroke', flashAtivo ? '#fbbf24' : '#ffffff');
+                // --- MUDANÇA AQUI: Cores do ícone ---
+                // Quando ativo, vira um raio totalmente branco (fill e stroke brancos)
+                // Quando inativo, volta ao padrão (centro transparente e borda branca)
+                iconFlash.setAttribute('fill', flashAtivo ? '#ffffff' : 'none');
+                iconFlash.setAttribute('stroke', '#ffffff'); // Mantém a borda branca sempre
                 
             } catch (e) {
-                // Desfaz a variável se falhou nas duas tentativas
                 flashAtivo = !flashAtivo; 
-                
-                if (e.name === 'NotSupportedError') {
-                    alert("O seu navegador não suporta ligar o flash.");
-                } else if (e.name === 'NotAllowedError') {
-                    alert("Permissão negada pelo sistema operacional.");
-                } else if (e.name === 'OverconstrainedError') {
-                    alert("A câmera atual não possui flash físico ou o navegador não permite ativá-lo neste formato.");
-                } else {
-                    alert("Erro ao ligar o flash: " + e.name);
-                }
+                alert("Erro ao ligar o flash: " + e.name);
                 console.error("Erro detalhado do Flash:", e);
             }
         });
@@ -460,7 +446,7 @@
             }, 'image/jpeg', 0.9);
         });
 
-        // --- Evento 5: IA de Cores ---
+        // --- Evento 5: IA de Cores (Ngrok Mantido) ---
         imagemFundo.addEventListener('click', async (evento) => {
             if (!arquivoAtual) return;
 
@@ -480,7 +466,9 @@
             formData.append("y", y);
 
             try {
-                const resposta = await fetch("https://winking-rinsing-trophy.ngrok-free.dev/analisar", { method: "POST", body: formData });
+                // Mudei para let para facilitar se o Ngrok mudar
+                let ngrokUrl = "https://winking-rinsing-trophy.ngrok-free.dev";
+                const resposta = await fetch(`${ngrokUrl}/analisar`, { method: "POST", body: formData });
                 const dados = await resposta.json();
                 
                 imagemFundo.classList.remove('pulso');
