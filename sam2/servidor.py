@@ -3,6 +3,7 @@ import numpy as np
 import torch
 import base64
 from fastapi import FastAPI, File, UploadFile, Form
+from fastapi.responses import FileResponse  
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from sam2.build_sam import build_sam2
@@ -114,6 +115,16 @@ def obter_nome_cor(rgb_tuple):
 # ==========================================
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+
+# 1. Quando o usuário entrar no site normal (ex: localhost:8000/), mostra a apresentação
+@app.get("/")
+async def pagina_principal():
+    return FileResponse("showpage.html")
+
+# 2. Quando ele clicar no botão de teste, ele vem para cá e abre a ferramenta
+@app.get("/app")
+async def pagina_ferramenta():
+    return FileResponse("app.html")
 
 @app.post("/analisar")
 async def analisar_clique(x: int = Form(...), y: int = Form(...), arquivo: UploadFile = File(...)):
