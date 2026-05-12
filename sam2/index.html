@@ -136,92 +136,97 @@
       transform:scale(1.05);
       box-shadow:0 0 25px rgba(0,102,255,.4);
     }
-    @media(max-width:768px){
+   @media (max-width: 768px) {
+    /* 1. Ajustes de Layout Global */
+    body {
+        overflow-y: auto; /* Permite rolar se o texto for grande demais */
+    }
 
-  /* HEADER */
+    .hero {
+        height: 100vh;
+        padding-top: 60px; /* Espaço para o navbar */
+    }
 
-  .navbar-custom{
-    padding:16px 18px;
-  }
+    /* 2. Navbar Estilo Gemini (Compacto) */
+    .navbar-custom {
+        padding: 12px 20px;
+        background: rgba(0, 0, 0, 0.8);
+    }
 
-  .nav-center{
-    display:none;
-  }
+    .logo-area img {
+        width: 38px; /* Logo mais discreto no mobile */
+    }
 
-  .social-icons{
-    display:none;
-  }
+    .logo-text {
+        font-size: 1.1rem;
+        letter-spacing: 0;
+    }
 
-  .logo-area{
-    gap:10px;
-  }
+    .test-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
 
-  .logo-area img{
-    width:42px;
-  }
+    /* 3. Conteúdo Central */
+    .hero-content {
+        width: 100%;
+        padding: 0 24px;
+        margin-top: 0; /* Centraliza melhor verticalmente */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .logo-text{
-    font-size:1.3rem;
-  }
+    .logo {
+        width: 130px; /* Diminuído para dar foco ao texto */
+        margin-bottom: 10px;
+    }
 
-  .test-btn{
-    padding:10px 18px;
-    font-size:.85rem;
-  }
+    .center-glow {
+        width: 250px;
+        height: 250px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-  /* HERO */
+    /* 4. O Slider de Texto (Onde estava o erro) */
+    .text-slider {
+        height: 140px; /* Altura maior para permitir que o texto quebre em 2 ou 3 linhas */
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .hero-content{
-    width:100%;
-    padding:0 20px;
-    margin-top:40px;
-  }
+    .hero-text {
+        font-size: 1.8rem; /* Fonte maior e mais impactante como no Gemini */
+        line-height: 1.2;
+        width: 100%;
+        white-space: normal; /* ESSENCIAL: permite que o texto quebre linha */
+        text-align: center;
+        padding: 0;
+    }
 
-  .logo{
-    width:170px;
-  }
-
-  .center-glow{
-    width:320px;
-    height:320px;
-  }
-
-  .text-slider{
-    height:90px;
-    margin-top:30px;
-  }
-
-  .hero-text{
-
-    font-size:1.45rem;
-
-    width:100%;
-
-    white-space:normal;
-
-    line-height:1.3;
-
-    padding:0 10px;
-
-    text-align:center;
-
-  }
-
-  .hero-btn{
-
-    margin-top:20px;
-
-    padding:14px 26px;
-
-    font-size:.95rem;
-
-    width:100%;
-
-    max-width:320px;
-
-  }
-
+    /* 5. Botão Principal (Pill Shape) */
+    .hero-btn {
+        margin-top: 40px;
+        width: 100%;
+        max-width: 280px; /* Botão elegante, não ocupa a largura toda */
+        padding: 16px 30px;
+        font-size: 1rem;
+        background: #ffffff; /* Fundo branco com texto preto dá o ar "Premium" do Gemini */
+        color: #000000;
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+    }
+    
+    .hero-btn:hover {
+        transform: translateY(-2px);
+        background: #f0f0f0;
+    }
 }
+
+
 
     /* =========================
        HERO
