@@ -95,18 +95,24 @@
             position: relative; 
             display: none; 
             cursor: crosshair; 
-            max-width: 100%;
             width: fit-content; 
+            height: fit-content; /* NOVO: Força o container a abraçar a altura exata do vídeo */
+            max-width: 100%;
             border-radius: 16px;
             overflow: hidden; 
+            margin: 0 auto; /* NOVO: Garante que a câmera fique sempre centralizada */
         }
 
         /* Proporções do Vídeo e Imagem */
         #imagem-fundo, #video-camera { 
-            max-width: 40vh; 
-            max-height: 53vh; 
+            display: block; /* CRÍTICO: Remove a margem fantasma embaixo da imagem */
             width: auto; 
             height: auto; 
+            max-height: 53vh; 
+            
+            /* NOVO: Usa 40vh no PC, mas se a tela do celular for menor que 40vh, 
+               ele trava em 100% da tela para não quebrar o layout */
+            max-width: min(40vh, 100%); 
         }
 
         #imagem-fundo { 
