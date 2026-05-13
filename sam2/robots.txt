@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:https://www.daltonspectra.com.br/app.html
+
+Sitemap: https://www.daltonspectra.com.br
