@@ -204,27 +204,46 @@
     align-items: center;
   }
 
-  .text-slider {
+ .text-slider {
     position: relative;
-    width: 100vw !important; /* Ocupa a largura total da janela */
-    height: 50px !important;
+    width: 100% !important;
+    height: 60px !important;
     margin-top: 20px;
-    display: block; /* Mudado de flex para block para facilitar o absolute */
+    
+    /* Flexbox para garantir centralização absoluta */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    left: 0 !important;
+    transform: none !important;
   }
 
+  /* 2. O texto agora ignora coordenadas antigas */
   .hero-text {
-    position: absolute;
-    left: 0 !important;   /* Alinha na borda esquerda */
-    right: 0 !important;  /* Alinha na borda direita */
-    width: 100% !important; /* Garante que o texto ocupe toda a largura */
-    transform: none !important; /* Remove o deslocamento do desktop */
-    text-align: center !important; /* Centraliza o texto dentro da largura total */
+    /* IMPORTANTE: Reset de posição */
+    position: absolute !important;
+    left: auto !important; /* Remove o left: 50% do desktop */
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* Centraliza apenas verticalmente */
     
-    white-space: nowrap !important; /* Força uma linha só */
-    font-size: 1.15rem !important;  /* Fonte reduzida para caber na linha */
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+    
+    /* Estilo do Texto */
+    text-align: center !important;
+    white-space: nowrap !important;
+    font-size: 1.1rem !important; /* Reduzi um pouco para garantir que caiba */
     letter-spacing: -0.02em;
-    padding: 0 5px;
   }
+
+  /* 3. Ajuste nas animações (Se o texto sumir ou tremer) */
+  /* Caso você tenha as animações textCycle, garanta que elas não mexam no 'left' ou 'transform' horizontal */
+  .text1, .text2, .text3 {
+     /* Garante que a animação só mexa na opacidade, não na posição */
+     right: 0 !important;
+  }
+
 
   /* 5. Botão Principal (Abaixo do texto) */
   .hero-btn {
