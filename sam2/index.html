@@ -195,17 +195,32 @@
 
   /* 4. Ajuste das Frases de Efeito para caber na tela */
   .hero-text {
-    font-size: 1.4rem !important;
-    white-space: nowrap !important; /* Faz o texto quebrar linha */
-    width: 90% !important;
-    left: 50%;
-    line-height: 1.3;
-    text-align: center;
-  }
+        /* 1. Reset de posicionamento para garantir o centro */
+        position: absolute;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        transform: none !important; /* Remove o translateX que causa o erro */
+        text-align: center !important;
+        
+        /* 2. Força uma linha só */
+        white-space: nowrap !important;
+        
+        /* 3. Tamanho da fonte (Ajuste se o texto for muito longo) */
+        font-size: 1.25rem !important; 
+        
+        /* 4. Margens de segurança */
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
 
-  .text-slider {
-    height: 80px; /* Ajuste para não sobrepor o botão */
-  }
+    .text-slider {
+        position: relative;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        height: 60px !important;
+    }
   
   .hero-btn {
     padding: 12px 24px !important;
