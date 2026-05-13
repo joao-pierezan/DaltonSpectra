@@ -4,677 +4,599 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon"  href="./logosemescrita.png">
+  <link rel="icon" href="./logosemescrita.png">
 
   <title>DaltonSpectra</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
 
-  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body{
-      background:#000;
-      overflow:hidden;
-      font-family:'Poppins',sans-serif;
+    body {
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+      background: #000;
     }
 
     /* =========================
        HEADER
     ========================== */
 
-    .navbar-custom{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:999;
-      padding:18px 50px;
-      background:rgba(0,0,0,.72);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid rgba(255,255,255,.05);
+    .navbar-custom {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      width: 100%;
+      padding: 18px 50px;
+      background: rgba(0, 0, 0, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(18px);
     }
 
-    .navbar-container{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .logo-area{
-      display:flex;
-      align-items:center;
-      gap:14px;
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
-    .logo-area img{
-      width:52px;
-      filter:drop-shadow(0 0 12px rgba(255,255,255,.15));
+    .logo-area img {
+      width: 52px;
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.15));
     }
 
-    .logo-text{
-      color:white;
-      font-size:2rem;
-      font-weight:500;
-      margin:0;
+    .logo-text {
+      margin: 0;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 500;
     }
 
-    .nav-center{
-      display:flex;
-      align-items:center;
-      gap:50px;
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 50px;
     }
 
-    .nav-center a{
-      color:white;
-      text-decoration:none;
-      font-size:1.1rem;
-      font-weight:400;
-      transition:.3s;
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 50px;
     }
 
-    .nav-center a:hover{
-      color:#67b8ff;
+    .nav-center a {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 400;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
-    .nav-right{
-      display:flex;
-      align-items:center;
-      gap:28px;
+    .nav-center a:hover {
+      color: #67b8ff;
     }
 
-    .social-icons{
-      display:flex;
-      align-items:center;
-      gap:22px;
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
     }
 
-    .social-icons i{
-      color:white;
-      font-size:1.5rem;
-      transition:.3s;
-      cursor:pointer;
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 22px;
     }
 
-    .social-icons i:hover{
-      color:#67b8ff;
-      transform:translateY(-2px);
+    .social-icons i {
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    .test-btn{
-      border:none;
-      padding:15px 34px;
-      border-radius:999px;
-
-      background:linear-gradient(
-      135deg,
-      #1a73ff,
-      #0057d8);
-
-      color:white;
-      font-weight:500;
-      font-size:1rem;
-
-      transition:.3s;
+    .social-icons i:hover {
+      color: #67b8ff;
+      transform: translateY(-2px);
     }
 
-    .test-btn:hover{
-      transform:scale(1.05);
-      box-shadow:0 0 25px rgba(0,102,255,.4);
+    .test-btn {
+      padding: 15px 34px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      background: linear-gradient(135deg, #1a73ff, #0057d8);
+      border: none;
+      border-radius: 999px;
+      transition: 0.3s;
     }
-    @media(max-width:768px){
 
-  /* HEADER */
+    .test-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 102, 255, 0.4);
+    }
 
-  .navbar-custom{
-    padding:16px 18px;
-  }
-
-  .nav-center{
-    display:none;
-  }
-
-  .social-icons{
-    display:none;
-  }
-
-  .logo-area{
-    gap:10px;
-  }
-
-  .logo-area img{
-    width:42px;
-  }
-
-  .logo-text{
-    font-size:1.3rem;
-  }
-
-  .test-btn{
-    padding:10px 18px;
-    font-size:.85rem;
-  }
-
-  /* HERO */
-
-  .hero-content{
-    width:100%;
-    padding:0 20px;
-    margin-top:40px;
-  }
-
-  .logo{
-    width:170px;
-  }
-
-  .center-glow{
-    width:320px;
-    height:320px;
-  }
-
-  .text-slider{
-    height:90px;
-    margin-top:30px;
-  }
-
-  .hero-text{
-
-    font-size:1.45rem;
-
-    width:100%;
-
-    white-space:normal;
-
-    line-height:1.3;
-
-    padding:0 10px;
-
-    text-align:center;
-
-  }
-
-  .hero-btn{
-
-    margin-top:20px;
-
-    padding:14px 26px;
-
-    font-size:.95rem;
-
-    width:100%;
-
-    max-width:320px;
-
-  }
-
-}
+    .menu-toggle,
+    .close-menu {
+      display: none;
+    }
 
     /* =========================
        HERO
     ========================== */
 
-    .hero{
-      position:relative;
-      width:100%;
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
       background:
-      radial-gradient(circle at center,
-      #101828 0%,
-      #050505 55%,
-      #000 100%);
+        radial-gradient(
+          circle at center,
+          #101828 0%,
+          #050505 55%,
+          #000 100%
+        );
     }
 
-    /* PARTÍCULAS */
-
-    .particles{
-      position:absolute;
-      inset:0;
-      overflow:hidden;
+    .particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
     }
 
-    .particle{
-      position:absolute;
-      border-radius:50%;
-      animation:float linear infinite;
-      opacity:.8;
-      filter:blur(1px);
+    .particle {
+      position: absolute;
+      opacity: 0.8;
+      border-radius: 50%;
+      filter: blur(1px);
+      animation: float linear infinite;
     }
 
-    /* GLOW */
-
-    .center-glow{
-      position:absolute;
-      width:550px;
-      height:550px;
-      border-radius:50%;
-      background:rgba(0, 200, 255, 0.08);
-      filter:blur(100px);
-      animation:pulseGlow 6s ease-in-out infinite;
+    .center-glow {
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      background: rgba(0, 200, 255, 0.08);
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: pulseGlow 6s ease-in-out infinite;
     }
 
-    /* CONTEÚDO */
-
-    .hero-content{
-      position:relative;
-      z-index:10;
-      text-align:center;
-      margin-top:80px;
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      margin-top: 80px;
+      text-align: center;
     }
 
-    /* LOGO */
-
-    .logo-wrapper{
-      position:relative;
-      animation:logoPulse 5s ease-in-out infinite;
+    .logo-wrapper {
+      position: relative;
+      animation: logoPulse 5s ease-in-out infinite;
     }
 
-    .logo-glow{
-      position:absolute;
-      inset:0;
-      border-radius:50%;
-      background:rgba(255,255,255,0.12);
-      filter:blur(50px);
-      transform:scale(1.25);
+    .logo-glow {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      filter: blur(50px);
+      transform: scale(1.25);
     }
 
-    .logo{
-      width:240px;
-      position:relative;
-      z-index:2;
-      filter:drop-shadow(0 0 40px rgba(255,255,255,.25));
+    .logo {
+      position: relative;
+      z-index: 2;
+      width: 240px;
+      filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.25));
     }
 
-    /* TEXTOS */
-
-    .text-slider{
-      position:relative;
-      width:100%;
-      height:120px;
-      margin-top:45px;
+    .text-slider {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      margin-top: 45px;
     }
 
-   .hero-text{
-
-
-    position:absolute;
-
-    top:0;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:max-content;
-
-    text-align:center;
-
-    color:white;
-
-    font-size:3rem;
-
-    font-weight:600;
-
-    letter-spacing:.5px;
-
-    opacity:0;
-
-    white-space:nowrap;
-
-}
-
-    .text1{
-    animation:textCycle1 24s infinite;
+    .hero-text {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: max-content;
+      color: #fff;
+      font-size: 3rem;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(-50%);
     }
 
-    .text2{
-    animation:textCycle2 24s infinite;
+    .text1 {
+      animation: textCycle1 24s infinite;
     }
 
-    .text3{
-    animation:textCycle3 24s infinite;
-    }
-    /* BOTÃO HERO */
-
-    .hero-btn{
-
-      margin-top:30px;
-
-      border:none;
-      outline:none;
-
-      padding:18px 42px;
-
-      border-radius:999px;
-
-      background:linear-gradient(
-      135deg,
-      #1a73ff,
-      #0057d8);
-
-      color:white;
-
-      font-size:1.1rem;
-      font-weight:500;
-
-      transition:.35s;
-
-      opacity:1;
-
-      display:inline-block;
-
-      box-shadow:
-      0 0 25px rgba(0,102,255,.35);
-
+    .text2 {
+      animation: textCycle2 24s infinite;
     }
 
-    .hero-btn:hover{
+    .text3 {
+      animation: textCycle3 24s infinite;
+    }
 
-      transform:translateY(-3px) scale(1.04);
+    .hero-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 18px 42px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      background: linear-gradient(135deg, #1a73ff, #0057d8);
+      border: none;
+      border-radius: 999px;
+      outline: none;
+      box-shadow: 0 0 25px rgba(0, 102, 255, 0.35);
+      transition: 0.35s;
+    }
 
-      box-shadow:
-      0 0 35px rgba(0,102,255,.55);
-
+    .hero-btn:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 0 35px rgba(0, 102, 255, 0.55);
     }
 
     /* =========================
        ANIMAÇÕES
     ========================== */
 
-    @keyframes float{
-
-      0%{
-        transform:translate(0,0) scale(1);
-        opacity:.2;
+    @keyframes float {
+      0% {
+        opacity: 0.2;
+        transform: translate(0, 0) scale(1);
       }
 
-      25%{
-        opacity:1;
+      25% {
+        opacity: 1;
       }
 
-      50%{
-        transform:translate(25px,-40px) scale(1.2);
+      50% {
+        transform: translate(25px, -40px) scale(1.2);
       }
 
-      75%{
-        opacity:.6;
+      75% {
+        opacity: 0.6;
       }
 
-      100%{
-        transform:translate(0,0) scale(1);
-        opacity:.2;
-      }
-    }
-
-    @keyframes logoPulse{
-
-      0%{
-        transform:scale(.95);
-        filter:brightness(.9);
-      }
-
-      25%{
-        transform:scale(1.03);
-        filter:brightness(1.1);
-      }
-
-      50%{
-        transform:scale(1);
-        filter:brightness(1.2);
-      }
-
-      75%{
-        transform:scale(1.05);
-        filter:brightness(1.05);
-      }
-
-      100%{
-        transform:scale(.95);
-        filter:brightness(.9);
+      100% {
+        opacity: 0.2;
+        transform: translate(0, 0) scale(1);
       }
     }
 
-    @keyframes textCycle1{
-
-      0%{
-        opacity:0;
-        transform:translateX(-50%) translateY(20px);
+    @keyframes logoPulse {
+      0% {
+        filter: brightness(0.9);
+        transform: scale(0.95);
       }
 
-      8%{
-        opacity:1;
-        transform:translateX(-50%) translateY(0);
+      25% {
+        filter: brightness(1.1);
+        transform: scale(1.03);
       }
 
-      28%{
-        opacity:1;
-        transform:translateX(-50%) translateY(0);
+      50% {
+        filter: brightness(1.2);
+        transform: scale(1);
       }
 
-      36%{
-        opacity:0;
-        transform:translateX(-50%) translateY(-20px);
+      75% {
+        filter: brightness(1.05);
+        transform: scale(1.05);
       }
 
-      100%{
-        opacity:0;
+      100% {
+        filter: brightness(0.9);
+        transform: scale(0.95);
       }
-
     }
 
-    @keyframes textCycle2{
-
-      0%, 33%{
-        opacity:0;
-        transform:translateX(-50%) translateY(20px);
+    @keyframes textCycle1 {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
       }
 
-      41%{
-        opacity:1;
-        transform:translateX(-50%) translateY(0);
+      5% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
       }
 
-      61%{
-        opacity:1;
-        transform:translateX(-50%) translateY(0);
+      20% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
       }
 
-      69%{
-        opacity:0;
-        transform:translateX(-50%) translateY(-20px);
+      25% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
       }
 
-      100%{
-        opacity:0;
+      100% {
+        opacity: 0;
       }
-
     }
 
-    @keyframes textCycle1{
+    @keyframes textCycle2 {
+      0%,
+      33% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+      }
 
-  0%{
-    opacity:0;
-    transform:translateX(-50%) translateY(20px);
-  }
+      38% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
 
-  5%{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-  }
+      53% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
 
-  20%{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-  }
+      58% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+      }
 
-  25%{
-    opacity:0;
-    transform:translateX(-50%) translateY(-20px);
-  }
+      100% {
+        opacity: 0;
+      }
+    }
 
-  100%{
-    opacity:0;
-  }
+    @keyframes textCycle3 {
+      0%,
+      66% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+      }
 
-}
+      71% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
 
-@keyframes textCycle2{
+      86% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
 
-  0%, 33%{
-    opacity:0;
-    transform:translateX(-50%) translateY(20px);
-  }
+      91% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+      }
 
-  38%{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-  }
+      100% {
+        opacity: 0;
+      }
+    }
 
-  53%{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-  }
+    /* =========================
+       MEDIA QUERIES
+    ========================== */
 
-  58%{
-    opacity:0;
-    transform:translateX(-50%) translateY(-20px);
-  }
+    @media (max-width: 768px) {
+      .navbar-custom {
+        padding: 12px 20px;
+      }
 
-  100%{
-    opacity:0;
-  }
+      .logo-text {
+        font-size: 1.1rem;
+      }
 
-}
+      .logo-area img {
+        width: 35px;
+      }
 
-@keyframes textCycle3{
+      .logo {
+        width: 160px !important;
+        margin-bottom: 5px;
+      }
 
-  0%, 66%{
-    opacity:0;
-    transform:translateX(-50%) translateY(20px);
-  }
+      .test-btn {
+        padding: 7px 14px !important;
+        font-size: 0.75rem !important;
+      }
 
-  71%{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-  }
+      .menu-toggle {
+        display: block;
+        margin-left: 15px;
+        color: #fff;
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
 
-  86%{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-  }
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 1000;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 250px;
+        height: 100vh;
+        padding: 80px 30px;
+        background: rgba(10, 10, 10, 0.98);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
 
-  91%{
-    opacity:0;
-    transform:translateX(-50%) translateY(-20px);
-  }
+      .nav-menu.active {
+        right: 0;
+      }
 
-  100%{
-    opacity:0;
-  }
+      .close-menu {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        display: block;
+        color: #fff;
+        font-size: 1.6rem;
+      }
 
-}
+      .nav-center {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px !important;
+      }
 
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+      }
+
+      .text-slider {
+        position: relative;
+        left: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 60px !important;
+        margin-top: 20px;
+        transform: none !important;
+      }
+
+      .hero-text {
+        position: absolute !important;
+        top: 50% !important;
+        left: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 15px !important;
+        font-size: 1.1rem !important;
+        text-align: center !important;
+        letter-spacing: -0.02em;
+        white-space: nowrap !important;
+        transform: translateY(-50%) !important;
+      }
+
+      .text1,
+      .text2,
+      .text3 {
+        right: 0 !important;
+      }
+
+      .hero-btn {
+        width: auto !important;
+        min-width: 200px;
+        margin-top: 35px;
+        padding: 14px 28px !important;
+        font-size: 0.9rem !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .menu-toggle,
+      .close-menu {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
 <body>
-
-  <!-- HEADER -->
-
-  <header class="navbar-custom">
-
+  <nav class="navbar-custom">
     <div class="navbar-container">
-
-      <!-- ESQUERDA -->
       <div class="logo-area">
-
-        <img src="logosemescrita.png">
+        <img src="logosemescrita.png" alt="Logo">
 
         <h1 class="logo-text">
           DaltonSpectra
         </h1>
-
       </div>
 
-      <!-- CENTRO -->
-      <nav class="nav-center">
-
-        <a href="#">
-          O que o DaltonSpectra pode fazer
-        </a>
-
-        <a href="#">
-          Recursos
-        </a>
-
-        <a href="#">
-          Quem somos
-        </a>
-
-      </nav>
-
-      <!-- DIREITA -->
-      <div class="nav-right">
-
-        <div class="social-icons">
-
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-tiktok"></i>
-          <i class="fa-brands fa-discord"></i>
-          <i class="fa-brands fa-x-twitter"></i>
-
+      <div class="nav-menu" id="nav-menu">
+        <div class="close-menu" id="close-menu">
+          <i class="fas fa-times"></i>
         </div>
 
-        <button class="test-btn" onclick="window.location.href='app.html'">Teste Agora</button>
+        <div class="nav-center">
+          <a href="#">Início</a>
+          <a href="#">Sobre</a>
+          <a href="#">Tecnologia</a>
+        </div>
 
+        <div class="social-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-github"></i>
+        </div>
       </div>
 
+      <div class="nav-right">
+        <button
+          class="test-btn"
+          onclick="window.location.href='/app.html'"
+        >
+          Teste agora
+        </button>
+
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
     </div>
-
-  </header>
-
-  <!-- HERO -->
+  </nav>
 
   <section class="hero">
-
-    <!-- Partículas -->
     <div class="particles" id="particles"></div>
 
-    <!-- Glow -->
     <div class="center-glow"></div>
 
-    <!-- Conteúdo -->
     <div class="hero-content">
-
       <div class="logo-wrapper">
-
         <div class="logo-glow"></div>
 
-        <img src="logosemescrita.png" class="logo">
-
+        <img
+          src="logosemescrita.png"
+          class="logo"
+          alt="DaltonSpectra"
+        >
       </div>
 
-      <!-- TEXTOS ANIMADOS -->
-
       <div class="text-slider">
-
         <h1 class="hero-text text1">
           Identificação de cores para todos
         </h1>
@@ -686,19 +608,18 @@
         <h1 class="hero-text text3">
           Entenda as cores ao seu redor
         </h1>
-
       </div>
 
-      <!-- BOTÃO -->
-
-      <button class="hero-btn" onclick="window.location.href='app.html'">Teste o DaltonSpectra agora</button>
-
+      <button
+        class="hero-btn"
+        onclick="window.location.href='app.html'"
+      >
+        Teste o DaltonSpectra agora
+      </button>
     </div>
-
   </section>
 
   <script>
-
     const container = document.getElementById("particles");
 
     const colors = [
@@ -710,8 +631,7 @@
       "#ff4ecd"
     ];
 
-    for(let i = 0; i < 140; i++){
-
+    for (let i = 0; i < 140; i++) {
       const particle = document.createElement("span");
 
       particle.classList.add("particle");
@@ -725,24 +645,39 @@
       particle.style.top = `${Math.random() * 100}%`;
 
       particle.style.background =
-      colors[Math.floor(Math.random() * colors.length)];
+        colors[Math.floor(Math.random() * colors.length)];
 
       particle.style.boxShadow =
-      `0 0 ${size * 3}px ${particle.style.background}`;
+        `0 0 ${size * 3}px ${particle.style.background}`;
 
       particle.style.animationDuration =
-      `${Math.random() * 10 + 8}s`;
+        `${Math.random() * 10 + 8}s`;
 
       particle.style.animationDelay =
-      `${Math.random() * 5}s`;
+        `${Math.random() * 5}s`;
 
       container.appendChild(particle);
-
     }
 
+    const menuToggle = document.getElementById("menu-toggle");
+    const closeMenu = document.getElementById("close-menu");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.add("active");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+    });
+
+    document.querySelectorAll(".nav-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+      });
+    });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
