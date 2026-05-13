@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:https://www.daltonspectra.com.br/app.html
+Disallow:/app.html
 
 Sitemap: https://www.daltonspectra.com.br/sitemap.xml
