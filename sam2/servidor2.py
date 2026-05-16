@@ -2,9 +2,8 @@ import cv2
 import numpy as np
 import torch
 import base64
-import csv
-import pandas as pd
-from sklearn.neighbors import KNeighborsClassifier
+import pandas as pd # NOVA: Para ler o CSV
+from sklearn.neighbors import KNeighborsClassifier # NOVA: A IA classificadora
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.responses import FileResponse  
 from fastapi.middleware.cors import CORSMiddleware
@@ -21,27 +20,18 @@ sam2_model = build_sam2(model_cfg, checkpoint, device=device)
 predictor = SAM2ImagePredictor(sam2_model)
 print(f"SAM 2 Pronto usando: {device}!")
 
+# --- 2. TREINAMENTO DA IA DE CORES (Roda apenas uma vez ao ligar) ---
+print("Treinando o modelo de cores...")
+df_cores = pd.read_csv("banco_de_cores.csv")
+X = df_cores[['H', 'S', 'V']].values # As características
+y = df_cores['Cor'].values           # Os nomes das cores
 
-# --- 2. TREINAMENTO DA IA DE CORES ---
+# Cria a IA que vai olhar para os 5 "vizinhos" mais próximos no cilindro 3D
 modelo_knn = KNeighborsClassifier(n_neighbors=5, weights='distance')
+modelo_knn.fit(X, y)
+print("Modelo de cores pronto e treinado!")
 
-def treinar_modelo():
-    global modelo_knn
-    print("Lendo CSV e treinando o modelo de cores...")
-    try:
-        df_cores = pd.read_csv("banco_de_cores.csv")
-        X = df_cores[['H', 'S', 'V']].values
-        y = df_cores['Cor'].values
-        modelo_knn.fit(X, y)
-        print(f"Modelo pronto! Total de memórias: {len(df_cores)} linhas.")
-    except FileNotFoundError:
-        print("AVISO: Arquivo 'banco_de_cores.csv' não encontrado. Rode o script gerador primeiro!")
-
-# Treina a IA na hora que o servidor liga
-treinar_modelo()
-
-
-# --- 3. FUNÇÕES DE PROCESSAMENTO ---
+# --- 3. FUNÇÕES AUXILIARES ---
 def obter_cor_dominante(imagem, mascara_uint8, k=3):
     pixels = imagem[mascara_uint8 > 0]
     if len(pixels) == 0: return (0, 0, 0)
@@ -55,18 +45,19 @@ def obter_cor_dominante(imagem, mascara_uint8, k=3):
 
 def obter_nome_cor(rgb_tuple):
     """
-    Usa Machine Learning (KNN) para prever a cor e retorna o HSV exato para possível correção.
+    Usa Machine Learning (KNN) para prever a cor baseada no nosso CSV de treinamento.
     """
     pixel_rgb = np.uint8([[[rgb_tuple[0], rgb_tuple[1], rgb_tuple[2]]]])
     
+    # Converte RGB para HSV
     hsv = cv2.cvtColor(pixel_rgb, cv2.COLOR_RGB2HSV)[0][0]
     h, s, v = int(hsv[0]), int(hsv[1]), int(hsv[2])
 
+    # Pede para a IA prever o nome da cor!
     caracteristicas_hsv = np.array([[h, s, v]])
     cor_predita = modelo_knn.predict(caracteristicas_hsv)[0]
     
-    return cor_predita, h, s, v
-
+    return cor_predita
 
 # --- 4. CONFIGURAÇÃO DA API FASTAPI ---
 app = FastAPI()
@@ -95,9 +86,7 @@ async def analisar_clique(x: int = Form(...), y: int = Form(...), arquivo: Uploa
     mascara_uint8 = (mascara * 255).astype(np.uint8)
 
     cor_dominante_bgr = obter_cor_dominante(imagem_cv2, mascara_uint8)
-    
-    # Agora recebemos 4 valores em vez de 1
-    nome_cor, h_calc, s_calc, v_calc = obter_nome_cor((cor_dominante_bgr[2], cor_dominante_bgr[1], cor_dominante_bgr[0]))
+    nome_cor = obter_nome_cor((cor_dominante_bgr[2], cor_dominante_bgr[1], cor_dominante_bgr[0]))
 
     imagem_rgba = cv2.cvtColor(imagem_cv2, cv2.COLOR_BGR2BGRA)
     imagem_rgba[mascara_uint8 == 0] = [0, 0, 0, 0] 
@@ -121,25 +110,9 @@ async def analisar_clique(x: int = Form(...), y: int = Form(...), arquivo: Uploa
     return {
         "status": "sucesso",
         "cor_predominante": nome_cor,
-        "hsv": {"h": h_calc, "s": s_calc, "v": v_calc}, # Enviamos o HSV para o front-end
         "imagem_resultado": imagem_base64, 
         "caminho_svg": caminho_svg        
     }
-
-@app.post("/corrigir")
-async def corrigir_cor(h: int = Form(...), s: int = Form(...), v: int = Form(...), cor_correta: str = Form(...)):
-    """
-    Recebe a correção de uma cor do front-end, salva no CSV e retreina a IA.
-    """
-    # 1. Adiciona a correção ao banco de dados
-    with open("banco_de_cores.csv", mode="a", newline="", encoding="utf-8") as arquivo:
-        writer = csv.writer(arquivo)
-        writer.writerow([h, s, v, cor_correta])
-    
-    # 2. Retreina o modelo instantaneamente
-    treinar_modelo()
-    
-    return {"status": "sucesso", "mensagem": f"Obrigado! Aprendi que H:{h} S:{s} V:{v} é {cor_correta}."}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

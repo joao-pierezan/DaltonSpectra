@@ -13,266 +13,93 @@
         * { box-sizing: border-box; }
         body { 
             font-family: 'Poppins', sans-serif; 
-            background-color: #000000; /* Fundo preto igual a showpage */
-            color: #ffffff; /* Texto branco para dar contraste */
+            background-color: #000000; 
+            color: #ffffff; 
             margin: 0; 
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden; /* Evita barra de rolagem horizontal */
-            }
-                    #particles {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1; /* Deixa as partículas no fundo, atrás de tudo */
-                overflow: hidden;
-                pointer-events: none; /* Para não atrapalhar o clique na câmera */
-            }
+            overflow-x: hidden; 
+        }
 
-            .particle {
-                position: absolute;
-                border-radius: 50%;
-                opacity: 0.6;
-                animation: floatParticle 8s infinite ease-in-out alternate;
-                filter: blur(2px);
-            }
+        #particles {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; 
+            overflow: hidden;
+            pointer-events: none; 
+        }
 
-            @keyframes float {
-      0% {
-        opacity: 0.2;
-        transform: translate(0, 0) scale(1);
-      }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: floatParticle 8s infinite ease-in-out alternate;
+            filter: blur(2px);
+        }
 
-      25% {
-        opacity: 1;
-      }
+        @keyframes float {
+            0% { opacity: 0.2; transform: translate(0, 0) scale(1); }
+            25% { opacity: 1; }
+            50% { transform: translate(25px, -40px) scale(1.2); }
+            75% { opacity: 0.6; }
+            100% { opacity: 0.2; transform: translate(0, 0) scale(1); }
+        }
 
-      50% {
-        transform: translate(25px, -40px) scale(1.2);
-      }
+        @keyframes logoPulse {
+            0% { filter: brightness(0.9); transform: scale(0.95); }
+            25% { filter: brightness(1.1); transform: scale(1.03); }
+            50% { filter: brightness(1.2); transform: scale(1); }
+            75% { filter: brightness(1.05); transform: scale(1.05); }
+            100% { filter: brightness(0.9); transform: scale(0.95); }
+        }
 
-      75% {
-        opacity: 0.6;
-      }
-
-      100% {
-        opacity: 0.2;
-        transform: translate(0, 0) scale(1);
-      }
-    }
-
-    @keyframes logoPulse {
-      0% {
-        filter: brightness(0.9);
-        transform: scale(0.95);
-      }
-
-      25% {
-        filter: brightness(1.1);
-        transform: scale(1.03);
-      }
-
-      50% {
-        filter: brightness(1.2);
-        transform: scale(1);
-      }
-
-      75% {
-        filter: brightness(1.05);
-        transform: scale(1.05);
-      }
-
-      100% {
-        filter: brightness(0.9);
-        transform: scale(0.95);
-      }
-    }
-
-    @keyframes textCycle1 {
-      0% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(20px);
-      }
-
-      5% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-      }
-
-      20% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-      }
-
-      25% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-20px);
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-
-    @keyframes textCycle2 {
-      0%,
-      33% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(20px);
-      }
-
-      38% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-      }
-
-      53% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-      }
-
-      58% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-20px);
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-
-    @keyframes textCycle3 {
-      0%,
-      66% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(20px);
-      }
-
-      71% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-      }
-
-      86% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-      }
-
-      91% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-20px);
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-        
         /* Cabeçalho */
         h1 { font-weight: 800; font-size: 2rem; margin-bottom: 5px; color: #38bdf8; text-align: center;}
         p.subtitulo { color: #ffffff; margin-bottom: 20px; font-size: 0.9rem; text-align: center;}
 
         /* Área de Botões (Nunca somem) */
         .botoes-container {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap; justify-content: center;
         }
 
         .footer {
-            background: transparent;
-            font-size: 0.8rem;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            z-index: 50;
+            background: transparent; font-size: 0.8rem; text-align: center; position: fixed;
+            bottom: 0; left: 0; width: 100%; z-index: 50;
         }
 
         input[type="file"] { display: none; }
 
         .btn-acao {
-            background: rgba(8, 32, 82, 0.6);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(8, 32, 82, 0.6); color: white; padding: 12px 24px;
+            border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: none; display: inline-flex; align-items: center; justify-content: center;
         }
         .btn-acao:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); }
 
         /* O Card (Contêiner da Imagem e do Vídeo) */
         #area-imagem { 
-            position: relative; 
-            display: none; 
-            cursor: crosshair; 
-            max-width: 100%;
-            width: fit-content; 
-            border-radius: 16px;
-            overflow: hidden; 
+            position: relative; display: none; cursor: crosshair; 
+            max-width: 100%; width: fit-content; border-radius: 16px; overflow: hidden; 
         }
 
-        /* Proporções do Vídeo e Imagem */
-        #imagem-fundo, #video-camera { 
-            max-width: 100%; 
-            max-height: 53vh; 
-            width: auto; 
-            height: auto; 
-        }
-
-        #imagem-fundo { 
-            display: block; 
-            transition: filter 1s ease-in-out; 
-        }
-
-        #video-camera {
-            display: none; 
-            object-fit: cover;
-        }
+        #imagem-fundo, #video-camera { max-width: 100%; max-height: 53vh; width: auto; height: auto; }
+        #imagem-fundo { display: block; transition: filter 1s ease-in-out; }
+        #video-camera { display: none; object-fit: cover; }
 
         #imagem-objeto { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            pointer-events: none; 
-            opacity: 0; 
-            transition: opacity 1s ease-in-out; 
-            object-fit: contain;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            pointer-events: none; opacity: 0; transition: opacity 1s ease-in-out; object-fit: contain;
         }
         
-        #tela-desenho { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            pointer-events: none; 
-        }
+        #tela-desenho { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 
         .linha-magica {
-            fill: none;
-            stroke: #ffffff; 
-            stroke-width: 4;
-            filter: drop-shadow(0px 0px 6px rgba(56, 189, 248, 0.9));
-            stroke-dasharray: var(--tamanho-caminho);
-            stroke-dashoffset: var(--tamanho-caminho);
+            fill: none; stroke: #ffffff; stroke-width: 4; filter: drop-shadow(0px 0px 6px rgba(56, 189, 248, 0.9));
+            stroke-dasharray: var(--tamanho-caminho); stroke-dashoffset: var(--tamanho-caminho);
             transition: stroke-dashoffset 1.5s ease-out;
         }
 
@@ -280,94 +107,82 @@
         .pulso { animation: pulsar 1.5s infinite; filter: brightness(0.6); pointer-events: none; }
         @keyframes pulsar { 0%, 100% { filter: brightness(0.6); } 50% { filter: brightness(1); } }
         
-        /* Display de Resultado */
-        #resultado-container { margin-top: 30px; height: 50px; margin-bottom: 40px; }
+        /* Display de Resultado e Correção */
+        #resultado-container { 
+            margin-top: 30px; margin-bottom: 60px; min-height: 80px; 
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+        }
         #resultado { 
-            background-color: rgba(8, 32, 82, 0.6);
-            backdrop-filter: blur(10px);
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #f8fafc;
-            display: none; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background-color: rgba(8, 32, 82, 0.6); backdrop-filter: blur(10px);
+            padding: 12px 24px; border-radius: 50px; font-size: 1.1rem; font-weight: 600;
+            color: #f8fafc; display: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         #resultado span { color:white }
+
+        /* Botão Novo de Corrigir */
+        .btn-corrigir {
+            background: transparent; border: none; color: #94a3b8; font-size: 0.85rem;
+            text-decoration: underline; cursor: pointer; display: none;
+            transition: color 0.2s; font-family: 'Poppins', sans-serif;
+        }
+        .btn-corrigir:hover { color: #38bdf8; }
+
+        /* Estilos do Modal de Correção */
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+            align-items: center; justify-content: center;
+        }
+        .modal-conteudo {
+            background: #0f172a; padding: 25px; border-radius: 16px; width: 90%; max-width: 350px;
+            border: 1px solid #1e293b; box-shadow: 0 10px 25px rgba(0,0,0,0.5); text-align: center;
+        }
+        .modal-conteudo h3 { color: #38bdf8; margin-top: 0; margin-bottom: 10px; }
+        .modal-conteudo p { font-size: 0.9rem; color: #cbd5e1; margin-bottom: 15px; }
+        .modal-conteudo input {
+            width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #334155;
+            background: #1e293b; color: white; font-family: 'Poppins', sans-serif; outline: none;
+        }
+        .modal-conteudo input:focus { border-color: #38bdf8; }
+        .modal-botoes { display: flex; gap: 10px; }
+        .btn-cancelar { flex: 1; padding: 10px; background: #334155; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500; }
+        .btn-salvar { flex: 1; padding: 10px; background: #38bdf8; color: #000; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
+
         .logo { width: 100%; max-width: 350px; margin-bottom: -5px; margin-top: -20px; } 
 
-        /* =========================================
-            BOTÕES SOBREPOSTOS DA CÂMERA
-           ========================================= */
+        /* Botões Sobrepostos da Câmera */
         .btn-overlay {
-            position: absolute;
-            z-index: 1000;
-            display: none;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            background: transparent;
+            position: absolute; z-index: 1000; display: none; cursor: pointer;
+            border: none; outline: none; background: transparent;
         }
 
         #btn-fechar-x {
-            top: 10px;
-            right: 10px;
-            padding: 5px;
-            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8)); 
-            transition: transform 0.2s;
+            top: 10px; right: 10px; padding: 5px;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8)); transition: transform 0.2s;
         }
         #btn-fechar-x:active { transform: scale(0.8); }
 
        #controles-inferiores {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80px; /* Altura da área de botões */
-            display: none; /* O JS vai mudar para 'block' */
-            z-index: 1000;
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; display: none; z-index: 1000;
         }
 
         #btn-flash {
-            position: absolute;
-            left: 20px; /* Distância da borda esquerda */
-            top: 50%;
-            transform: translateY(-50%); /* Centraliza verticalmente na caixa */
-            padding: 8px;
-            background: transparent; /* REMOVIDO O FUNDO ESCURO */
-            border: none;
-            outline: none;
-            cursor: pointer;
-            display: block;
+            position: absolute; left: 20px; top: 50%; transform: translateY(-50%); padding: 8px;
+            background: transparent; border: none; outline: none; cursor: pointer; display: block;
         }
 
         #btn-capturar-bola {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%); /* Garante o centro EXATO */
-            width: 50px;
-            height: 50px;
-            background-color: white;
-            border: 4px solid rgba(255, 255, 255, 0.4); 
-            border-radius: 50%;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.1s ease, background-color 0.1s;
-            padding: 0;
+            position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+            width: 50px; height: 50px; background-color: white; border: 4px solid rgba(255, 255, 255, 0.4); 
+            border-radius: 50%; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.1s ease, background-color 0.1s; padding: 0;
         }
-
-
         
         #btn-capturar-bola:active { 
-            /* Mantém o translate para não sair do centro ao encolher */
-            transform: translate(-50%, -50%) scale(0.9); 
-            background-color: #e0e0e0;
+            transform: translate(-50%, -50%) scale(0.9); background-color: #e0e0e0;
         }
         #btn-voltar-seta {
-            top: 10px;
-            left: 10px; /* Canto superior esquerdo */
-            padding: 5px;
-            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8)); 
+            top: 10px; left: 10px; padding: 5px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8)); 
             transition: transform 0.2s;
         }
         #btn-voltar-seta:active { transform: scale(0.8); }
@@ -390,42 +205,52 @@
     <input type="file" id="input-arquivo" accept="image/*">
     
     <div id="area-imagem">
-    <video id="video-camera" autoplay playsinline></video>
-    <img id="imagem-fundo">
-    <img id="imagem-objeto">
-    <svg id="tela-desenho" preserveAspectRatio="none">
-        <path id="linha-contorno" class="linha-magica"></path>
-    </svg>
-
-    <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
+        <video id="video-camera" autoplay playsinline></video>
+        <img id="imagem-fundo">
+        <img id="imagem-objeto">
+        <svg id="tela-desenho" preserveAspectRatio="none">
+            <path id="linha-contorno" class="linha-magica"></path>
         </svg>
-    </button>
 
-    <button id="btn-voltar-seta" class="btn-overlay" title="Voltar e escolher outro objeto">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-    </button>
-
-    <div id="controles-inferiores">
-        <button id="btn-flash" title="Ligar/Desligar Flash">
-            <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
         </button>
 
-        <button id="btn-capturar-bola" title="Tirar Foto"></button>
+        <button id="btn-voltar-seta" class="btn-overlay" title="Voltar e escolher outro objeto">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
 
-        
+        <div id="controles-inferiores">
+            <button id="btn-flash" title="Ligar/Desligar Flash">
+                <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+            </button>
+            <button id="btn-capturar-bola" title="Tirar Foto"></button>
+        </div>
     </div>
-</div>
     
     <div id="resultado-container">
         <div id="resultado"></div>
+        <button id="btn-corrigir" class="btn-corrigir">A cor está errada?</button>
+    </div>
+
+    <div id="modal-correcao" class="modal">
+        <div class="modal-conteudo">
+            <h3>Corrigir Cor</h3>
+            <p>Qual é a cor exata deste objeto?</p>
+            <input type="text" id="input-cor-correta" placeholder="Ex: Vermelho Escuro" autocomplete="off">
+            <div class="modal-botoes">
+                <button id="btn-cancelar" class="btn-cancelar">Cancelar</button>
+                <button id="btn-salvar" class="btn-salvar">Ensinar IA</button>
+            </div>
+        </div>
     </div>
 
     <div class="footer">
@@ -442,8 +267,6 @@
         const btnFlash = document.getElementById('btn-flash');
         const iconFlash = document.getElementById('icon-flash');
         const btnVoltarSeta = document.getElementById('btn-voltar-seta');
-        
-        // NOVO: Pegando a caixa que guarda os botões inferiores
         const controlesInferiores = document.getElementById('controles-inferiores');
         
         const areaImagem = document.getElementById('area-imagem');
@@ -452,13 +275,23 @@
         const imagemObjeto = document.getElementById('imagem-objeto');
         const telaDesenho = document.getElementById('tela-desenho');
         const linhaContorno = document.getElementById('linha-contorno');
+        
         const resultado = document.getElementById('resultado');
+        
+        // Elementos do Modal e Correção
+        const btnCorrigir = document.getElementById('btn-corrigir');
+        const modalCorrecao = document.getElementById('modal-correcao');
+        const btnCancelar = document.getElementById('btn-cancelar');
+        const btnSalvar = document.getElementById('btn-salvar');
+        const inputCorCorreta = document.getElementById('input-cor-correta');
         
         let arquivoAtual = null;
         let streamCameraAtual = null;
         let flashAtivo = false;
+        
+        // Memória HSV da última cor clicada
+        let hAtual = 0, sAtual = 0, vAtual = 0;
 
-        // --- FUNÇÃO CENTRAL: Carrega a foto no palco ---
         function carregarFotoNoPalco(arquivo) {
             arquivoAtual = arquivo;
             areaImagem.style.display = 'inline-block';
@@ -467,11 +300,8 @@
             imagemFundo.style.display = 'block';
             videoCamera.style.display = 'none';
             btnFecharX.style.display = 'none';
-            btnVoltarSeta.style.display = 'none'; // Garante que a seta suma ao carregar nova foto
-            
-            // NOVO: Esconde a caixa inteira
+            btnVoltarSeta.style.display = 'none'; 
             controlesInferiores.style.display = 'none';
-            
             telaDesenho.style.display = 'block';
             
             imagemFundo.classList.remove('efeito-blur');
@@ -485,9 +315,9 @@
             
             resultado.innerText = "Clique em um objeto";
             resultado.style.display = 'inline-block';
+            btnCorrigir.style.display = 'none'; // Oculta botão de corrigir na nova foto
         }
 
-        // --- Desliga a câmera se estiver ligada ---
         function desligarCamera() {
             if (streamCameraAtual) {
                 streamCameraAtual.getTracks().forEach(track => track.stop());
@@ -499,13 +329,10 @@
             
             videoCamera.style.display = 'none';
             btnFecharX.style.display = 'none';
-            btnVoltarSeta.style.display = 'none'; // Prevenção
-            
-            // NOVO: Esconde a caixa inteira
+            btnVoltarSeta.style.display = 'none'; 
             controlesInferiores.style.display = 'none';
         }
 
-        // --- Evento 1: Galeria ---
         inputArquivo.addEventListener('change', (evento) => {
             if (evento.target.files[0]) {
                 desligarCamera();
@@ -513,7 +340,6 @@
             }
         });
 
-        // --- Evento 2: Abrir a Câmera ---
         btnAbrirCamera.addEventListener('click', async () => {
             try {
                 let streamTemporario = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -525,9 +351,7 @@
 
                 if (camerasTraseiras.length > 0) {
                     let cameraCerta = camerasTraseiras.find(c => c.label.includes('0'));
-                    if (!cameraCerta) {
-                        cameraCerta = camerasTraseiras[0];
-                    }
+                    if (!cameraCerta) cameraCerta = camerasTraseiras[0];
                     idLentePrincipal = cameraCerta.deviceId;
                 }
 
@@ -540,18 +364,16 @@
                 streamCameraAtual = await navigator.mediaDevices.getUserMedia(restricoes);
                 videoCamera.srcObject = streamCameraAtual;
                 
-                // Interface Visual
                 resultado.style.display = 'none';
+                btnCorrigir.style.display = 'none'; // Oculta botão
                 areaImagem.style.display = 'inline-block';
                 imagemFundo.style.display = 'none';
                 imagemObjeto.style.opacity = '0';
                 telaDesenho.style.display = 'none'; 
-                btnVoltarSeta.style.display = 'none'; // Esconde na câmera
+                btnVoltarSeta.style.display = 'none'; 
                 
                 videoCamera.style.display = 'block'; 
                 btnFecharX.style.display = 'block'; 
-                
-                // NOVO: Mostra a caixa dos botões inferiores com 'block' (já que estamos usando absolute agora)
                 controlesInferiores.style.display = 'block'; 
                 
             } catch (erro) {
@@ -560,44 +382,27 @@
             }
         });
 
-        // --- Lógica do Flash ---
         btnFlash.addEventListener('click', async () => {
             if (!streamCameraAtual) return;
-            
             const track = streamCameraAtual.getVideoTracks()[0];
-            
             try {
                 flashAtivo = !flashAtivo;
                 const restricoesAtuais = track.getConstraints();
-                
                 try {
-                    await track.applyConstraints({
-                        ...restricoesAtuais,
-                        advanced: [{ torch: flashAtivo }]
-                    });
+                    await track.applyConstraints({ ...restricoesAtuais, advanced: [{ torch: flashAtivo }] });
                 } catch (err1) {
                     if (err1.name === 'OverconstrainedError') {
-                        await track.applyConstraints({
-                            ...restricoesAtuais,
-                            torch: flashAtivo
-                        });
-                    } else {
-                        throw err1;
-                    }
+                        await track.applyConstraints({ ...restricoesAtuais, torch: flashAtivo });
+                    } else { throw err1; }
                 }
-
-                // Cores do ícone
                 iconFlash.setAttribute('fill', flashAtivo ? '#ffffff' : 'none');
                 iconFlash.setAttribute('stroke', '#ffffff');
-                
             } catch (e) {
                 flashAtivo = !flashAtivo; 
                 alert("Erro ao ligar o flash: " + e.name);
-                console.error("Erro detalhado do Flash:", e);
             }
         });
 
-        // --- Evento 3: Fechar Câmera (X) ---
         btnFecharX.addEventListener('click', () => {
             desligarCamera();
             if (arquivoAtual) {
@@ -609,7 +414,6 @@
             }
         });
 
-        // --- Evento 4: Capturar Foto ---
         btnCapturarBola.addEventListener('click', () => {
             const canvas = document.createElement('canvas');
             canvas.width = videoCamera.videoWidth;
@@ -624,11 +428,14 @@
             }, 'image/jpeg', 0.9);
         });
 
-        // --- Evento 5: IA de Cores (Ngrok Mantido) ---
+        // URL MESTRE DO SERVIDOR
+        const ngrokUrl = "https://winking-rinsing-trophy.ngrok-free.dev";
+
         imagemFundo.addEventListener('click', async (evento) => {
             if (!arquivoAtual) return;
 
-            btnVoltarSeta.style.display = 'flex'; // Garante que a seta suma se o usuário clicar de novo
+            btnVoltarSeta.style.display = 'flex'; 
+            btnCorrigir.style.display = 'none'; // Oculta o link de correção enquanto processa
             imagemFundo.classList.remove('efeito-blur');
             imagemObjeto.style.opacity = '0';
             linhaContorno.setAttribute("d", ""); 
@@ -645,10 +452,16 @@
             formData.append("y", y);
 
             try {
-                let ngrokUrl = "https://winking-rinsing-trophy.ngrok-free.dev";
                 const resposta = await fetch(`${ngrokUrl}/analisar`, { method: "POST", body: formData });
                 const dados = await resposta.json();
                 
+                // Salva a memória para uma possível correção
+                if (dados.hsv) {
+                    hAtual = dados.hsv.h;
+                    sAtual = dados.hsv.s;
+                    vAtual = dados.hsv.v;
+                }
+
                 imagemFundo.classList.remove('pulso');
                 resultado.innerHTML = "Cor detectada: <span>" + dados.cor_predominante + "</span>";
 
@@ -667,8 +480,8 @@
                 linhaContorno.style.transition = 'stroke-dashoffset 1.5s ease-out';
                 linhaContorno.style.strokeDashoffset = '0';
 
-                // MOSTRA A SETA APÓS O SUCESSO DA IA
                 btnVoltarSeta.style.display = 'block';
+                btnCorrigir.style.display = 'inline-block'; // Mostra botão após resultado
 
             } catch (erro) {
                 imagemFundo.classList.remove('pulso');
@@ -677,36 +490,77 @@
             }
         });
 
-        // --- Evento 6: Voltar imagem ao normal para nova seleção ---
+        // --- SISTEMA DE CORREÇÃO (NOVO) ---
+        btnCorrigir.addEventListener('click', () => {
+            inputCorCorreta.value = "";
+            modalCorrecao.style.display = 'flex';
+            inputCorCorreta.focus();
+        });
+
+        btnCancelar.addEventListener('click', () => {
+            modalCorrecao.style.display = 'none';
+        });
+
+        btnSalvar.addEventListener('click', async () => {
+            const corDigitada = inputCorCorreta.value.trim();
+            if (!corDigitada) {
+                alert("Por favor, digite o nome da cor.");
+                return;
+            }
+
+            btnSalvar.innerText = "Salvando...";
+
+            const formData = new FormData();
+            formData.append("h", hAtual);
+            formData.append("s", sAtual);
+            formData.append("v", vAtual);
+            formData.append("cor_correta", corDigitada);
+
+            try {
+                const resposta = await fetch(`${ngrokUrl}/corrigir`, { method: "POST", body: formData });
+                const dados = await resposta.json();
+                
+                modalCorrecao.style.display = 'none';
+                resultado.innerHTML = `Cor atualizada: <span>${corDigitada}</span>`;
+                btnCorrigir.style.display = 'none'; // Oculta após corrigir
+                
+                // Confirmação sutil e elegante pro usuário
+                setTimeout(() => alert("A Inteligência Artificial aprendeu esta nova cor!"), 100);
+
+            } catch (erro) {
+                alert("Erro ao conectar com o servidor.");
+                console.error(erro);
+            } finally {
+                btnSalvar.innerText = "Ensinar IA";
+            }
+        });
+
         btnVoltarSeta.addEventListener('click', () => {
-            // Esconde a seta novamente
             btnVoltarSeta.style.display = 'none'; 
-            
-            // Remove os efeitos da imagem antiga
+            btnCorrigir.style.display = 'none'; // Oculta ao voltar
             imagemFundo.classList.remove('efeito-blur');
             imagemObjeto.style.opacity = '0';
             linhaContorno.style.transition = 'none';
             linhaContorno.setAttribute("d", ""); 
-            
-            // Atualiza a mensagem para o usuário
             resultado.innerHTML = "Clique em um objeto";
         });
 
         const container = document.getElementById("particles");
-    const colors = ["#ff5f57", "#ffbd2e", "#28c840", "#00c2ff", "#7f5af0", "#ff4ecd"];
+        const colors = ["#ff5f57", "#ffbd2e", "#28c840", "#00c2ff", "#7f5af0", "#ff4ecd"];
 
-    for(let i = 0; i < 60; i++){ // Coloquei 60 para não poluir muito a tela da câmera
-      const particle = document.createElement("span");
-      particle.classList.add("particle");
-      const size = Math.random() * 6 + 2;
-      
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-      particle.style.left = `${Math.random() * 100}%`;
-      particle.style.top = `${Math.random() * 100}%`;
-      particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-      
-      container.appendChild(particle);
-    }
+        for(let i = 0; i < 60; i++){ 
+            const particle = document.createElement("span");
+            particle.classList.add("particle");
+            const size = Math.random() * 6 + 2;
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            container.appendChild(particle);
+        }
     </script>
+</body>
 </html>
