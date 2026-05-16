@@ -1,0 +1,27 @@
+# Servidor e API
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+
+# Processamento de Imagens
+opencv-python
+pillow
+numpy
+matplotlib
+
+# Inteligência Artificial
+torch
+torchvision
+torchaudio
+
+# Dependências do SAM 2
+tqdm
+hydra-core
+omegaconf
+iopath
+
+# Utilitários
+requests
+python-dotenv
+aiofiles

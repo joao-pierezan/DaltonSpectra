@@ -9,10 +9,7 @@ import uvicorn
 from sam2.build_sam import build_sam2
 from sam2.sam2_image_predictor import SAM2ImagePredictor
 
-# ==========================================
-# 1. Configurações Iniciais do SAM 2
-# ==========================================
-print("Carregando modelo SAM 2 na memória... (Isso pode levar alguns segundos)")
+
 checkpoint = "./checkpoints/sam2_hiera_tiny.pt"
 model_cfg = "configs/sam2/sam2_hiera_t.yaml"
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -21,9 +18,7 @@ sam2_model = build_sam2(model_cfg, checkpoint, device=device)
 predictor = SAM2ImagePredictor(sam2_model)
 print(f"SAM 2 Pronto usando: {device}!")
 
-# ==========================================
-# 2. Funções de IA de Cores
-# ==========================================
+
 def obter_cor_dominante(imagem, mascara_uint8, k=3):
     pixels = imagem[mascara_uint8 > 0]
     if len(pixels) == 0: return (0, 0, 0)
@@ -40,57 +35,46 @@ def obter_nome_cor(rgb_tuple):
     Traduz a cor usando como o olho humano enxerga (HSV), resolvendo 
     problemas de sombras (azul virando preto) e tons (laranja virando vermelho).
     """
-    # Converte a cor RGB (que veio do K-Means) para o formato do OpenCV
     pixel_rgb = np.uint8([[[rgb_tuple[0], rgb_tuple[1], rgb_tuple[2]]]])
     
-    # Transforma de RGB para HSV (A mágica acontece aqui)
     hsv = cv2.cvtColor(pixel_rgb, cv2.COLOR_RGB2HSV)[0][0]
     h, s, v = int(hsv[0]), int(hsv[1]), int(hsv[2])
 
-    # 1. Filtros de Luz e Sombra extremos (Escala de Cinza)
     if v < 40: return "Preto"
-    
-    # Aumentamos de 45 para 50 para perdoar um pouco mais de cor na luz
+
     if s < 50: 
         if v > 200: return "Branco"
         elif v > 160: return "Branco / Cinza Claro"
         else: return "Cinza Escuro" if v < 100 else "Cinza"
 
-    # 2. Identificação da Cor Real pela Matiz (Roda de Cores)
-    # No OpenCV o H (Matiz) vai de 0 a 179. S e V vão de 0 a 255.
     
     if (h < 10) or (h >= 170): 
         if s < 150 and v > 150: return "Salmão"
         return "Vinho / Vermelho Escuro" if v < 120 else "Vermelho"
         
     elif 10 <= h < 22: 
-        # Área dos laranjas, marrons e beges
+        
         if v > 180 and s < 130: return "Bege"
         if v < 150: return "Marrom Escuro" if v < 100 else "Marrom"
         if s < 180 and v > 180: return "Coral"
         return "Laranja Escuro" if v < 200 else "Laranja"
         
     elif 22 <= h < 35: 
-        # Área dos amarelos
         if v > 180 and s < 120: return "Amarelo Claro"
         if v < 180: return "Amarelo Escuro/ Queimado"
         return "Amarelo"
         
     elif 35 <= h < 85: 
-        # Área dos verdes
         if h > 70 and s < 100 and v > 150: return "Verde Água"
         if v < 100: return "Verde Escuro"
         if h < 45: return "Verde Neon"
         return "Verde"
         
     elif 85 <= h < 100: 
-        # Ciano / Turquesa
         if v > 180 and s < 150: return "Azul Bebê"
         return "Turquesa" if s > 150 else "Ciano"
         
     elif 100 <= h < 135: 
-        # Azuis
-        # ARMADILHA: Se a saturação for baixa (mesmo passando de 50), é só a luz fria enganando a câmera!
         if s < 75: return "Cinza" 
         
         if v < 100: return "Azul Marinho"
@@ -98,42 +82,34 @@ def obter_nome_cor(rgb_tuple):
         return "Azul"
         
     elif 135 <= h < 155: 
-        # Roxos / Lilás
         if v > 180 and s < 120: return "Lilás"
         return "Roxo Escuro" if v < 120 else "Roxo"
         
     elif 155 <= h < 170: 
-        # Rosas
+
         if v < 150: return "Rosa Escuro"
         if s > 180: return "Rosa Choque"
         return "Rosa Claro"
 
     return "Cor Indefinida"
 
-# ==========================================
-# 3. Servidor Web (FastAPI)
-# ==========================================
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-# 1. Quando o usuário entrar no site normal (ex: localhost:8000/), mostra a apresentação
 @app.get("/")
 async def pagina_principal():
     return FileResponse("showpage.html")
 
-# 2. Quando ele clicar no botão de teste, ele vem para cá e abre a ferramenta
 @app.get("/app")
 async def pagina_ferramenta():
     return FileResponse("app.html")
 
 @app.post("/analisar")
 async def analisar_clique(x: int = Form(...), y: int = Form(...), arquivo: UploadFile = File(...)):
-    # 1. Lê a imagem
     conteudo = await arquivo.read()
     np_arr = np.frombuffer(conteudo, np.uint8)
     imagem_cv2 = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
 
-    # 2. Roda o SAM 2
     imagem_rgb = cv2.cvtColor(imagem_cv2, cv2.COLOR_BGR2RGB)
     predictor.set_image(imagem_rgb)
     ponto = np.array([[x, y]])
@@ -142,22 +118,19 @@ async def analisar_clique(x: int = Form(...), y: int = Form(...), arquivo: Uploa
     mascara = np.squeeze(masks[0]).astype(bool)
     mascara_uint8 = (mascara * 255).astype(np.uint8)
 
-    # 3. Calcula a Cor
     cor_dominante_bgr = obter_cor_dominante(imagem_cv2, mascara_uint8)
     nome_cor = obter_nome_cor((cor_dominante_bgr[2], cor_dominante_bgr[1], cor_dominante_bgr[0]))
 
-    # 4. CRIA A CAMADA 2: O Objeto com Fundo Transparente (RGBA)
     imagem_rgba = cv2.cvtColor(imagem_cv2, cv2.COLOR_BGR2BGRA)
     imagem_rgba[mascara_uint8 == 0] = [0, 0, 0, 0] 
     
     _, buffer = cv2.imencode('.png', imagem_rgba)
     imagem_base64 = base64.b64encode(buffer).decode('utf-8')
 
-    # 5. CRIA A CAMADA 3: O Caminho do Contorno (Com trava de segurança!)
     contornos, _ = cv2.findContours(mascara_uint8, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
     caminho_svg = ""
-    if contornos: # Só faz o desenho se a IA achou um objeto
+    if contornos: 
         maior_contorno = max(contornos, key=cv2.contourArea) 
         for i, ponto_contorno in enumerate(maior_contorno):
             px, py = ponto_contorno[0]
@@ -174,6 +147,5 @@ async def analisar_clique(x: int = Form(...), y: int = Form(...), arquivo: Uploa
         "caminho_svg": caminho_svg         
     }
 
-# LIGA O SERVIDOR PARA O SITE CONSEGUIR CONVERSAR COM ELE
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
