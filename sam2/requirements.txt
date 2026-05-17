@@ -9,6 +9,7 @@ opencv-python
 pillow
 numpy
 matplotlib
+pandas scikit-learn
 
 # Inteligência Artificial
 torch
