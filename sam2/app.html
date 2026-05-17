@@ -455,11 +455,11 @@
                 const resposta = await fetch(`${ngrokUrl}/analisar`, { method: "POST", body: formData });
                 const dados = await resposta.json();
                 
-                // Salva a memória para uma possível correção
-                if (dados.hsv) {
-                    hAtual = dados.hsv.h;
-                    sAtual = dados.hsv.s;
-                    vAtual = dados.hsv.v;
+                // CORREÇÃO: Agora o JS pega os dados exatamente como o backend FastApi envia!
+                if (dados.status === "sucesso") {
+                    hAtual = dados.h;
+                    sAtual = dados.s;
+                    vAtual = dados.v;
                 }
 
                 imagemFundo.classList.remove('pulso');
@@ -490,7 +490,7 @@
             }
         });
 
-        // --- SISTEMA DE CORREÇÃO (NOVO) ---
+        // --- SISTEMA DE CORREÇÃO ---
         btnCorrigir.addEventListener('click', () => {
             inputCorCorreta.value = "";
             modalCorrecao.style.display = 'flex';
@@ -561,6 +561,4 @@
             
             container.appendChild(particle);
         }
-    </script>
-</body>
-</html>
+</script>
