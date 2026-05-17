@@ -6,36 +6,35 @@ def classificar_hsv(h, s, v):
     Espaço de Cores HSV no OpenCV: H (0-179), S (0-255), V (0-255).
     """
     
-    # 1. ESCALA ACROMÁTICA (Preto, Branco e Cinza)
-    if v < 40:
-        return "Preto"
-    if s < 40 and v > 200:
-        return "Branco"
-    if s < 50 and 40 <= v <= 200:
-        return "Cinza"
+    # 1. ESCALA ACROMÁTICA (Prioridade)
+    if v < 40: return "Preto"
+    if s < 40 and v > 200: return "Branco"
+    if s < 50 and 40 <= v <= 200: return "Cinza"
 
-    # 2. TONS TERROSOS (Marrom e variações escuras de cores quentes)
-    if (h <= 20 or h >= 165) and s > 50 and 40 <= v < 130:
-        return "Marrom"
-    if 20 < h <= 35 and s > 50 and 40 <= v < 120:
-        return "Marrom" # Absorve o Amarelo Escuro/Oliva/Ocre como Marrom
-
-    # 3. ESPECTRO CROMÁTICO (Baseado no Matiz - H)
-    
-    # Vermelhos e variações
-    if h <= 10 or h >= 170:
-        if v < 150: return "Vermelho Escuro"
-        if s < 150 and v > 180: return "Rosa" # Vermelho claro/desbotado
+    # --- PROTEÇÃO DO VERMELHO PURO E ESCURO ---
+    # Nós capturamos o Hue de vermelho primeiro e criamos uma "gaveta" forte pra ele.
+    # Se H for de 0 a 12 ou de 168 a 179, é VERMELHO (não importa se é escuro)
+    if h <= 12 or h >= 168:
+        if v < 140: # Um brilho razoável, se for mais escuro que isso, chamamos de Vermelho Escuro (Vinho)
+            return "Vermelho Escuro"
+        if s < 120 and v > 180: # Se for clarinho e desbotado, é Rosa
+            return "Rosa"
         return "Vermelho"
-        
-    # Laranja
-    elif 10 < h <= 22:
-        if v < 120: return "Marrom" # Laranja muito escuro vira marrom no mundo real
+
+    # --- AGORA DEFINIMOS O MARROM COM BASE NO LARANJA E AMARELO ESCUROS ---
+    
+    # Marrom clássico (vem do Laranja escuro)
+    elif 12 < h <= 20:
+        if v < 120: # Se estiver na sombra, esse laranja vira Marrom
+            return "Marrom"
         return "Laranja"
         
-    # Amarelo e Bege
-    elif 22 < h <= 35:
-        if s < 120 and v > 180: return "Bege" 
+    # Marrom Oliva/Ocre (vem do Amarelo escuro)
+    elif 20 < h <= 35:
+        if v < 100: # Amarelo muito escuro vira marrom
+            return "Marrom"
+        if s < 120 and v > 180: 
+            return "Bege" 
         return "Amarelo"
         
     # Verdes (Claro, Normal e Escuro)

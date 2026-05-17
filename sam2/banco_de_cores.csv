@@ -74,12 +74,12 @@ H,S,V,Cor
 0,60,0,Preto
 0,60,15,Preto
 0,60,30,Preto
-0,60,45,Marrom
-0,60,60,Marrom
-0,60,75,Marrom
-0,60,90,Marrom
-0,60,105,Marrom
-0,60,120,Marrom
+0,60,45,Vermelho Escuro
+0,60,60,Vermelho Escuro
+0,60,75,Vermelho Escuro
+0,60,90,Vermelho Escuro
+0,60,105,Vermelho Escuro
+0,60,120,Vermelho Escuro
 0,60,135,Vermelho Escuro
 0,60,150,Vermelho
 0,60,165,Vermelho
@@ -92,12 +92,12 @@ H,S,V,Cor
 0,75,0,Preto
 0,75,15,Preto
 0,75,30,Preto
-0,75,45,Marrom
-0,75,60,Marrom
-0,75,75,Marrom
-0,75,90,Marrom
-0,75,105,Marrom
-0,75,120,Marrom
+0,75,45,Vermelho Escuro
+0,75,60,Vermelho Escuro
+0,75,75,Vermelho Escuro
+0,75,90,Vermelho Escuro
+0,75,105,Vermelho Escuro
+0,75,120,Vermelho Escuro
 0,75,135,Vermelho Escuro
 0,75,150,Vermelho
 0,75,165,Vermelho
@@ -110,12 +110,12 @@ H,S,V,Cor
 0,90,0,Preto
 0,90,15,Preto
 0,90,30,Preto
-0,90,45,Marrom
-0,90,60,Marrom
-0,90,75,Marrom
-0,90,90,Marrom
-0,90,105,Marrom
-0,90,120,Marrom
+0,90,45,Vermelho Escuro
+0,90,60,Vermelho Escuro
+0,90,75,Vermelho Escuro
+0,90,90,Vermelho Escuro
+0,90,105,Vermelho Escuro
+0,90,120,Vermelho Escuro
 0,90,135,Vermelho Escuro
 0,90,150,Vermelho
 0,90,165,Vermelho
@@ -128,12 +128,12 @@ H,S,V,Cor
 0,105,0,Preto
 0,105,15,Preto
 0,105,30,Preto
-0,105,45,Marrom
-0,105,60,Marrom
-0,105,75,Marrom
-0,105,90,Marrom
-0,105,105,Marrom
-0,105,120,Marrom
+0,105,45,Vermelho Escuro
+0,105,60,Vermelho Escuro
+0,105,75,Vermelho Escuro
+0,105,90,Vermelho Escuro
+0,105,105,Vermelho Escuro
+0,105,120,Vermelho Escuro
 0,105,135,Vermelho Escuro
 0,105,150,Vermelho
 0,105,165,Vermelho
@@ -146,48 +146,48 @@ H,S,V,Cor
 0,120,0,Preto
 0,120,15,Preto
 0,120,30,Preto
-0,120,45,Marrom
-0,120,60,Marrom
-0,120,75,Marrom
-0,120,90,Marrom
-0,120,105,Marrom
-0,120,120,Marrom
+0,120,45,Vermelho Escuro
+0,120,60,Vermelho Escuro
+0,120,75,Vermelho Escuro
+0,120,90,Vermelho Escuro
+0,120,105,Vermelho Escuro
+0,120,120,Vermelho Escuro
 0,120,135,Vermelho Escuro
 0,120,150,Vermelho
 0,120,165,Vermelho
 0,120,180,Vermelho
-0,120,195,Rosa
-0,120,210,Rosa
-0,120,225,Rosa
-0,120,240,Rosa
-0,120,255,Rosa
+0,120,195,Vermelho
+0,120,210,Vermelho
+0,120,225,Vermelho
+0,120,240,Vermelho
+0,120,255,Vermelho
 0,135,0,Preto
 0,135,15,Preto
 0,135,30,Preto
-0,135,45,Marrom
-0,135,60,Marrom
-0,135,75,Marrom
-0,135,90,Marrom
-0,135,105,Marrom
-0,135,120,Marrom
+0,135,45,Vermelho Escuro
+0,135,60,Vermelho Escuro
+0,135,75,Vermelho Escuro
+0,135,90,Vermelho Escuro
+0,135,105,Vermelho Escuro
+0,135,120,Vermelho Escuro
 0,135,135,Vermelho Escuro
 0,135,150,Vermelho
 0,135,165,Vermelho
 0,135,180,Vermelho
-0,135,195,Rosa
-0,135,210,Rosa
-0,135,225,Rosa
-0,135,240,Rosa
-0,135,255,Rosa
+0,135,195,Vermelho
+0,135,210,Vermelho
+0,135,225,Vermelho
+0,135,240,Vermelho
+0,135,255,Vermelho
 0,150,0,Preto
 0,150,15,Preto
 0,150,30,Preto
-0,150,45,Marrom
-0,150,60,Marrom
-0,150,75,Marrom
-0,150,90,Marrom
-0,150,105,Marrom
-0,150,120,Marrom
+0,150,45,Vermelho Escuro
+0,150,60,Vermelho Escuro
+0,150,75,Vermelho Escuro
+0,150,90,Vermelho Escuro
+0,150,105,Vermelho Escuro
+0,150,120,Vermelho Escuro
 0,150,135,Vermelho Escuro
 0,150,150,Vermelho
 0,150,165,Vermelho
@@ -200,12 +200,12 @@ H,S,V,Cor
 0,165,0,Preto
 0,165,15,Preto
 0,165,30,Preto
-0,165,45,Marrom
-0,165,60,Marrom
-0,165,75,Marrom
-0,165,90,Marrom
-0,165,105,Marrom
-0,165,120,Marrom
+0,165,45,Vermelho Escuro
+0,165,60,Vermelho Escuro
+0,165,75,Vermelho Escuro
+0,165,90,Vermelho Escuro
+0,165,105,Vermelho Escuro
+0,165,120,Vermelho Escuro
 0,165,135,Vermelho Escuro
 0,165,150,Vermelho
 0,165,165,Vermelho
@@ -218,12 +218,12 @@ H,S,V,Cor
 0,180,0,Preto
 0,180,15,Preto
 0,180,30,Preto
-0,180,45,Marrom
-0,180,60,Marrom
-0,180,75,Marrom
-0,180,90,Marrom
-0,180,105,Marrom
-0,180,120,Marrom
+0,180,45,Vermelho Escuro
+0,180,60,Vermelho Escuro
+0,180,75,Vermelho Escuro
+0,180,90,Vermelho Escuro
+0,180,105,Vermelho Escuro
+0,180,120,Vermelho Escuro
 0,180,135,Vermelho Escuro
 0,180,150,Vermelho
 0,180,165,Vermelho
@@ -236,12 +236,12 @@ H,S,V,Cor
 0,195,0,Preto
 0,195,15,Preto
 0,195,30,Preto
-0,195,45,Marrom
-0,195,60,Marrom
-0,195,75,Marrom
-0,195,90,Marrom
-0,195,105,Marrom
-0,195,120,Marrom
+0,195,45,Vermelho Escuro
+0,195,60,Vermelho Escuro
+0,195,75,Vermelho Escuro
+0,195,90,Vermelho Escuro
+0,195,105,Vermelho Escuro
+0,195,120,Vermelho Escuro
 0,195,135,Vermelho Escuro
 0,195,150,Vermelho
 0,195,165,Vermelho
@@ -254,12 +254,12 @@ H,S,V,Cor
 0,210,0,Preto
 0,210,15,Preto
 0,210,30,Preto
-0,210,45,Marrom
-0,210,60,Marrom
-0,210,75,Marrom
-0,210,90,Marrom
-0,210,105,Marrom
-0,210,120,Marrom
+0,210,45,Vermelho Escuro
+0,210,60,Vermelho Escuro
+0,210,75,Vermelho Escuro
+0,210,90,Vermelho Escuro
+0,210,105,Vermelho Escuro
+0,210,120,Vermelho Escuro
 0,210,135,Vermelho Escuro
 0,210,150,Vermelho
 0,210,165,Vermelho
@@ -272,12 +272,12 @@ H,S,V,Cor
 0,225,0,Preto
 0,225,15,Preto
 0,225,30,Preto
-0,225,45,Marrom
-0,225,60,Marrom
-0,225,75,Marrom
-0,225,90,Marrom
-0,225,105,Marrom
-0,225,120,Marrom
+0,225,45,Vermelho Escuro
+0,225,60,Vermelho Escuro
+0,225,75,Vermelho Escuro
+0,225,90,Vermelho Escuro
+0,225,105,Vermelho Escuro
+0,225,120,Vermelho Escuro
 0,225,135,Vermelho Escuro
 0,225,150,Vermelho
 0,225,165,Vermelho
@@ -290,12 +290,12 @@ H,S,V,Cor
 0,240,0,Preto
 0,240,15,Preto
 0,240,30,Preto
-0,240,45,Marrom
-0,240,60,Marrom
-0,240,75,Marrom
-0,240,90,Marrom
-0,240,105,Marrom
-0,240,120,Marrom
+0,240,45,Vermelho Escuro
+0,240,60,Vermelho Escuro
+0,240,75,Vermelho Escuro
+0,240,90,Vermelho Escuro
+0,240,105,Vermelho Escuro
+0,240,120,Vermelho Escuro
 0,240,135,Vermelho Escuro
 0,240,150,Vermelho
 0,240,165,Vermelho
@@ -308,12 +308,12 @@ H,S,V,Cor
 0,255,0,Preto
 0,255,15,Preto
 0,255,30,Preto
-0,255,45,Marrom
-0,255,60,Marrom
-0,255,75,Marrom
-0,255,90,Marrom
-0,255,105,Marrom
-0,255,120,Marrom
+0,255,45,Vermelho Escuro
+0,255,60,Vermelho Escuro
+0,255,75,Vermelho Escuro
+0,255,90,Vermelho Escuro
+0,255,105,Vermelho Escuro
+0,255,120,Vermelho Escuro
 0,255,135,Vermelho Escuro
 0,255,150,Vermelho
 0,255,165,Vermelho
@@ -398,12 +398,12 @@ H,S,V,Cor
 4,60,0,Preto
 4,60,15,Preto
 4,60,30,Preto
-4,60,45,Marrom
-4,60,60,Marrom
-4,60,75,Marrom
-4,60,90,Marrom
-4,60,105,Marrom
-4,60,120,Marrom
+4,60,45,Vermelho Escuro
+4,60,60,Vermelho Escuro
+4,60,75,Vermelho Escuro
+4,60,90,Vermelho Escuro
+4,60,105,Vermelho Escuro
+4,60,120,Vermelho Escuro
 4,60,135,Vermelho Escuro
 4,60,150,Vermelho
 4,60,165,Vermelho
@@ -416,12 +416,12 @@ H,S,V,Cor
 4,75,0,Preto
 4,75,15,Preto
 4,75,30,Preto
-4,75,45,Marrom
-4,75,60,Marrom
-4,75,75,Marrom
-4,75,90,Marrom
-4,75,105,Marrom
-4,75,120,Marrom
+4,75,45,Vermelho Escuro
+4,75,60,Vermelho Escuro
+4,75,75,Vermelho Escuro
+4,75,90,Vermelho Escuro
+4,75,105,Vermelho Escuro
+4,75,120,Vermelho Escuro
 4,75,135,Vermelho Escuro
 4,75,150,Vermelho
 4,75,165,Vermelho
@@ -434,12 +434,12 @@ H,S,V,Cor
 4,90,0,Preto
 4,90,15,Preto
 4,90,30,Preto
-4,90,45,Marrom
-4,90,60,Marrom
-4,90,75,Marrom
-4,90,90,Marrom
-4,90,105,Marrom
-4,90,120,Marrom
+4,90,45,Vermelho Escuro
+4,90,60,Vermelho Escuro
+4,90,75,Vermelho Escuro
+4,90,90,Vermelho Escuro
+4,90,105,Vermelho Escuro
+4,90,120,Vermelho Escuro
 4,90,135,Vermelho Escuro
 4,90,150,Vermelho
 4,90,165,Vermelho
@@ -452,12 +452,12 @@ H,S,V,Cor
 4,105,0,Preto
 4,105,15,Preto
 4,105,30,Preto
-4,105,45,Marrom
-4,105,60,Marrom
-4,105,75,Marrom
-4,105,90,Marrom
-4,105,105,Marrom
-4,105,120,Marrom
+4,105,45,Vermelho Escuro
+4,105,60,Vermelho Escuro
+4,105,75,Vermelho Escuro
+4,105,90,Vermelho Escuro
+4,105,105,Vermelho Escuro
+4,105,120,Vermelho Escuro
 4,105,135,Vermelho Escuro
 4,105,150,Vermelho
 4,105,165,Vermelho
@@ -470,48 +470,48 @@ H,S,V,Cor
 4,120,0,Preto
 4,120,15,Preto
 4,120,30,Preto
-4,120,45,Marrom
-4,120,60,Marrom
-4,120,75,Marrom
-4,120,90,Marrom
-4,120,105,Marrom
-4,120,120,Marrom
+4,120,45,Vermelho Escuro
+4,120,60,Vermelho Escuro
+4,120,75,Vermelho Escuro
+4,120,90,Vermelho Escuro
+4,120,105,Vermelho Escuro
+4,120,120,Vermelho Escuro
 4,120,135,Vermelho Escuro
 4,120,150,Vermelho
 4,120,165,Vermelho
 4,120,180,Vermelho
-4,120,195,Rosa
-4,120,210,Rosa
-4,120,225,Rosa
-4,120,240,Rosa
-4,120,255,Rosa
+4,120,195,Vermelho
+4,120,210,Vermelho
+4,120,225,Vermelho
+4,120,240,Vermelho
+4,120,255,Vermelho
 4,135,0,Preto
 4,135,15,Preto
 4,135,30,Preto
-4,135,45,Marrom
-4,135,60,Marrom
-4,135,75,Marrom
-4,135,90,Marrom
-4,135,105,Marrom
-4,135,120,Marrom
+4,135,45,Vermelho Escuro
+4,135,60,Vermelho Escuro
+4,135,75,Vermelho Escuro
+4,135,90,Vermelho Escuro
+4,135,105,Vermelho Escuro
+4,135,120,Vermelho Escuro
 4,135,135,Vermelho Escuro
 4,135,150,Vermelho
 4,135,165,Vermelho
 4,135,180,Vermelho
-4,135,195,Rosa
-4,135,210,Rosa
-4,135,225,Rosa
-4,135,240,Rosa
-4,135,255,Rosa
+4,135,195,Vermelho
+4,135,210,Vermelho
+4,135,225,Vermelho
+4,135,240,Vermelho
+4,135,255,Vermelho
 4,150,0,Preto
 4,150,15,Preto
 4,150,30,Preto
-4,150,45,Marrom
-4,150,60,Marrom
-4,150,75,Marrom
-4,150,90,Marrom
-4,150,105,Marrom
-4,150,120,Marrom
+4,150,45,Vermelho Escuro
+4,150,60,Vermelho Escuro
+4,150,75,Vermelho Escuro
+4,150,90,Vermelho Escuro
+4,150,105,Vermelho Escuro
+4,150,120,Vermelho Escuro
 4,150,135,Vermelho Escuro
 4,150,150,Vermelho
 4,150,165,Vermelho
@@ -524,12 +524,12 @@ H,S,V,Cor
 4,165,0,Preto
 4,165,15,Preto
 4,165,30,Preto
-4,165,45,Marrom
-4,165,60,Marrom
-4,165,75,Marrom
-4,165,90,Marrom
-4,165,105,Marrom
-4,165,120,Marrom
+4,165,45,Vermelho Escuro
+4,165,60,Vermelho Escuro
+4,165,75,Vermelho Escuro
+4,165,90,Vermelho Escuro
+4,165,105,Vermelho Escuro
+4,165,120,Vermelho Escuro
 4,165,135,Vermelho Escuro
 4,165,150,Vermelho
 4,165,165,Vermelho
@@ -542,12 +542,12 @@ H,S,V,Cor
 4,180,0,Preto
 4,180,15,Preto
 4,180,30,Preto
-4,180,45,Marrom
-4,180,60,Marrom
-4,180,75,Marrom
-4,180,90,Marrom
-4,180,105,Marrom
-4,180,120,Marrom
+4,180,45,Vermelho Escuro
+4,180,60,Vermelho Escuro
+4,180,75,Vermelho Escuro
+4,180,90,Vermelho Escuro
+4,180,105,Vermelho Escuro
+4,180,120,Vermelho Escuro
 4,180,135,Vermelho Escuro
 4,180,150,Vermelho
 4,180,165,Vermelho
@@ -560,12 +560,12 @@ H,S,V,Cor
 4,195,0,Preto
 4,195,15,Preto
 4,195,30,Preto
-4,195,45,Marrom
-4,195,60,Marrom
-4,195,75,Marrom
-4,195,90,Marrom
-4,195,105,Marrom
-4,195,120,Marrom
+4,195,45,Vermelho Escuro
+4,195,60,Vermelho Escuro
+4,195,75,Vermelho Escuro
+4,195,90,Vermelho Escuro
+4,195,105,Vermelho Escuro
+4,195,120,Vermelho Escuro
 4,195,135,Vermelho Escuro
 4,195,150,Vermelho
 4,195,165,Vermelho
@@ -578,12 +578,12 @@ H,S,V,Cor
 4,210,0,Preto
 4,210,15,Preto
 4,210,30,Preto
-4,210,45,Marrom
-4,210,60,Marrom
-4,210,75,Marrom
-4,210,90,Marrom
-4,210,105,Marrom
-4,210,120,Marrom
+4,210,45,Vermelho Escuro
+4,210,60,Vermelho Escuro
+4,210,75,Vermelho Escuro
+4,210,90,Vermelho Escuro
+4,210,105,Vermelho Escuro
+4,210,120,Vermelho Escuro
 4,210,135,Vermelho Escuro
 4,210,150,Vermelho
 4,210,165,Vermelho
@@ -596,12 +596,12 @@ H,S,V,Cor
 4,225,0,Preto
 4,225,15,Preto
 4,225,30,Preto
-4,225,45,Marrom
-4,225,60,Marrom
-4,225,75,Marrom
-4,225,90,Marrom
-4,225,105,Marrom
-4,225,120,Marrom
+4,225,45,Vermelho Escuro
+4,225,60,Vermelho Escuro
+4,225,75,Vermelho Escuro
+4,225,90,Vermelho Escuro
+4,225,105,Vermelho Escuro
+4,225,120,Vermelho Escuro
 4,225,135,Vermelho Escuro
 4,225,150,Vermelho
 4,225,165,Vermelho
@@ -614,12 +614,12 @@ H,S,V,Cor
 4,240,0,Preto
 4,240,15,Preto
 4,240,30,Preto
-4,240,45,Marrom
-4,240,60,Marrom
-4,240,75,Marrom
-4,240,90,Marrom
-4,240,105,Marrom
-4,240,120,Marrom
+4,240,45,Vermelho Escuro
+4,240,60,Vermelho Escuro
+4,240,75,Vermelho Escuro
+4,240,90,Vermelho Escuro
+4,240,105,Vermelho Escuro
+4,240,120,Vermelho Escuro
 4,240,135,Vermelho Escuro
 4,240,150,Vermelho
 4,240,165,Vermelho
@@ -632,12 +632,12 @@ H,S,V,Cor
 4,255,0,Preto
 4,255,15,Preto
 4,255,30,Preto
-4,255,45,Marrom
-4,255,60,Marrom
-4,255,75,Marrom
-4,255,90,Marrom
-4,255,105,Marrom
-4,255,120,Marrom
+4,255,45,Vermelho Escuro
+4,255,60,Vermelho Escuro
+4,255,75,Vermelho Escuro
+4,255,90,Vermelho Escuro
+4,255,105,Vermelho Escuro
+4,255,120,Vermelho Escuro
 4,255,135,Vermelho Escuro
 4,255,150,Vermelho
 4,255,165,Vermelho
@@ -722,12 +722,12 @@ H,S,V,Cor
 8,60,0,Preto
 8,60,15,Preto
 8,60,30,Preto
-8,60,45,Marrom
-8,60,60,Marrom
-8,60,75,Marrom
-8,60,90,Marrom
-8,60,105,Marrom
-8,60,120,Marrom
+8,60,45,Vermelho Escuro
+8,60,60,Vermelho Escuro
+8,60,75,Vermelho Escuro
+8,60,90,Vermelho Escuro
+8,60,105,Vermelho Escuro
+8,60,120,Vermelho Escuro
 8,60,135,Vermelho Escuro
 8,60,150,Vermelho
 8,60,165,Vermelho
@@ -740,12 +740,12 @@ H,S,V,Cor
 8,75,0,Preto
 8,75,15,Preto
 8,75,30,Preto
-8,75,45,Marrom
-8,75,60,Marrom
-8,75,75,Marrom
-8,75,90,Marrom
-8,75,105,Marrom
-8,75,120,Marrom
+8,75,45,Vermelho Escuro
+8,75,60,Vermelho Escuro
+8,75,75,Vermelho Escuro
+8,75,90,Vermelho Escuro
+8,75,105,Vermelho Escuro
+8,75,120,Vermelho Escuro
 8,75,135,Vermelho Escuro
 8,75,150,Vermelho
 8,75,165,Vermelho
@@ -758,12 +758,12 @@ H,S,V,Cor
 8,90,0,Preto
 8,90,15,Preto
 8,90,30,Preto
-8,90,45,Marrom
-8,90,60,Marrom
-8,90,75,Marrom
-8,90,90,Marrom
-8,90,105,Marrom
-8,90,120,Marrom
+8,90,45,Vermelho Escuro
+8,90,60,Vermelho Escuro
+8,90,75,Vermelho Escuro
+8,90,90,Vermelho Escuro
+8,90,105,Vermelho Escuro
+8,90,120,Vermelho Escuro
 8,90,135,Vermelho Escuro
 8,90,150,Vermelho
 8,90,165,Vermelho
@@ -776,12 +776,12 @@ H,S,V,Cor
 8,105,0,Preto
 8,105,15,Preto
 8,105,30,Preto
-8,105,45,Marrom
-8,105,60,Marrom
-8,105,75,Marrom
-8,105,90,Marrom
-8,105,105,Marrom
-8,105,120,Marrom
+8,105,45,Vermelho Escuro
+8,105,60,Vermelho Escuro
+8,105,75,Vermelho Escuro
+8,105,90,Vermelho Escuro
+8,105,105,Vermelho Escuro
+8,105,120,Vermelho Escuro
 8,105,135,Vermelho Escuro
 8,105,150,Vermelho
 8,105,165,Vermelho
@@ -794,48 +794,48 @@ H,S,V,Cor
 8,120,0,Preto
 8,120,15,Preto
 8,120,30,Preto
-8,120,45,Marrom
-8,120,60,Marrom
-8,120,75,Marrom
-8,120,90,Marrom
-8,120,105,Marrom
-8,120,120,Marrom
+8,120,45,Vermelho Escuro
+8,120,60,Vermelho Escuro
+8,120,75,Vermelho Escuro
+8,120,90,Vermelho Escuro
+8,120,105,Vermelho Escuro
+8,120,120,Vermelho Escuro
 8,120,135,Vermelho Escuro
 8,120,150,Vermelho
 8,120,165,Vermelho
 8,120,180,Vermelho
-8,120,195,Rosa
-8,120,210,Rosa
-8,120,225,Rosa
-8,120,240,Rosa
-8,120,255,Rosa
+8,120,195,Vermelho
+8,120,210,Vermelho
+8,120,225,Vermelho
+8,120,240,Vermelho
+8,120,255,Vermelho
 8,135,0,Preto
 8,135,15,Preto
 8,135,30,Preto
-8,135,45,Marrom
-8,135,60,Marrom
-8,135,75,Marrom
-8,135,90,Marrom
-8,135,105,Marrom
-8,135,120,Marrom
+8,135,45,Vermelho Escuro
+8,135,60,Vermelho Escuro
+8,135,75,Vermelho Escuro
+8,135,90,Vermelho Escuro
+8,135,105,Vermelho Escuro
+8,135,120,Vermelho Escuro
 8,135,135,Vermelho Escuro
 8,135,150,Vermelho
 8,135,165,Vermelho
 8,135,180,Vermelho
-8,135,195,Rosa
-8,135,210,Rosa
-8,135,225,Rosa
-8,135,240,Rosa
-8,135,255,Rosa
+8,135,195,Vermelho
+8,135,210,Vermelho
+8,135,225,Vermelho
+8,135,240,Vermelho
+8,135,255,Vermelho
 8,150,0,Preto
 8,150,15,Preto
 8,150,30,Preto
-8,150,45,Marrom
-8,150,60,Marrom
-8,150,75,Marrom
-8,150,90,Marrom
-8,150,105,Marrom
-8,150,120,Marrom
+8,150,45,Vermelho Escuro
+8,150,60,Vermelho Escuro
+8,150,75,Vermelho Escuro
+8,150,90,Vermelho Escuro
+8,150,105,Vermelho Escuro
+8,150,120,Vermelho Escuro
 8,150,135,Vermelho Escuro
 8,150,150,Vermelho
 8,150,165,Vermelho
@@ -848,12 +848,12 @@ H,S,V,Cor
 8,165,0,Preto
 8,165,15,Preto
 8,165,30,Preto
-8,165,45,Marrom
-8,165,60,Marrom
-8,165,75,Marrom
-8,165,90,Marrom
-8,165,105,Marrom
-8,165,120,Marrom
+8,165,45,Vermelho Escuro
+8,165,60,Vermelho Escuro
+8,165,75,Vermelho Escuro
+8,165,90,Vermelho Escuro
+8,165,105,Vermelho Escuro
+8,165,120,Vermelho Escuro
 8,165,135,Vermelho Escuro
 8,165,150,Vermelho
 8,165,165,Vermelho
@@ -866,12 +866,12 @@ H,S,V,Cor
 8,180,0,Preto
 8,180,15,Preto
 8,180,30,Preto
-8,180,45,Marrom
-8,180,60,Marrom
-8,180,75,Marrom
-8,180,90,Marrom
-8,180,105,Marrom
-8,180,120,Marrom
+8,180,45,Vermelho Escuro
+8,180,60,Vermelho Escuro
+8,180,75,Vermelho Escuro
+8,180,90,Vermelho Escuro
+8,180,105,Vermelho Escuro
+8,180,120,Vermelho Escuro
 8,180,135,Vermelho Escuro
 8,180,150,Vermelho
 8,180,165,Vermelho
@@ -884,12 +884,12 @@ H,S,V,Cor
 8,195,0,Preto
 8,195,15,Preto
 8,195,30,Preto
-8,195,45,Marrom
-8,195,60,Marrom
-8,195,75,Marrom
-8,195,90,Marrom
-8,195,105,Marrom
-8,195,120,Marrom
+8,195,45,Vermelho Escuro
+8,195,60,Vermelho Escuro
+8,195,75,Vermelho Escuro
+8,195,90,Vermelho Escuro
+8,195,105,Vermelho Escuro
+8,195,120,Vermelho Escuro
 8,195,135,Vermelho Escuro
 8,195,150,Vermelho
 8,195,165,Vermelho
@@ -902,12 +902,12 @@ H,S,V,Cor
 8,210,0,Preto
 8,210,15,Preto
 8,210,30,Preto
-8,210,45,Marrom
-8,210,60,Marrom
-8,210,75,Marrom
-8,210,90,Marrom
-8,210,105,Marrom
-8,210,120,Marrom
+8,210,45,Vermelho Escuro
+8,210,60,Vermelho Escuro
+8,210,75,Vermelho Escuro
+8,210,90,Vermelho Escuro
+8,210,105,Vermelho Escuro
+8,210,120,Vermelho Escuro
 8,210,135,Vermelho Escuro
 8,210,150,Vermelho
 8,210,165,Vermelho
@@ -920,12 +920,12 @@ H,S,V,Cor
 8,225,0,Preto
 8,225,15,Preto
 8,225,30,Preto
-8,225,45,Marrom
-8,225,60,Marrom
-8,225,75,Marrom
-8,225,90,Marrom
-8,225,105,Marrom
-8,225,120,Marrom
+8,225,45,Vermelho Escuro
+8,225,60,Vermelho Escuro
+8,225,75,Vermelho Escuro
+8,225,90,Vermelho Escuro
+8,225,105,Vermelho Escuro
+8,225,120,Vermelho Escuro
 8,225,135,Vermelho Escuro
 8,225,150,Vermelho
 8,225,165,Vermelho
@@ -938,12 +938,12 @@ H,S,V,Cor
 8,240,0,Preto
 8,240,15,Preto
 8,240,30,Preto
-8,240,45,Marrom
-8,240,60,Marrom
-8,240,75,Marrom
-8,240,90,Marrom
-8,240,105,Marrom
-8,240,120,Marrom
+8,240,45,Vermelho Escuro
+8,240,60,Vermelho Escuro
+8,240,75,Vermelho Escuro
+8,240,90,Vermelho Escuro
+8,240,105,Vermelho Escuro
+8,240,120,Vermelho Escuro
 8,240,135,Vermelho Escuro
 8,240,150,Vermelho
 8,240,165,Vermelho
@@ -956,12 +956,12 @@ H,S,V,Cor
 8,255,0,Preto
 8,255,15,Preto
 8,255,30,Preto
-8,255,45,Marrom
-8,255,60,Marrom
-8,255,75,Marrom
-8,255,90,Marrom
-8,255,105,Marrom
-8,255,120,Marrom
+8,255,45,Vermelho Escuro
+8,255,60,Vermelho Escuro
+8,255,75,Vermelho Escuro
+8,255,90,Vermelho Escuro
+8,255,105,Vermelho Escuro
+8,255,120,Vermelho Escuro
 8,255,135,Vermelho Escuro
 8,255,150,Vermelho
 8,255,165,Vermelho
@@ -1039,262 +1039,262 @@ H,S,V,Cor
 12,45,165,Cinza
 12,45,180,Cinza
 12,45,195,Cinza
-12,45,210,Laranja
-12,45,225,Laranja
-12,45,240,Laranja
-12,45,255,Laranja
+12,45,210,Rosa
+12,45,225,Rosa
+12,45,240,Rosa
+12,45,255,Rosa
 12,60,0,Preto
 12,60,15,Preto
 12,60,30,Preto
-12,60,45,Marrom
-12,60,60,Marrom
-12,60,75,Marrom
-12,60,90,Marrom
-12,60,105,Marrom
-12,60,120,Marrom
-12,60,135,Laranja
-12,60,150,Laranja
-12,60,165,Laranja
-12,60,180,Laranja
-12,60,195,Laranja
-12,60,210,Laranja
-12,60,225,Laranja
-12,60,240,Laranja
-12,60,255,Laranja
+12,60,45,Vermelho Escuro
+12,60,60,Vermelho Escuro
+12,60,75,Vermelho Escuro
+12,60,90,Vermelho Escuro
+12,60,105,Vermelho Escuro
+12,60,120,Vermelho Escuro
+12,60,135,Vermelho Escuro
+12,60,150,Vermelho
+12,60,165,Vermelho
+12,60,180,Vermelho
+12,60,195,Rosa
+12,60,210,Rosa
+12,60,225,Rosa
+12,60,240,Rosa
+12,60,255,Rosa
 12,75,0,Preto
 12,75,15,Preto
 12,75,30,Preto
-12,75,45,Marrom
-12,75,60,Marrom
-12,75,75,Marrom
-12,75,90,Marrom
-12,75,105,Marrom
-12,75,120,Marrom
-12,75,135,Laranja
-12,75,150,Laranja
-12,75,165,Laranja
-12,75,180,Laranja
-12,75,195,Laranja
-12,75,210,Laranja
-12,75,225,Laranja
-12,75,240,Laranja
-12,75,255,Laranja
+12,75,45,Vermelho Escuro
+12,75,60,Vermelho Escuro
+12,75,75,Vermelho Escuro
+12,75,90,Vermelho Escuro
+12,75,105,Vermelho Escuro
+12,75,120,Vermelho Escuro
+12,75,135,Vermelho Escuro
+12,75,150,Vermelho
+12,75,165,Vermelho
+12,75,180,Vermelho
+12,75,195,Rosa
+12,75,210,Rosa
+12,75,225,Rosa
+12,75,240,Rosa
+12,75,255,Rosa
 12,90,0,Preto
 12,90,15,Preto
 12,90,30,Preto
-12,90,45,Marrom
-12,90,60,Marrom
-12,90,75,Marrom
-12,90,90,Marrom
-12,90,105,Marrom
-12,90,120,Marrom
-12,90,135,Laranja
-12,90,150,Laranja
-12,90,165,Laranja
-12,90,180,Laranja
-12,90,195,Laranja
-12,90,210,Laranja
-12,90,225,Laranja
-12,90,240,Laranja
-12,90,255,Laranja
+12,90,45,Vermelho Escuro
+12,90,60,Vermelho Escuro
+12,90,75,Vermelho Escuro
+12,90,90,Vermelho Escuro
+12,90,105,Vermelho Escuro
+12,90,120,Vermelho Escuro
+12,90,135,Vermelho Escuro
+12,90,150,Vermelho
+12,90,165,Vermelho
+12,90,180,Vermelho
+12,90,195,Rosa
+12,90,210,Rosa
+12,90,225,Rosa
+12,90,240,Rosa
+12,90,255,Rosa
 12,105,0,Preto
 12,105,15,Preto
 12,105,30,Preto
-12,105,45,Marrom
-12,105,60,Marrom
-12,105,75,Marrom
-12,105,90,Marrom
-12,105,105,Marrom
-12,105,120,Marrom
-12,105,135,Laranja
-12,105,150,Laranja
-12,105,165,Laranja
-12,105,180,Laranja
-12,105,195,Laranja
-12,105,210,Laranja
-12,105,225,Laranja
-12,105,240,Laranja
-12,105,255,Laranja
+12,105,45,Vermelho Escuro
+12,105,60,Vermelho Escuro
+12,105,75,Vermelho Escuro
+12,105,90,Vermelho Escuro
+12,105,105,Vermelho Escuro
+12,105,120,Vermelho Escuro
+12,105,135,Vermelho Escuro
+12,105,150,Vermelho
+12,105,165,Vermelho
+12,105,180,Vermelho
+12,105,195,Rosa
+12,105,210,Rosa
+12,105,225,Rosa
+12,105,240,Rosa
+12,105,255,Rosa
 12,120,0,Preto
 12,120,15,Preto
 12,120,30,Preto
-12,120,45,Marrom
-12,120,60,Marrom
-12,120,75,Marrom
-12,120,90,Marrom
-12,120,105,Marrom
-12,120,120,Marrom
-12,120,135,Laranja
-12,120,150,Laranja
-12,120,165,Laranja
-12,120,180,Laranja
-12,120,195,Laranja
-12,120,210,Laranja
-12,120,225,Laranja
-12,120,240,Laranja
-12,120,255,Laranja
+12,120,45,Vermelho Escuro
+12,120,60,Vermelho Escuro
+12,120,75,Vermelho Escuro
+12,120,90,Vermelho Escuro
+12,120,105,Vermelho Escuro
+12,120,120,Vermelho Escuro
+12,120,135,Vermelho Escuro
+12,120,150,Vermelho
+12,120,165,Vermelho
+12,120,180,Vermelho
+12,120,195,Vermelho
+12,120,210,Vermelho
+12,120,225,Vermelho
+12,120,240,Vermelho
+12,120,255,Vermelho
 12,135,0,Preto
 12,135,15,Preto
 12,135,30,Preto
-12,135,45,Marrom
-12,135,60,Marrom
-12,135,75,Marrom
-12,135,90,Marrom
-12,135,105,Marrom
-12,135,120,Marrom
-12,135,135,Laranja
-12,135,150,Laranja
-12,135,165,Laranja
-12,135,180,Laranja
-12,135,195,Laranja
-12,135,210,Laranja
-12,135,225,Laranja
-12,135,240,Laranja
-12,135,255,Laranja
+12,135,45,Vermelho Escuro
+12,135,60,Vermelho Escuro
+12,135,75,Vermelho Escuro
+12,135,90,Vermelho Escuro
+12,135,105,Vermelho Escuro
+12,135,120,Vermelho Escuro
+12,135,135,Vermelho Escuro
+12,135,150,Vermelho
+12,135,165,Vermelho
+12,135,180,Vermelho
+12,135,195,Vermelho
+12,135,210,Vermelho
+12,135,225,Vermelho
+12,135,240,Vermelho
+12,135,255,Vermelho
 12,150,0,Preto
 12,150,15,Preto
 12,150,30,Preto
-12,150,45,Marrom
-12,150,60,Marrom
-12,150,75,Marrom
-12,150,90,Marrom
-12,150,105,Marrom
-12,150,120,Marrom
-12,150,135,Laranja
-12,150,150,Laranja
-12,150,165,Laranja
-12,150,180,Laranja
-12,150,195,Laranja
-12,150,210,Laranja
-12,150,225,Laranja
-12,150,240,Laranja
-12,150,255,Laranja
+12,150,45,Vermelho Escuro
+12,150,60,Vermelho Escuro
+12,150,75,Vermelho Escuro
+12,150,90,Vermelho Escuro
+12,150,105,Vermelho Escuro
+12,150,120,Vermelho Escuro
+12,150,135,Vermelho Escuro
+12,150,150,Vermelho
+12,150,165,Vermelho
+12,150,180,Vermelho
+12,150,195,Vermelho
+12,150,210,Vermelho
+12,150,225,Vermelho
+12,150,240,Vermelho
+12,150,255,Vermelho
 12,165,0,Preto
 12,165,15,Preto
 12,165,30,Preto
-12,165,45,Marrom
-12,165,60,Marrom
-12,165,75,Marrom
-12,165,90,Marrom
-12,165,105,Marrom
-12,165,120,Marrom
-12,165,135,Laranja
-12,165,150,Laranja
-12,165,165,Laranja
-12,165,180,Laranja
-12,165,195,Laranja
-12,165,210,Laranja
-12,165,225,Laranja
-12,165,240,Laranja
-12,165,255,Laranja
+12,165,45,Vermelho Escuro
+12,165,60,Vermelho Escuro
+12,165,75,Vermelho Escuro
+12,165,90,Vermelho Escuro
+12,165,105,Vermelho Escuro
+12,165,120,Vermelho Escuro
+12,165,135,Vermelho Escuro
+12,165,150,Vermelho
+12,165,165,Vermelho
+12,165,180,Vermelho
+12,165,195,Vermelho
+12,165,210,Vermelho
+12,165,225,Vermelho
+12,165,240,Vermelho
+12,165,255,Vermelho
 12,180,0,Preto
 12,180,15,Preto
 12,180,30,Preto
-12,180,45,Marrom
-12,180,60,Marrom
-12,180,75,Marrom
-12,180,90,Marrom
-12,180,105,Marrom
-12,180,120,Marrom
-12,180,135,Laranja
-12,180,150,Laranja
-12,180,165,Laranja
-12,180,180,Laranja
-12,180,195,Laranja
-12,180,210,Laranja
-12,180,225,Laranja
-12,180,240,Laranja
-12,180,255,Laranja
+12,180,45,Vermelho Escuro
+12,180,60,Vermelho Escuro
+12,180,75,Vermelho Escuro
+12,180,90,Vermelho Escuro
+12,180,105,Vermelho Escuro
+12,180,120,Vermelho Escuro
+12,180,135,Vermelho Escuro
+12,180,150,Vermelho
+12,180,165,Vermelho
+12,180,180,Vermelho
+12,180,195,Vermelho
+12,180,210,Vermelho
+12,180,225,Vermelho
+12,180,240,Vermelho
+12,180,255,Vermelho
 12,195,0,Preto
 12,195,15,Preto
 12,195,30,Preto
-12,195,45,Marrom
-12,195,60,Marrom
-12,195,75,Marrom
-12,195,90,Marrom
-12,195,105,Marrom
-12,195,120,Marrom
-12,195,135,Laranja
-12,195,150,Laranja
-12,195,165,Laranja
-12,195,180,Laranja
-12,195,195,Laranja
-12,195,210,Laranja
-12,195,225,Laranja
-12,195,240,Laranja
-12,195,255,Laranja
+12,195,45,Vermelho Escuro
+12,195,60,Vermelho Escuro
+12,195,75,Vermelho Escuro
+12,195,90,Vermelho Escuro
+12,195,105,Vermelho Escuro
+12,195,120,Vermelho Escuro
+12,195,135,Vermelho Escuro
+12,195,150,Vermelho
+12,195,165,Vermelho
+12,195,180,Vermelho
+12,195,195,Vermelho
+12,195,210,Vermelho
+12,195,225,Vermelho
+12,195,240,Vermelho
+12,195,255,Vermelho
 12,210,0,Preto
 12,210,15,Preto
 12,210,30,Preto
-12,210,45,Marrom
-12,210,60,Marrom
-12,210,75,Marrom
-12,210,90,Marrom
-12,210,105,Marrom
-12,210,120,Marrom
-12,210,135,Laranja
-12,210,150,Laranja
-12,210,165,Laranja
-12,210,180,Laranja
-12,210,195,Laranja
-12,210,210,Laranja
-12,210,225,Laranja
-12,210,240,Laranja
-12,210,255,Laranja
+12,210,45,Vermelho Escuro
+12,210,60,Vermelho Escuro
+12,210,75,Vermelho Escuro
+12,210,90,Vermelho Escuro
+12,210,105,Vermelho Escuro
+12,210,120,Vermelho Escuro
+12,210,135,Vermelho Escuro
+12,210,150,Vermelho
+12,210,165,Vermelho
+12,210,180,Vermelho
+12,210,195,Vermelho
+12,210,210,Vermelho
+12,210,225,Vermelho
+12,210,240,Vermelho
+12,210,255,Vermelho
 12,225,0,Preto
 12,225,15,Preto
 12,225,30,Preto
-12,225,45,Marrom
-12,225,60,Marrom
-12,225,75,Marrom
-12,225,90,Marrom
-12,225,105,Marrom
-12,225,120,Marrom
-12,225,135,Laranja
-12,225,150,Laranja
-12,225,165,Laranja
-12,225,180,Laranja
-12,225,195,Laranja
-12,225,210,Laranja
-12,225,225,Laranja
-12,225,240,Laranja
-12,225,255,Laranja
+12,225,45,Vermelho Escuro
+12,225,60,Vermelho Escuro
+12,225,75,Vermelho Escuro
+12,225,90,Vermelho Escuro
+12,225,105,Vermelho Escuro
+12,225,120,Vermelho Escuro
+12,225,135,Vermelho Escuro
+12,225,150,Vermelho
+12,225,165,Vermelho
+12,225,180,Vermelho
+12,225,195,Vermelho
+12,225,210,Vermelho
+12,225,225,Vermelho
+12,225,240,Vermelho
+12,225,255,Vermelho
 12,240,0,Preto
 12,240,15,Preto
 12,240,30,Preto
-12,240,45,Marrom
-12,240,60,Marrom
-12,240,75,Marrom
-12,240,90,Marrom
-12,240,105,Marrom
-12,240,120,Marrom
-12,240,135,Laranja
-12,240,150,Laranja
-12,240,165,Laranja
-12,240,180,Laranja
-12,240,195,Laranja
-12,240,210,Laranja
-12,240,225,Laranja
-12,240,240,Laranja
-12,240,255,Laranja
+12,240,45,Vermelho Escuro
+12,240,60,Vermelho Escuro
+12,240,75,Vermelho Escuro
+12,240,90,Vermelho Escuro
+12,240,105,Vermelho Escuro
+12,240,120,Vermelho Escuro
+12,240,135,Vermelho Escuro
+12,240,150,Vermelho
+12,240,165,Vermelho
+12,240,180,Vermelho
+12,240,195,Vermelho
+12,240,210,Vermelho
+12,240,225,Vermelho
+12,240,240,Vermelho
+12,240,255,Vermelho
 12,255,0,Preto
 12,255,15,Preto
 12,255,30,Preto
-12,255,45,Marrom
-12,255,60,Marrom
-12,255,75,Marrom
-12,255,90,Marrom
-12,255,105,Marrom
-12,255,120,Marrom
-12,255,135,Laranja
-12,255,150,Laranja
-12,255,165,Laranja
-12,255,180,Laranja
-12,255,195,Laranja
-12,255,210,Laranja
-12,255,225,Laranja
-12,255,240,Laranja
-12,255,255,Laranja
+12,255,45,Vermelho Escuro
+12,255,60,Vermelho Escuro
+12,255,75,Vermelho Escuro
+12,255,90,Vermelho Escuro
+12,255,105,Vermelho Escuro
+12,255,120,Vermelho Escuro
+12,255,135,Vermelho Escuro
+12,255,150,Vermelho
+12,255,165,Vermelho
+12,255,180,Vermelho
+12,255,195,Vermelho
+12,255,210,Vermelho
+12,255,225,Vermelho
+12,255,240,Vermelho
+12,255,255,Vermelho
 16,0,0,Preto
 16,0,15,Preto
 16,0,30,Preto
@@ -1375,7 +1375,7 @@ H,S,V,Cor
 16,60,75,Marrom
 16,60,90,Marrom
 16,60,105,Marrom
-16,60,120,Marrom
+16,60,120,Laranja
 16,60,135,Laranja
 16,60,150,Laranja
 16,60,165,Laranja
@@ -1393,7 +1393,7 @@ H,S,V,Cor
 16,75,75,Marrom
 16,75,90,Marrom
 16,75,105,Marrom
-16,75,120,Marrom
+16,75,120,Laranja
 16,75,135,Laranja
 16,75,150,Laranja
 16,75,165,Laranja
@@ -1411,7 +1411,7 @@ H,S,V,Cor
 16,90,75,Marrom
 16,90,90,Marrom
 16,90,105,Marrom
-16,90,120,Marrom
+16,90,120,Laranja
 16,90,135,Laranja
 16,90,150,Laranja
 16,90,165,Laranja
@@ -1429,7 +1429,7 @@ H,S,V,Cor
 16,105,75,Marrom
 16,105,90,Marrom
 16,105,105,Marrom
-16,105,120,Marrom
+16,105,120,Laranja
 16,105,135,Laranja
 16,105,150,Laranja
 16,105,165,Laranja
@@ -1447,7 +1447,7 @@ H,S,V,Cor
 16,120,75,Marrom
 16,120,90,Marrom
 16,120,105,Marrom
-16,120,120,Marrom
+16,120,120,Laranja
 16,120,135,Laranja
 16,120,150,Laranja
 16,120,165,Laranja
@@ -1465,7 +1465,7 @@ H,S,V,Cor
 16,135,75,Marrom
 16,135,90,Marrom
 16,135,105,Marrom
-16,135,120,Marrom
+16,135,120,Laranja
 16,135,135,Laranja
 16,135,150,Laranja
 16,135,165,Laranja
@@ -1483,7 +1483,7 @@ H,S,V,Cor
 16,150,75,Marrom
 16,150,90,Marrom
 16,150,105,Marrom
-16,150,120,Marrom
+16,150,120,Laranja
 16,150,135,Laranja
 16,150,150,Laranja
 16,150,165,Laranja
@@ -1501,7 +1501,7 @@ H,S,V,Cor
 16,165,75,Marrom
 16,165,90,Marrom
 16,165,105,Marrom
-16,165,120,Marrom
+16,165,120,Laranja
 16,165,135,Laranja
 16,165,150,Laranja
 16,165,165,Laranja
@@ -1519,7 +1519,7 @@ H,S,V,Cor
 16,180,75,Marrom
 16,180,90,Marrom
 16,180,105,Marrom
-16,180,120,Marrom
+16,180,120,Laranja
 16,180,135,Laranja
 16,180,150,Laranja
 16,180,165,Laranja
@@ -1537,7 +1537,7 @@ H,S,V,Cor
 16,195,75,Marrom
 16,195,90,Marrom
 16,195,105,Marrom
-16,195,120,Marrom
+16,195,120,Laranja
 16,195,135,Laranja
 16,195,150,Laranja
 16,195,165,Laranja
@@ -1555,7 +1555,7 @@ H,S,V,Cor
 16,210,75,Marrom
 16,210,90,Marrom
 16,210,105,Marrom
-16,210,120,Marrom
+16,210,120,Laranja
 16,210,135,Laranja
 16,210,150,Laranja
 16,210,165,Laranja
@@ -1573,7 +1573,7 @@ H,S,V,Cor
 16,225,75,Marrom
 16,225,90,Marrom
 16,225,105,Marrom
-16,225,120,Marrom
+16,225,120,Laranja
 16,225,135,Laranja
 16,225,150,Laranja
 16,225,165,Laranja
@@ -1591,7 +1591,7 @@ H,S,V,Cor
 16,240,75,Marrom
 16,240,90,Marrom
 16,240,105,Marrom
-16,240,120,Marrom
+16,240,120,Laranja
 16,240,135,Laranja
 16,240,150,Laranja
 16,240,165,Laranja
@@ -1609,7 +1609,7 @@ H,S,V,Cor
 16,255,75,Marrom
 16,255,90,Marrom
 16,255,105,Marrom
-16,255,120,Marrom
+16,255,120,Laranja
 16,255,135,Laranja
 16,255,150,Laranja
 16,255,165,Laranja
@@ -1699,7 +1699,7 @@ H,S,V,Cor
 20,60,75,Marrom
 20,60,90,Marrom
 20,60,105,Marrom
-20,60,120,Marrom
+20,60,120,Laranja
 20,60,135,Laranja
 20,60,150,Laranja
 20,60,165,Laranja
@@ -1717,7 +1717,7 @@ H,S,V,Cor
 20,75,75,Marrom
 20,75,90,Marrom
 20,75,105,Marrom
-20,75,120,Marrom
+20,75,120,Laranja
 20,75,135,Laranja
 20,75,150,Laranja
 20,75,165,Laranja
@@ -1735,7 +1735,7 @@ H,S,V,Cor
 20,90,75,Marrom
 20,90,90,Marrom
 20,90,105,Marrom
-20,90,120,Marrom
+20,90,120,Laranja
 20,90,135,Laranja
 20,90,150,Laranja
 20,90,165,Laranja
@@ -1753,7 +1753,7 @@ H,S,V,Cor
 20,105,75,Marrom
 20,105,90,Marrom
 20,105,105,Marrom
-20,105,120,Marrom
+20,105,120,Laranja
 20,105,135,Laranja
 20,105,150,Laranja
 20,105,165,Laranja
@@ -1771,7 +1771,7 @@ H,S,V,Cor
 20,120,75,Marrom
 20,120,90,Marrom
 20,120,105,Marrom
-20,120,120,Marrom
+20,120,120,Laranja
 20,120,135,Laranja
 20,120,150,Laranja
 20,120,165,Laranja
@@ -1789,7 +1789,7 @@ H,S,V,Cor
 20,135,75,Marrom
 20,135,90,Marrom
 20,135,105,Marrom
-20,135,120,Marrom
+20,135,120,Laranja
 20,135,135,Laranja
 20,135,150,Laranja
 20,135,165,Laranja
@@ -1807,7 +1807,7 @@ H,S,V,Cor
 20,150,75,Marrom
 20,150,90,Marrom
 20,150,105,Marrom
-20,150,120,Marrom
+20,150,120,Laranja
 20,150,135,Laranja
 20,150,150,Laranja
 20,150,165,Laranja
@@ -1825,7 +1825,7 @@ H,S,V,Cor
 20,165,75,Marrom
 20,165,90,Marrom
 20,165,105,Marrom
-20,165,120,Marrom
+20,165,120,Laranja
 20,165,135,Laranja
 20,165,150,Laranja
 20,165,165,Laranja
@@ -1843,7 +1843,7 @@ H,S,V,Cor
 20,180,75,Marrom
 20,180,90,Marrom
 20,180,105,Marrom
-20,180,120,Marrom
+20,180,120,Laranja
 20,180,135,Laranja
 20,180,150,Laranja
 20,180,165,Laranja
@@ -1861,7 +1861,7 @@ H,S,V,Cor
 20,195,75,Marrom
 20,195,90,Marrom
 20,195,105,Marrom
-20,195,120,Marrom
+20,195,120,Laranja
 20,195,135,Laranja
 20,195,150,Laranja
 20,195,165,Laranja
@@ -1879,7 +1879,7 @@ H,S,V,Cor
 20,210,75,Marrom
 20,210,90,Marrom
 20,210,105,Marrom
-20,210,120,Marrom
+20,210,120,Laranja
 20,210,135,Laranja
 20,210,150,Laranja
 20,210,165,Laranja
@@ -1897,7 +1897,7 @@ H,S,V,Cor
 20,225,75,Marrom
 20,225,90,Marrom
 20,225,105,Marrom
-20,225,120,Marrom
+20,225,120,Laranja
 20,225,135,Laranja
 20,225,150,Laranja
 20,225,165,Laranja
@@ -1915,7 +1915,7 @@ H,S,V,Cor
 20,240,75,Marrom
 20,240,90,Marrom
 20,240,105,Marrom
-20,240,120,Marrom
+20,240,120,Laranja
 20,240,135,Laranja
 20,240,150,Laranja
 20,240,165,Laranja
@@ -1933,7 +1933,7 @@ H,S,V,Cor
 20,255,75,Marrom
 20,255,90,Marrom
 20,255,105,Marrom
-20,255,120,Marrom
+20,255,120,Laranja
 20,255,135,Laranja
 20,255,150,Laranja
 20,255,165,Laranja
@@ -2022,7 +2022,7 @@ H,S,V,Cor
 24,60,60,Marrom
 24,60,75,Marrom
 24,60,90,Marrom
-24,60,105,Marrom
+24,60,105,Amarelo
 24,60,120,Amarelo
 24,60,135,Amarelo
 24,60,150,Amarelo
@@ -2040,7 +2040,7 @@ H,S,V,Cor
 24,75,60,Marrom
 24,75,75,Marrom
 24,75,90,Marrom
-24,75,105,Marrom
+24,75,105,Amarelo
 24,75,120,Amarelo
 24,75,135,Amarelo
 24,75,150,Amarelo
@@ -2058,7 +2058,7 @@ H,S,V,Cor
 24,90,60,Marrom
 24,90,75,Marrom
 24,90,90,Marrom
-24,90,105,Marrom
+24,90,105,Amarelo
 24,90,120,Amarelo
 24,90,135,Amarelo
 24,90,150,Amarelo
@@ -2076,7 +2076,7 @@ H,S,V,Cor
 24,105,60,Marrom
 24,105,75,Marrom
 24,105,90,Marrom
-24,105,105,Marrom
+24,105,105,Amarelo
 24,105,120,Amarelo
 24,105,135,Amarelo
 24,105,150,Amarelo
@@ -2094,7 +2094,7 @@ H,S,V,Cor
 24,120,60,Marrom
 24,120,75,Marrom
 24,120,90,Marrom
-24,120,105,Marrom
+24,120,105,Amarelo
 24,120,120,Amarelo
 24,120,135,Amarelo
 24,120,150,Amarelo
@@ -2112,7 +2112,7 @@ H,S,V,Cor
 24,135,60,Marrom
 24,135,75,Marrom
 24,135,90,Marrom
-24,135,105,Marrom
+24,135,105,Amarelo
 24,135,120,Amarelo
 24,135,135,Amarelo
 24,135,150,Amarelo
@@ -2130,7 +2130,7 @@ H,S,V,Cor
 24,150,60,Marrom
 24,150,75,Marrom
 24,150,90,Marrom
-24,150,105,Marrom
+24,150,105,Amarelo
 24,150,120,Amarelo
 24,150,135,Amarelo
 24,150,150,Amarelo
@@ -2148,7 +2148,7 @@ H,S,V,Cor
 24,165,60,Marrom
 24,165,75,Marrom
 24,165,90,Marrom
-24,165,105,Marrom
+24,165,105,Amarelo
 24,165,120,Amarelo
 24,165,135,Amarelo
 24,165,150,Amarelo
@@ -2166,7 +2166,7 @@ H,S,V,Cor
 24,180,60,Marrom
 24,180,75,Marrom
 24,180,90,Marrom
-24,180,105,Marrom
+24,180,105,Amarelo
 24,180,120,Amarelo
 24,180,135,Amarelo
 24,180,150,Amarelo
@@ -2184,7 +2184,7 @@ H,S,V,Cor
 24,195,60,Marrom
 24,195,75,Marrom
 24,195,90,Marrom
-24,195,105,Marrom
+24,195,105,Amarelo
 24,195,120,Amarelo
 24,195,135,Amarelo
 24,195,150,Amarelo
@@ -2202,7 +2202,7 @@ H,S,V,Cor
 24,210,60,Marrom
 24,210,75,Marrom
 24,210,90,Marrom
-24,210,105,Marrom
+24,210,105,Amarelo
 24,210,120,Amarelo
 24,210,135,Amarelo
 24,210,150,Amarelo
@@ -2220,7 +2220,7 @@ H,S,V,Cor
 24,225,60,Marrom
 24,225,75,Marrom
 24,225,90,Marrom
-24,225,105,Marrom
+24,225,105,Amarelo
 24,225,120,Amarelo
 24,225,135,Amarelo
 24,225,150,Amarelo
@@ -2238,7 +2238,7 @@ H,S,V,Cor
 24,240,60,Marrom
 24,240,75,Marrom
 24,240,90,Marrom
-24,240,105,Marrom
+24,240,105,Amarelo
 24,240,120,Amarelo
 24,240,135,Amarelo
 24,240,150,Amarelo
@@ -2256,7 +2256,7 @@ H,S,V,Cor
 24,255,60,Marrom
 24,255,75,Marrom
 24,255,90,Marrom
-24,255,105,Marrom
+24,255,105,Amarelo
 24,255,120,Amarelo
 24,255,135,Amarelo
 24,255,150,Amarelo
@@ -2346,7 +2346,7 @@ H,S,V,Cor
 28,60,60,Marrom
 28,60,75,Marrom
 28,60,90,Marrom
-28,60,105,Marrom
+28,60,105,Amarelo
 28,60,120,Amarelo
 28,60,135,Amarelo
 28,60,150,Amarelo
@@ -2364,7 +2364,7 @@ H,S,V,Cor
 28,75,60,Marrom
 28,75,75,Marrom
 28,75,90,Marrom
-28,75,105,Marrom
+28,75,105,Amarelo
 28,75,120,Amarelo
 28,75,135,Amarelo
 28,75,150,Amarelo
@@ -2382,7 +2382,7 @@ H,S,V,Cor
 28,90,60,Marrom
 28,90,75,Marrom
 28,90,90,Marrom
-28,90,105,Marrom
+28,90,105,Amarelo
 28,90,120,Amarelo
 28,90,135,Amarelo
 28,90,150,Amarelo
@@ -2400,7 +2400,7 @@ H,S,V,Cor
 28,105,60,Marrom
 28,105,75,Marrom
 28,105,90,Marrom
-28,105,105,Marrom
+28,105,105,Amarelo
 28,105,120,Amarelo
 28,105,135,Amarelo
 28,105,150,Amarelo
@@ -2418,7 +2418,7 @@ H,S,V,Cor
 28,120,60,Marrom
 28,120,75,Marrom
 28,120,90,Marrom
-28,120,105,Marrom
+28,120,105,Amarelo
 28,120,120,Amarelo
 28,120,135,Amarelo
 28,120,150,Amarelo
@@ -2436,7 +2436,7 @@ H,S,V,Cor
 28,135,60,Marrom
 28,135,75,Marrom
 28,135,90,Marrom
-28,135,105,Marrom
+28,135,105,Amarelo
 28,135,120,Amarelo
 28,135,135,Amarelo
 28,135,150,Amarelo
@@ -2454,7 +2454,7 @@ H,S,V,Cor
 28,150,60,Marrom
 28,150,75,Marrom
 28,150,90,Marrom
-28,150,105,Marrom
+28,150,105,Amarelo
 28,150,120,Amarelo
 28,150,135,Amarelo
 28,150,150,Amarelo
@@ -2472,7 +2472,7 @@ H,S,V,Cor
 28,165,60,Marrom
 28,165,75,Marrom
 28,165,90,Marrom
-28,165,105,Marrom
+28,165,105,Amarelo
 28,165,120,Amarelo
 28,165,135,Amarelo
 28,165,150,Amarelo
@@ -2490,7 +2490,7 @@ H,S,V,Cor
 28,180,60,Marrom
 28,180,75,Marrom
 28,180,90,Marrom
-28,180,105,Marrom
+28,180,105,Amarelo
 28,180,120,Amarelo
 28,180,135,Amarelo
 28,180,150,Amarelo
@@ -2508,7 +2508,7 @@ H,S,V,Cor
 28,195,60,Marrom
 28,195,75,Marrom
 28,195,90,Marrom
-28,195,105,Marrom
+28,195,105,Amarelo
 28,195,120,Amarelo
 28,195,135,Amarelo
 28,195,150,Amarelo
@@ -2526,7 +2526,7 @@ H,S,V,Cor
 28,210,60,Marrom
 28,210,75,Marrom
 28,210,90,Marrom
-28,210,105,Marrom
+28,210,105,Amarelo
 28,210,120,Amarelo
 28,210,135,Amarelo
 28,210,150,Amarelo
@@ -2544,7 +2544,7 @@ H,S,V,Cor
 28,225,60,Marrom
 28,225,75,Marrom
 28,225,90,Marrom
-28,225,105,Marrom
+28,225,105,Amarelo
 28,225,120,Amarelo
 28,225,135,Amarelo
 28,225,150,Amarelo
@@ -2562,7 +2562,7 @@ H,S,V,Cor
 28,240,60,Marrom
 28,240,75,Marrom
 28,240,90,Marrom
-28,240,105,Marrom
+28,240,105,Amarelo
 28,240,120,Amarelo
 28,240,135,Amarelo
 28,240,150,Amarelo
@@ -2580,7 +2580,7 @@ H,S,V,Cor
 28,255,60,Marrom
 28,255,75,Marrom
 28,255,90,Marrom
-28,255,105,Marrom
+28,255,105,Amarelo
 28,255,120,Amarelo
 28,255,135,Amarelo
 28,255,150,Amarelo
@@ -2670,7 +2670,7 @@ H,S,V,Cor
 32,60,60,Marrom
 32,60,75,Marrom
 32,60,90,Marrom
-32,60,105,Marrom
+32,60,105,Amarelo
 32,60,120,Amarelo
 32,60,135,Amarelo
 32,60,150,Amarelo
@@ -2688,7 +2688,7 @@ H,S,V,Cor
 32,75,60,Marrom
 32,75,75,Marrom
 32,75,90,Marrom
-32,75,105,Marrom
+32,75,105,Amarelo
 32,75,120,Amarelo
 32,75,135,Amarelo
 32,75,150,Amarelo
@@ -2706,7 +2706,7 @@ H,S,V,Cor
 32,90,60,Marrom
 32,90,75,Marrom
 32,90,90,Marrom
-32,90,105,Marrom
+32,90,105,Amarelo
 32,90,120,Amarelo
 32,90,135,Amarelo
 32,90,150,Amarelo
@@ -2724,7 +2724,7 @@ H,S,V,Cor
 32,105,60,Marrom
 32,105,75,Marrom
 32,105,90,Marrom
-32,105,105,Marrom
+32,105,105,Amarelo
 32,105,120,Amarelo
 32,105,135,Amarelo
 32,105,150,Amarelo
@@ -2742,7 +2742,7 @@ H,S,V,Cor
 32,120,60,Marrom
 32,120,75,Marrom
 32,120,90,Marrom
-32,120,105,Marrom
+32,120,105,Amarelo
 32,120,120,Amarelo
 32,120,135,Amarelo
 32,120,150,Amarelo
@@ -2760,7 +2760,7 @@ H,S,V,Cor
 32,135,60,Marrom
 32,135,75,Marrom
 32,135,90,Marrom
-32,135,105,Marrom
+32,135,105,Amarelo
 32,135,120,Amarelo
 32,135,135,Amarelo
 32,135,150,Amarelo
@@ -2778,7 +2778,7 @@ H,S,V,Cor
 32,150,60,Marrom
 32,150,75,Marrom
 32,150,90,Marrom
-32,150,105,Marrom
+32,150,105,Amarelo
 32,150,120,Amarelo
 32,150,135,Amarelo
 32,150,150,Amarelo
@@ -2796,7 +2796,7 @@ H,S,V,Cor
 32,165,60,Marrom
 32,165,75,Marrom
 32,165,90,Marrom
-32,165,105,Marrom
+32,165,105,Amarelo
 32,165,120,Amarelo
 32,165,135,Amarelo
 32,165,150,Amarelo
@@ -2814,7 +2814,7 @@ H,S,V,Cor
 32,180,60,Marrom
 32,180,75,Marrom
 32,180,90,Marrom
-32,180,105,Marrom
+32,180,105,Amarelo
 32,180,120,Amarelo
 32,180,135,Amarelo
 32,180,150,Amarelo
@@ -2832,7 +2832,7 @@ H,S,V,Cor
 32,195,60,Marrom
 32,195,75,Marrom
 32,195,90,Marrom
-32,195,105,Marrom
+32,195,105,Amarelo
 32,195,120,Amarelo
 32,195,135,Amarelo
 32,195,150,Amarelo
@@ -2850,7 +2850,7 @@ H,S,V,Cor
 32,210,60,Marrom
 32,210,75,Marrom
 32,210,90,Marrom
-32,210,105,Marrom
+32,210,105,Amarelo
 32,210,120,Amarelo
 32,210,135,Amarelo
 32,210,150,Amarelo
@@ -2868,7 +2868,7 @@ H,S,V,Cor
 32,225,60,Marrom
 32,225,75,Marrom
 32,225,90,Marrom
-32,225,105,Marrom
+32,225,105,Amarelo
 32,225,120,Amarelo
 32,225,135,Amarelo
 32,225,150,Amarelo
@@ -2886,7 +2886,7 @@ H,S,V,Cor
 32,240,60,Marrom
 32,240,75,Marrom
 32,240,90,Marrom
-32,240,105,Marrom
+32,240,105,Amarelo
 32,240,120,Amarelo
 32,240,135,Amarelo
 32,240,150,Amarelo
@@ -2904,7 +2904,7 @@ H,S,V,Cor
 32,255,60,Marrom
 32,255,75,Marrom
 32,255,90,Marrom
-32,255,105,Marrom
+32,255,105,Amarelo
 32,255,120,Amarelo
 32,255,135,Amarelo
 32,255,150,Amarelo
@@ -13682,16 +13682,16 @@ H,S,V,Cor
 168,60,0,Preto
 168,60,15,Preto
 168,60,30,Preto
-168,60,45,Marrom
-168,60,60,Marrom
-168,60,75,Marrom
-168,60,90,Marrom
-168,60,105,Marrom
-168,60,120,Marrom
-168,60,135,Rosa
-168,60,150,Rosa
-168,60,165,Rosa
-168,60,180,Rosa
+168,60,45,Vermelho Escuro
+168,60,60,Vermelho Escuro
+168,60,75,Vermelho Escuro
+168,60,90,Vermelho Escuro
+168,60,105,Vermelho Escuro
+168,60,120,Vermelho Escuro
+168,60,135,Vermelho Escuro
+168,60,150,Vermelho
+168,60,165,Vermelho
+168,60,180,Vermelho
 168,60,195,Rosa
 168,60,210,Rosa
 168,60,225,Rosa
@@ -13700,16 +13700,16 @@ H,S,V,Cor
 168,75,0,Preto
 168,75,15,Preto
 168,75,30,Preto
-168,75,45,Marrom
-168,75,60,Marrom
-168,75,75,Marrom
-168,75,90,Marrom
-168,75,105,Marrom
-168,75,120,Marrom
-168,75,135,Rosa
-168,75,150,Rosa
-168,75,165,Rosa
-168,75,180,Rosa
+168,75,45,Vermelho Escuro
+168,75,60,Vermelho Escuro
+168,75,75,Vermelho Escuro
+168,75,90,Vermelho Escuro
+168,75,105,Vermelho Escuro
+168,75,120,Vermelho Escuro
+168,75,135,Vermelho Escuro
+168,75,150,Vermelho
+168,75,165,Vermelho
+168,75,180,Vermelho
 168,75,195,Rosa
 168,75,210,Rosa
 168,75,225,Rosa
@@ -13718,16 +13718,16 @@ H,S,V,Cor
 168,90,0,Preto
 168,90,15,Preto
 168,90,30,Preto
-168,90,45,Marrom
-168,90,60,Marrom
-168,90,75,Marrom
-168,90,90,Marrom
-168,90,105,Marrom
-168,90,120,Marrom
-168,90,135,Rosa
-168,90,150,Rosa
-168,90,165,Rosa
-168,90,180,Rosa
+168,90,45,Vermelho Escuro
+168,90,60,Vermelho Escuro
+168,90,75,Vermelho Escuro
+168,90,90,Vermelho Escuro
+168,90,105,Vermelho Escuro
+168,90,120,Vermelho Escuro
+168,90,135,Vermelho Escuro
+168,90,150,Vermelho
+168,90,165,Vermelho
+168,90,180,Vermelho
 168,90,195,Rosa
 168,90,210,Rosa
 168,90,225,Rosa
@@ -13736,16 +13736,16 @@ H,S,V,Cor
 168,105,0,Preto
 168,105,15,Preto
 168,105,30,Preto
-168,105,45,Marrom
-168,105,60,Marrom
-168,105,75,Marrom
-168,105,90,Marrom
-168,105,105,Marrom
-168,105,120,Marrom
-168,105,135,Rosa
-168,105,150,Rosa
-168,105,165,Rosa
-168,105,180,Rosa
+168,105,45,Vermelho Escuro
+168,105,60,Vermelho Escuro
+168,105,75,Vermelho Escuro
+168,105,90,Vermelho Escuro
+168,105,105,Vermelho Escuro
+168,105,120,Vermelho Escuro
+168,105,135,Vermelho Escuro
+168,105,150,Vermelho
+168,105,165,Vermelho
+168,105,180,Vermelho
 168,105,195,Rosa
 168,105,210,Rosa
 168,105,225,Rosa
@@ -13754,183 +13754,183 @@ H,S,V,Cor
 168,120,0,Preto
 168,120,15,Preto
 168,120,30,Preto
-168,120,45,Marrom
-168,120,60,Marrom
-168,120,75,Marrom
-168,120,90,Marrom
-168,120,105,Marrom
-168,120,120,Marrom
-168,120,135,Rosa
-168,120,150,Rosa
-168,120,165,Rosa
-168,120,180,Rosa
-168,120,195,Rosa
-168,120,210,Rosa
-168,120,225,Rosa
-168,120,240,Rosa
-168,120,255,Rosa
+168,120,45,Vermelho Escuro
+168,120,60,Vermelho Escuro
+168,120,75,Vermelho Escuro
+168,120,90,Vermelho Escuro
+168,120,105,Vermelho Escuro
+168,120,120,Vermelho Escuro
+168,120,135,Vermelho Escuro
+168,120,150,Vermelho
+168,120,165,Vermelho
+168,120,180,Vermelho
+168,120,195,Vermelho
+168,120,210,Vermelho
+168,120,225,Vermelho
+168,120,240,Vermelho
+168,120,255,Vermelho
 168,135,0,Preto
 168,135,15,Preto
 168,135,30,Preto
-168,135,45,Marrom
-168,135,60,Marrom
-168,135,75,Marrom
-168,135,90,Marrom
-168,135,105,Marrom
-168,135,120,Marrom
-168,135,135,Rosa
-168,135,150,Rosa
-168,135,165,Rosa
-168,135,180,Rosa
-168,135,195,Rosa
-168,135,210,Rosa
-168,135,225,Rosa
-168,135,240,Rosa
-168,135,255,Rosa
+168,135,45,Vermelho Escuro
+168,135,60,Vermelho Escuro
+168,135,75,Vermelho Escuro
+168,135,90,Vermelho Escuro
+168,135,105,Vermelho Escuro
+168,135,120,Vermelho Escuro
+168,135,135,Vermelho Escuro
+168,135,150,Vermelho
+168,135,165,Vermelho
+168,135,180,Vermelho
+168,135,195,Vermelho
+168,135,210,Vermelho
+168,135,225,Vermelho
+168,135,240,Vermelho
+168,135,255,Vermelho
 168,150,0,Preto
 168,150,15,Preto
 168,150,30,Preto
-168,150,45,Marrom
-168,150,60,Marrom
-168,150,75,Marrom
-168,150,90,Marrom
-168,150,105,Marrom
-168,150,120,Marrom
-168,150,135,Rosa
-168,150,150,Rosa
-168,150,165,Rosa
-168,150,180,Rosa
-168,150,195,Rosa
-168,150,210,Rosa
-168,150,225,Rosa
-168,150,240,Rosa
-168,150,255,Rosa
+168,150,45,Vermelho Escuro
+168,150,60,Vermelho Escuro
+168,150,75,Vermelho Escuro
+168,150,90,Vermelho Escuro
+168,150,105,Vermelho Escuro
+168,150,120,Vermelho Escuro
+168,150,135,Vermelho Escuro
+168,150,150,Vermelho
+168,150,165,Vermelho
+168,150,180,Vermelho
+168,150,195,Vermelho
+168,150,210,Vermelho
+168,150,225,Vermelho
+168,150,240,Vermelho
+168,150,255,Vermelho
 168,165,0,Preto
 168,165,15,Preto
 168,165,30,Preto
-168,165,45,Marrom
-168,165,60,Marrom
-168,165,75,Marrom
-168,165,90,Marrom
-168,165,105,Marrom
-168,165,120,Marrom
-168,165,135,Rosa
-168,165,150,Rosa
-168,165,165,Rosa
-168,165,180,Rosa
-168,165,195,Rosa
-168,165,210,Rosa
-168,165,225,Rosa
-168,165,240,Rosa
-168,165,255,Rosa
+168,165,45,Vermelho Escuro
+168,165,60,Vermelho Escuro
+168,165,75,Vermelho Escuro
+168,165,90,Vermelho Escuro
+168,165,105,Vermelho Escuro
+168,165,120,Vermelho Escuro
+168,165,135,Vermelho Escuro
+168,165,150,Vermelho
+168,165,165,Vermelho
+168,165,180,Vermelho
+168,165,195,Vermelho
+168,165,210,Vermelho
+168,165,225,Vermelho
+168,165,240,Vermelho
+168,165,255,Vermelho
 168,180,0,Preto
 168,180,15,Preto
 168,180,30,Preto
-168,180,45,Marrom
-168,180,60,Marrom
-168,180,75,Marrom
-168,180,90,Marrom
-168,180,105,Marrom
-168,180,120,Marrom
-168,180,135,Rosa
-168,180,150,Rosa
-168,180,165,Rosa
-168,180,180,Rosa
-168,180,195,Rosa
-168,180,210,Rosa
-168,180,225,Rosa
-168,180,240,Rosa
-168,180,255,Rosa
+168,180,45,Vermelho Escuro
+168,180,60,Vermelho Escuro
+168,180,75,Vermelho Escuro
+168,180,90,Vermelho Escuro
+168,180,105,Vermelho Escuro
+168,180,120,Vermelho Escuro
+168,180,135,Vermelho Escuro
+168,180,150,Vermelho
+168,180,165,Vermelho
+168,180,180,Vermelho
+168,180,195,Vermelho
+168,180,210,Vermelho
+168,180,225,Vermelho
+168,180,240,Vermelho
+168,180,255,Vermelho
 168,195,0,Preto
 168,195,15,Preto
 168,195,30,Preto
-168,195,45,Marrom
-168,195,60,Marrom
-168,195,75,Marrom
-168,195,90,Marrom
-168,195,105,Marrom
-168,195,120,Marrom
-168,195,135,Rosa
-168,195,150,Rosa
-168,195,165,Rosa
-168,195,180,Rosa
-168,195,195,Rosa
-168,195,210,Rosa
-168,195,225,Rosa
-168,195,240,Rosa
-168,195,255,Rosa
+168,195,45,Vermelho Escuro
+168,195,60,Vermelho Escuro
+168,195,75,Vermelho Escuro
+168,195,90,Vermelho Escuro
+168,195,105,Vermelho Escuro
+168,195,120,Vermelho Escuro
+168,195,135,Vermelho Escuro
+168,195,150,Vermelho
+168,195,165,Vermelho
+168,195,180,Vermelho
+168,195,195,Vermelho
+168,195,210,Vermelho
+168,195,225,Vermelho
+168,195,240,Vermelho
+168,195,255,Vermelho
 168,210,0,Preto
 168,210,15,Preto
 168,210,30,Preto
-168,210,45,Marrom
-168,210,60,Marrom
-168,210,75,Marrom
-168,210,90,Marrom
-168,210,105,Marrom
-168,210,120,Marrom
-168,210,135,Rosa
-168,210,150,Rosa
-168,210,165,Rosa
-168,210,180,Rosa
-168,210,195,Rosa
-168,210,210,Rosa
-168,210,225,Rosa
-168,210,240,Rosa
-168,210,255,Rosa
+168,210,45,Vermelho Escuro
+168,210,60,Vermelho Escuro
+168,210,75,Vermelho Escuro
+168,210,90,Vermelho Escuro
+168,210,105,Vermelho Escuro
+168,210,120,Vermelho Escuro
+168,210,135,Vermelho Escuro
+168,210,150,Vermelho
+168,210,165,Vermelho
+168,210,180,Vermelho
+168,210,195,Vermelho
+168,210,210,Vermelho
+168,210,225,Vermelho
+168,210,240,Vermelho
+168,210,255,Vermelho
 168,225,0,Preto
 168,225,15,Preto
 168,225,30,Preto
-168,225,45,Marrom
-168,225,60,Marrom
-168,225,75,Marrom
-168,225,90,Marrom
-168,225,105,Marrom
-168,225,120,Marrom
-168,225,135,Rosa
-168,225,150,Rosa
-168,225,165,Rosa
-168,225,180,Rosa
-168,225,195,Rosa
-168,225,210,Rosa
-168,225,225,Rosa
-168,225,240,Rosa
-168,225,255,Rosa
+168,225,45,Vermelho Escuro
+168,225,60,Vermelho Escuro
+168,225,75,Vermelho Escuro
+168,225,90,Vermelho Escuro
+168,225,105,Vermelho Escuro
+168,225,120,Vermelho Escuro
+168,225,135,Vermelho Escuro
+168,225,150,Vermelho
+168,225,165,Vermelho
+168,225,180,Vermelho
+168,225,195,Vermelho
+168,225,210,Vermelho
+168,225,225,Vermelho
+168,225,240,Vermelho
+168,225,255,Vermelho
 168,240,0,Preto
 168,240,15,Preto
 168,240,30,Preto
-168,240,45,Marrom
-168,240,60,Marrom
-168,240,75,Marrom
-168,240,90,Marrom
-168,240,105,Marrom
-168,240,120,Marrom
-168,240,135,Rosa
-168,240,150,Rosa
-168,240,165,Rosa
-168,240,180,Rosa
-168,240,195,Rosa
-168,240,210,Rosa
-168,240,225,Rosa
-168,240,240,Rosa
-168,240,255,Rosa
+168,240,45,Vermelho Escuro
+168,240,60,Vermelho Escuro
+168,240,75,Vermelho Escuro
+168,240,90,Vermelho Escuro
+168,240,105,Vermelho Escuro
+168,240,120,Vermelho Escuro
+168,240,135,Vermelho Escuro
+168,240,150,Vermelho
+168,240,165,Vermelho
+168,240,180,Vermelho
+168,240,195,Vermelho
+168,240,210,Vermelho
+168,240,225,Vermelho
+168,240,240,Vermelho
+168,240,255,Vermelho
 168,255,0,Preto
 168,255,15,Preto
 168,255,30,Preto
-168,255,45,Marrom
-168,255,60,Marrom
-168,255,75,Marrom
-168,255,90,Marrom
-168,255,105,Marrom
-168,255,120,Marrom
-168,255,135,Rosa
-168,255,150,Rosa
-168,255,165,Rosa
-168,255,180,Rosa
-168,255,195,Rosa
-168,255,210,Rosa
-168,255,225,Rosa
-168,255,240,Rosa
-168,255,255,Rosa
+168,255,45,Vermelho Escuro
+168,255,60,Vermelho Escuro
+168,255,75,Vermelho Escuro
+168,255,90,Vermelho Escuro
+168,255,105,Vermelho Escuro
+168,255,120,Vermelho Escuro
+168,255,135,Vermelho Escuro
+168,255,150,Vermelho
+168,255,165,Vermelho
+168,255,180,Vermelho
+168,255,195,Vermelho
+168,255,210,Vermelho
+168,255,225,Vermelho
+168,255,240,Vermelho
+168,255,255,Vermelho
 172,0,0,Preto
 172,0,15,Preto
 172,0,30,Preto
@@ -14006,12 +14006,12 @@ H,S,V,Cor
 172,60,0,Preto
 172,60,15,Preto
 172,60,30,Preto
-172,60,45,Marrom
-172,60,60,Marrom
-172,60,75,Marrom
-172,60,90,Marrom
-172,60,105,Marrom
-172,60,120,Marrom
+172,60,45,Vermelho Escuro
+172,60,60,Vermelho Escuro
+172,60,75,Vermelho Escuro
+172,60,90,Vermelho Escuro
+172,60,105,Vermelho Escuro
+172,60,120,Vermelho Escuro
 172,60,135,Vermelho Escuro
 172,60,150,Vermelho
 172,60,165,Vermelho
@@ -14024,12 +14024,12 @@ H,S,V,Cor
 172,75,0,Preto
 172,75,15,Preto
 172,75,30,Preto
-172,75,45,Marrom
-172,75,60,Marrom
-172,75,75,Marrom
-172,75,90,Marrom
-172,75,105,Marrom
-172,75,120,Marrom
+172,75,45,Vermelho Escuro
+172,75,60,Vermelho Escuro
+172,75,75,Vermelho Escuro
+172,75,90,Vermelho Escuro
+172,75,105,Vermelho Escuro
+172,75,120,Vermelho Escuro
 172,75,135,Vermelho Escuro
 172,75,150,Vermelho
 172,75,165,Vermelho
@@ -14042,12 +14042,12 @@ H,S,V,Cor
 172,90,0,Preto
 172,90,15,Preto
 172,90,30,Preto
-172,90,45,Marrom
-172,90,60,Marrom
-172,90,75,Marrom
-172,90,90,Marrom
-172,90,105,Marrom
-172,90,120,Marrom
+172,90,45,Vermelho Escuro
+172,90,60,Vermelho Escuro
+172,90,75,Vermelho Escuro
+172,90,90,Vermelho Escuro
+172,90,105,Vermelho Escuro
+172,90,120,Vermelho Escuro
 172,90,135,Vermelho Escuro
 172,90,150,Vermelho
 172,90,165,Vermelho
@@ -14060,12 +14060,12 @@ H,S,V,Cor
 172,105,0,Preto
 172,105,15,Preto
 172,105,30,Preto
-172,105,45,Marrom
-172,105,60,Marrom
-172,105,75,Marrom
-172,105,90,Marrom
-172,105,105,Marrom
-172,105,120,Marrom
+172,105,45,Vermelho Escuro
+172,105,60,Vermelho Escuro
+172,105,75,Vermelho Escuro
+172,105,90,Vermelho Escuro
+172,105,105,Vermelho Escuro
+172,105,120,Vermelho Escuro
 172,105,135,Vermelho Escuro
 172,105,150,Vermelho
 172,105,165,Vermelho
@@ -14078,48 +14078,48 @@ H,S,V,Cor
 172,120,0,Preto
 172,120,15,Preto
 172,120,30,Preto
-172,120,45,Marrom
-172,120,60,Marrom
-172,120,75,Marrom
-172,120,90,Marrom
-172,120,105,Marrom
-172,120,120,Marrom
+172,120,45,Vermelho Escuro
+172,120,60,Vermelho Escuro
+172,120,75,Vermelho Escuro
+172,120,90,Vermelho Escuro
+172,120,105,Vermelho Escuro
+172,120,120,Vermelho Escuro
 172,120,135,Vermelho Escuro
 172,120,150,Vermelho
 172,120,165,Vermelho
 172,120,180,Vermelho
-172,120,195,Rosa
-172,120,210,Rosa
-172,120,225,Rosa
-172,120,240,Rosa
-172,120,255,Rosa
+172,120,195,Vermelho
+172,120,210,Vermelho
+172,120,225,Vermelho
+172,120,240,Vermelho
+172,120,255,Vermelho
 172,135,0,Preto
 172,135,15,Preto
 172,135,30,Preto
-172,135,45,Marrom
-172,135,60,Marrom
-172,135,75,Marrom
-172,135,90,Marrom
-172,135,105,Marrom
-172,135,120,Marrom
+172,135,45,Vermelho Escuro
+172,135,60,Vermelho Escuro
+172,135,75,Vermelho Escuro
+172,135,90,Vermelho Escuro
+172,135,105,Vermelho Escuro
+172,135,120,Vermelho Escuro
 172,135,135,Vermelho Escuro
 172,135,150,Vermelho
 172,135,165,Vermelho
 172,135,180,Vermelho
-172,135,195,Rosa
-172,135,210,Rosa
-172,135,225,Rosa
-172,135,240,Rosa
-172,135,255,Rosa
+172,135,195,Vermelho
+172,135,210,Vermelho
+172,135,225,Vermelho
+172,135,240,Vermelho
+172,135,255,Vermelho
 172,150,0,Preto
 172,150,15,Preto
 172,150,30,Preto
-172,150,45,Marrom
-172,150,60,Marrom
-172,150,75,Marrom
-172,150,90,Marrom
-172,150,105,Marrom
-172,150,120,Marrom
+172,150,45,Vermelho Escuro
+172,150,60,Vermelho Escuro
+172,150,75,Vermelho Escuro
+172,150,90,Vermelho Escuro
+172,150,105,Vermelho Escuro
+172,150,120,Vermelho Escuro
 172,150,135,Vermelho Escuro
 172,150,150,Vermelho
 172,150,165,Vermelho
@@ -14132,12 +14132,12 @@ H,S,V,Cor
 172,165,0,Preto
 172,165,15,Preto
 172,165,30,Preto
-172,165,45,Marrom
-172,165,60,Marrom
-172,165,75,Marrom
-172,165,90,Marrom
-172,165,105,Marrom
-172,165,120,Marrom
+172,165,45,Vermelho Escuro
+172,165,60,Vermelho Escuro
+172,165,75,Vermelho Escuro
+172,165,90,Vermelho Escuro
+172,165,105,Vermelho Escuro
+172,165,120,Vermelho Escuro
 172,165,135,Vermelho Escuro
 172,165,150,Vermelho
 172,165,165,Vermelho
@@ -14150,12 +14150,12 @@ H,S,V,Cor
 172,180,0,Preto
 172,180,15,Preto
 172,180,30,Preto
-172,180,45,Marrom
-172,180,60,Marrom
-172,180,75,Marrom
-172,180,90,Marrom
-172,180,105,Marrom
-172,180,120,Marrom
+172,180,45,Vermelho Escuro
+172,180,60,Vermelho Escuro
+172,180,75,Vermelho Escuro
+172,180,90,Vermelho Escuro
+172,180,105,Vermelho Escuro
+172,180,120,Vermelho Escuro
 172,180,135,Vermelho Escuro
 172,180,150,Vermelho
 172,180,165,Vermelho
@@ -14168,12 +14168,12 @@ H,S,V,Cor
 172,195,0,Preto
 172,195,15,Preto
 172,195,30,Preto
-172,195,45,Marrom
-172,195,60,Marrom
-172,195,75,Marrom
-172,195,90,Marrom
-172,195,105,Marrom
-172,195,120,Marrom
+172,195,45,Vermelho Escuro
+172,195,60,Vermelho Escuro
+172,195,75,Vermelho Escuro
+172,195,90,Vermelho Escuro
+172,195,105,Vermelho Escuro
+172,195,120,Vermelho Escuro
 172,195,135,Vermelho Escuro
 172,195,150,Vermelho
 172,195,165,Vermelho
@@ -14186,12 +14186,12 @@ H,S,V,Cor
 172,210,0,Preto
 172,210,15,Preto
 172,210,30,Preto
-172,210,45,Marrom
-172,210,60,Marrom
-172,210,75,Marrom
-172,210,90,Marrom
-172,210,105,Marrom
-172,210,120,Marrom
+172,210,45,Vermelho Escuro
+172,210,60,Vermelho Escuro
+172,210,75,Vermelho Escuro
+172,210,90,Vermelho Escuro
+172,210,105,Vermelho Escuro
+172,210,120,Vermelho Escuro
 172,210,135,Vermelho Escuro
 172,210,150,Vermelho
 172,210,165,Vermelho
@@ -14204,12 +14204,12 @@ H,S,V,Cor
 172,225,0,Preto
 172,225,15,Preto
 172,225,30,Preto
-172,225,45,Marrom
-172,225,60,Marrom
-172,225,75,Marrom
-172,225,90,Marrom
-172,225,105,Marrom
-172,225,120,Marrom
+172,225,45,Vermelho Escuro
+172,225,60,Vermelho Escuro
+172,225,75,Vermelho Escuro
+172,225,90,Vermelho Escuro
+172,225,105,Vermelho Escuro
+172,225,120,Vermelho Escuro
 172,225,135,Vermelho Escuro
 172,225,150,Vermelho
 172,225,165,Vermelho
@@ -14222,12 +14222,12 @@ H,S,V,Cor
 172,240,0,Preto
 172,240,15,Preto
 172,240,30,Preto
-172,240,45,Marrom
-172,240,60,Marrom
-172,240,75,Marrom
-172,240,90,Marrom
-172,240,105,Marrom
-172,240,120,Marrom
+172,240,45,Vermelho Escuro
+172,240,60,Vermelho Escuro
+172,240,75,Vermelho Escuro
+172,240,90,Vermelho Escuro
+172,240,105,Vermelho Escuro
+172,240,120,Vermelho Escuro
 172,240,135,Vermelho Escuro
 172,240,150,Vermelho
 172,240,165,Vermelho
@@ -14240,12 +14240,12 @@ H,S,V,Cor
 172,255,0,Preto
 172,255,15,Preto
 172,255,30,Preto
-172,255,45,Marrom
-172,255,60,Marrom
-172,255,75,Marrom
-172,255,90,Marrom
-172,255,105,Marrom
-172,255,120,Marrom
+172,255,45,Vermelho Escuro
+172,255,60,Vermelho Escuro
+172,255,75,Vermelho Escuro
+172,255,90,Vermelho Escuro
+172,255,105,Vermelho Escuro
+172,255,120,Vermelho Escuro
 172,255,135,Vermelho Escuro
 172,255,150,Vermelho
 172,255,165,Vermelho
@@ -14330,12 +14330,12 @@ H,S,V,Cor
 176,60,0,Preto
 176,60,15,Preto
 176,60,30,Preto
-176,60,45,Marrom
-176,60,60,Marrom
-176,60,75,Marrom
-176,60,90,Marrom
-176,60,105,Marrom
-176,60,120,Marrom
+176,60,45,Vermelho Escuro
+176,60,60,Vermelho Escuro
+176,60,75,Vermelho Escuro
+176,60,90,Vermelho Escuro
+176,60,105,Vermelho Escuro
+176,60,120,Vermelho Escuro
 176,60,135,Vermelho Escuro
 176,60,150,Vermelho
 176,60,165,Vermelho
@@ -14348,12 +14348,12 @@ H,S,V,Cor
 176,75,0,Preto
 176,75,15,Preto
 176,75,30,Preto
-176,75,45,Marrom
-176,75,60,Marrom
-176,75,75,Marrom
-176,75,90,Marrom
-176,75,105,Marrom
-176,75,120,Marrom
+176,75,45,Vermelho Escuro
+176,75,60,Vermelho Escuro
+176,75,75,Vermelho Escuro
+176,75,90,Vermelho Escuro
+176,75,105,Vermelho Escuro
+176,75,120,Vermelho Escuro
 176,75,135,Vermelho Escuro
 176,75,150,Vermelho
 176,75,165,Vermelho
@@ -14366,12 +14366,12 @@ H,S,V,Cor
 176,90,0,Preto
 176,90,15,Preto
 176,90,30,Preto
-176,90,45,Marrom
-176,90,60,Marrom
-176,90,75,Marrom
-176,90,90,Marrom
-176,90,105,Marrom
-176,90,120,Marrom
+176,90,45,Vermelho Escuro
+176,90,60,Vermelho Escuro
+176,90,75,Vermelho Escuro
+176,90,90,Vermelho Escuro
+176,90,105,Vermelho Escuro
+176,90,120,Vermelho Escuro
 176,90,135,Vermelho Escuro
 176,90,150,Vermelho
 176,90,165,Vermelho
@@ -14384,12 +14384,12 @@ H,S,V,Cor
 176,105,0,Preto
 176,105,15,Preto
 176,105,30,Preto
-176,105,45,Marrom
-176,105,60,Marrom
-176,105,75,Marrom
-176,105,90,Marrom
-176,105,105,Marrom
-176,105,120,Marrom
+176,105,45,Vermelho Escuro
+176,105,60,Vermelho Escuro
+176,105,75,Vermelho Escuro
+176,105,90,Vermelho Escuro
+176,105,105,Vermelho Escuro
+176,105,120,Vermelho Escuro
 176,105,135,Vermelho Escuro
 176,105,150,Vermelho
 176,105,165,Vermelho
@@ -14402,48 +14402,48 @@ H,S,V,Cor
 176,120,0,Preto
 176,120,15,Preto
 176,120,30,Preto
-176,120,45,Marrom
-176,120,60,Marrom
-176,120,75,Marrom
-176,120,90,Marrom
-176,120,105,Marrom
-176,120,120,Marrom
+176,120,45,Vermelho Escuro
+176,120,60,Vermelho Escuro
+176,120,75,Vermelho Escuro
+176,120,90,Vermelho Escuro
+176,120,105,Vermelho Escuro
+176,120,120,Vermelho Escuro
 176,120,135,Vermelho Escuro
 176,120,150,Vermelho
 176,120,165,Vermelho
 176,120,180,Vermelho
-176,120,195,Rosa
-176,120,210,Rosa
-176,120,225,Rosa
-176,120,240,Rosa
-176,120,255,Rosa
+176,120,195,Vermelho
+176,120,210,Vermelho
+176,120,225,Vermelho
+176,120,240,Vermelho
+176,120,255,Vermelho
 176,135,0,Preto
 176,135,15,Preto
 176,135,30,Preto
-176,135,45,Marrom
-176,135,60,Marrom
-176,135,75,Marrom
-176,135,90,Marrom
-176,135,105,Marrom
-176,135,120,Marrom
+176,135,45,Vermelho Escuro
+176,135,60,Vermelho Escuro
+176,135,75,Vermelho Escuro
+176,135,90,Vermelho Escuro
+176,135,105,Vermelho Escuro
+176,135,120,Vermelho Escuro
 176,135,135,Vermelho Escuro
 176,135,150,Vermelho
 176,135,165,Vermelho
 176,135,180,Vermelho
-176,135,195,Rosa
-176,135,210,Rosa
-176,135,225,Rosa
-176,135,240,Rosa
-176,135,255,Rosa
+176,135,195,Vermelho
+176,135,210,Vermelho
+176,135,225,Vermelho
+176,135,240,Vermelho
+176,135,255,Vermelho
 176,150,0,Preto
 176,150,15,Preto
 176,150,30,Preto
-176,150,45,Marrom
-176,150,60,Marrom
-176,150,75,Marrom
-176,150,90,Marrom
-176,150,105,Marrom
-176,150,120,Marrom
+176,150,45,Vermelho Escuro
+176,150,60,Vermelho Escuro
+176,150,75,Vermelho Escuro
+176,150,90,Vermelho Escuro
+176,150,105,Vermelho Escuro
+176,150,120,Vermelho Escuro
 176,150,135,Vermelho Escuro
 176,150,150,Vermelho
 176,150,165,Vermelho
@@ -14456,12 +14456,12 @@ H,S,V,Cor
 176,165,0,Preto
 176,165,15,Preto
 176,165,30,Preto
-176,165,45,Marrom
-176,165,60,Marrom
-176,165,75,Marrom
-176,165,90,Marrom
-176,165,105,Marrom
-176,165,120,Marrom
+176,165,45,Vermelho Escuro
+176,165,60,Vermelho Escuro
+176,165,75,Vermelho Escuro
+176,165,90,Vermelho Escuro
+176,165,105,Vermelho Escuro
+176,165,120,Vermelho Escuro
 176,165,135,Vermelho Escuro
 176,165,150,Vermelho
 176,165,165,Vermelho
@@ -14474,12 +14474,12 @@ H,S,V,Cor
 176,180,0,Preto
 176,180,15,Preto
 176,180,30,Preto
-176,180,45,Marrom
-176,180,60,Marrom
-176,180,75,Marrom
-176,180,90,Marrom
-176,180,105,Marrom
-176,180,120,Marrom
+176,180,45,Vermelho Escuro
+176,180,60,Vermelho Escuro
+176,180,75,Vermelho Escuro
+176,180,90,Vermelho Escuro
+176,180,105,Vermelho Escuro
+176,180,120,Vermelho Escuro
 176,180,135,Vermelho Escuro
 176,180,150,Vermelho
 176,180,165,Vermelho
@@ -14492,12 +14492,12 @@ H,S,V,Cor
 176,195,0,Preto
 176,195,15,Preto
 176,195,30,Preto
-176,195,45,Marrom
-176,195,60,Marrom
-176,195,75,Marrom
-176,195,90,Marrom
-176,195,105,Marrom
-176,195,120,Marrom
+176,195,45,Vermelho Escuro
+176,195,60,Vermelho Escuro
+176,195,75,Vermelho Escuro
+176,195,90,Vermelho Escuro
+176,195,105,Vermelho Escuro
+176,195,120,Vermelho Escuro
 176,195,135,Vermelho Escuro
 176,195,150,Vermelho
 176,195,165,Vermelho
@@ -14510,12 +14510,12 @@ H,S,V,Cor
 176,210,0,Preto
 176,210,15,Preto
 176,210,30,Preto
-176,210,45,Marrom
-176,210,60,Marrom
-176,210,75,Marrom
-176,210,90,Marrom
-176,210,105,Marrom
-176,210,120,Marrom
+176,210,45,Vermelho Escuro
+176,210,60,Vermelho Escuro
+176,210,75,Vermelho Escuro
+176,210,90,Vermelho Escuro
+176,210,105,Vermelho Escuro
+176,210,120,Vermelho Escuro
 176,210,135,Vermelho Escuro
 176,210,150,Vermelho
 176,210,165,Vermelho
@@ -14528,12 +14528,12 @@ H,S,V,Cor
 176,225,0,Preto
 176,225,15,Preto
 176,225,30,Preto
-176,225,45,Marrom
-176,225,60,Marrom
-176,225,75,Marrom
-176,225,90,Marrom
-176,225,105,Marrom
-176,225,120,Marrom
+176,225,45,Vermelho Escuro
+176,225,60,Vermelho Escuro
+176,225,75,Vermelho Escuro
+176,225,90,Vermelho Escuro
+176,225,105,Vermelho Escuro
+176,225,120,Vermelho Escuro
 176,225,135,Vermelho Escuro
 176,225,150,Vermelho
 176,225,165,Vermelho
@@ -14546,12 +14546,12 @@ H,S,V,Cor
 176,240,0,Preto
 176,240,15,Preto
 176,240,30,Preto
-176,240,45,Marrom
-176,240,60,Marrom
-176,240,75,Marrom
-176,240,90,Marrom
-176,240,105,Marrom
-176,240,120,Marrom
+176,240,45,Vermelho Escuro
+176,240,60,Vermelho Escuro
+176,240,75,Vermelho Escuro
+176,240,90,Vermelho Escuro
+176,240,105,Vermelho Escuro
+176,240,120,Vermelho Escuro
 176,240,135,Vermelho Escuro
 176,240,150,Vermelho
 176,240,165,Vermelho
@@ -14564,12 +14564,12 @@ H,S,V,Cor
 176,255,0,Preto
 176,255,15,Preto
 176,255,30,Preto
-176,255,45,Marrom
-176,255,60,Marrom
-176,255,75,Marrom
-176,255,90,Marrom
-176,255,105,Marrom
-176,255,120,Marrom
+176,255,45,Vermelho Escuro
+176,255,60,Vermelho Escuro
+176,255,75,Vermelho Escuro
+176,255,90,Vermelho Escuro
+176,255,105,Vermelho Escuro
+176,255,120,Vermelho Escuro
 176,255,135,Vermelho Escuro
 176,255,150,Vermelho
 176,255,165,Vermelho
@@ -14579,3 +14579,679 @@ H,S,V,Cor
 176,255,225,Vermelho
 176,255,240,Vermelho
 176,255,255,Vermelho
+20,73,242,Bege
+20,73,242,Bege
+20,73,242,Bege
+20,73,242,Bege
+20,73,242,Bege
+20,73,245,Bege
+20,73,245,Bege
+20,73,245,Bege
+20,73,245,Bege
+20,73,245,Bege
+20,73,248,Bege
+20,73,248,Bege
+20,73,248,Bege
+20,73,248,Bege
+20,73,248,Bege
+20,76,242,Bege
+20,76,242,Bege
+20,76,242,Bege
+20,76,242,Bege
+20,76,242,Bege
+20,76,245,Bege
+20,76,245,Bege
+20,76,245,Bege
+20,76,245,Bege
+20,76,245,Bege
+20,76,248,Bege
+20,76,248,Bege
+20,76,248,Bege
+20,76,248,Bege
+20,76,248,Bege
+20,79,242,Bege
+20,79,242,Bege
+20,79,242,Bege
+20,79,242,Bege
+20,79,242,Bege
+20,79,245,Bege
+20,79,245,Bege
+20,79,245,Bege
+20,79,245,Bege
+20,79,245,Bege
+20,79,248,Bege
+20,79,248,Bege
+20,79,248,Bege
+20,79,248,Bege
+20,79,248,Bege
+21,73,242,Bege
+21,73,242,Bege
+21,73,242,Bege
+21,73,242,Bege
+21,73,242,Bege
+21,73,245,Bege
+21,73,245,Bege
+21,73,245,Bege
+21,73,245,Bege
+21,73,245,Bege
+21,73,248,Bege
+21,73,248,Bege
+21,73,248,Bege
+21,73,248,Bege
+21,73,248,Bege
+21,76,242,Bege
+21,76,242,Bege
+21,76,242,Bege
+21,76,242,Bege
+21,76,242,Bege
+21,76,245,Bege
+21,76,245,Bege
+21,76,245,Bege
+21,76,245,Bege
+21,76,245,Bege
+21,76,248,Bege
+21,76,248,Bege
+21,76,248,Bege
+21,76,248,Bege
+21,76,248,Bege
+21,79,242,Bege
+21,79,242,Bege
+21,79,242,Bege
+21,79,242,Bege
+21,79,242,Bege
+21,79,245,Bege
+21,79,245,Bege
+21,79,245,Bege
+21,79,245,Bege
+21,79,245,Bege
+21,79,248,Bege
+21,79,248,Bege
+21,79,248,Bege
+21,79,248,Bege
+21,79,248,Bege
+22,73,242,Bege
+22,73,242,Bege
+22,73,242,Bege
+22,73,242,Bege
+22,73,242,Bege
+22,73,245,Bege
+22,73,245,Bege
+22,73,245,Bege
+22,73,245,Bege
+22,73,245,Bege
+22,73,248,Bege
+22,73,248,Bege
+22,73,248,Bege
+22,73,248,Bege
+22,73,248,Bege
+22,76,242,Bege
+22,76,242,Bege
+22,76,242,Bege
+22,76,242,Bege
+22,76,242,Bege
+22,76,245,Bege
+22,76,245,Bege
+22,76,245,Bege
+22,76,245,Bege
+22,76,245,Bege
+22,76,248,Bege
+22,76,248,Bege
+22,76,248,Bege
+22,76,248,Bege
+22,76,248,Bege
+22,79,242,Bege
+22,79,242,Bege
+22,79,242,Bege
+22,79,242,Bege
+22,79,242,Bege
+22,79,245,Bege
+22,79,245,Bege
+22,79,245,Bege
+22,79,245,Bege
+22,79,245,Bege
+22,79,248,Bege
+22,79,248,Bege
+22,79,248,Bege
+22,79,248,Bege
+22,79,248,Bege
+15,60,231,Bege
+15,60,231,Bege
+15,60,231,Bege
+15,60,231,Bege
+15,60,231,Bege
+15,60,234,Bege
+15,60,234,Bege
+15,60,234,Bege
+15,60,234,Bege
+15,60,234,Bege
+15,60,237,Bege
+15,60,237,Bege
+15,60,237,Bege
+15,60,237,Bege
+15,60,237,Bege
+15,63,231,Bege
+15,63,231,Bege
+15,63,231,Bege
+15,63,231,Bege
+15,63,231,Bege
+15,63,234,Bege
+15,63,234,Bege
+15,63,234,Bege
+15,63,234,Bege
+15,63,234,Bege
+15,63,237,Bege
+15,63,237,Bege
+15,63,237,Bege
+15,63,237,Bege
+15,63,237,Bege
+15,66,231,Bege
+15,66,231,Bege
+15,66,231,Bege
+15,66,231,Bege
+15,66,231,Bege
+15,66,234,Bege
+15,66,234,Bege
+15,66,234,Bege
+15,66,234,Bege
+15,66,234,Bege
+15,66,237,Bege
+15,66,237,Bege
+15,66,237,Bege
+15,66,237,Bege
+15,66,237,Bege
+16,60,231,Bege
+16,60,231,Bege
+16,60,231,Bege
+16,60,231,Bege
+16,60,231,Bege
+16,60,234,Bege
+16,60,234,Bege
+16,60,234,Bege
+16,60,234,Bege
+16,60,234,Bege
+16,60,237,Bege
+16,60,237,Bege
+16,60,237,Bege
+16,60,237,Bege
+16,60,237,Bege
+16,63,231,Bege
+16,63,231,Bege
+16,63,231,Bege
+16,63,231,Bege
+16,63,231,Bege
+16,63,234,Bege
+16,63,234,Bege
+16,63,234,Bege
+16,63,234,Bege
+16,63,234,Bege
+16,63,237,Bege
+16,63,237,Bege
+16,63,237,Bege
+16,63,237,Bege
+16,63,237,Bege
+16,66,231,Bege
+16,66,231,Bege
+16,66,231,Bege
+16,66,231,Bege
+16,66,231,Bege
+16,66,234,Bege
+16,66,234,Bege
+16,66,234,Bege
+16,66,234,Bege
+16,66,234,Bege
+16,66,237,Bege
+16,66,237,Bege
+16,66,237,Bege
+16,66,237,Bege
+16,66,237,Bege
+17,60,231,Bege
+17,60,231,Bege
+17,60,231,Bege
+17,60,231,Bege
+17,60,231,Bege
+17,60,234,Bege
+17,60,234,Bege
+17,60,234,Bege
+17,60,234,Bege
+17,60,234,Bege
+17,60,237,Bege
+17,60,237,Bege
+17,60,237,Bege
+17,60,237,Bege
+17,60,237,Bege
+17,63,231,Bege
+17,63,231,Bege
+17,63,231,Bege
+17,63,231,Bege
+17,63,231,Bege
+17,63,234,Bege
+17,63,234,Bege
+17,63,234,Bege
+17,63,234,Bege
+17,63,234,Bege
+17,63,237,Bege
+17,63,237,Bege
+17,63,237,Bege
+17,63,237,Bege
+17,63,237,Bege
+17,66,231,Bege
+17,66,231,Bege
+17,66,231,Bege
+17,66,231,Bege
+17,66,231,Bege
+17,66,234,Bege
+17,66,234,Bege
+17,66,234,Bege
+17,66,234,Bege
+17,66,234,Bege
+17,66,237,Bege
+17,66,237,Bege
+17,66,237,Bege
+17,66,237,Bege
+17,66,237,Bege
+44,148,191,Verde Claro
+44,148,191,Verde Claro
+44,148,191,Verde Claro
+44,148,191,Verde Claro
+44,148,191,Verde Claro
+44,148,194,Verde Claro
+44,148,194,Verde Claro
+44,148,194,Verde Claro
+44,148,194,Verde Claro
+44,148,194,Verde Claro
+44,148,197,Verde Claro
+44,148,197,Verde Claro
+44,148,197,Verde Claro
+44,148,197,Verde Claro
+44,148,197,Verde Claro
+44,151,191,Verde Claro
+44,151,191,Verde Claro
+44,151,191,Verde Claro
+44,151,191,Verde Claro
+44,151,191,Verde Claro
+44,151,194,Verde Claro
+44,151,194,Verde Claro
+44,151,194,Verde Claro
+44,151,194,Verde Claro
+44,151,194,Verde Claro
+44,151,197,Verde Claro
+44,151,197,Verde Claro
+44,151,197,Verde Claro
+44,151,197,Verde Claro
+44,151,197,Verde Claro
+44,154,191,Verde Claro
+44,154,191,Verde Claro
+44,154,191,Verde Claro
+44,154,191,Verde Claro
+44,154,191,Verde Claro
+44,154,194,Verde Claro
+44,154,194,Verde Claro
+44,154,194,Verde Claro
+44,154,194,Verde Claro
+44,154,194,Verde Claro
+44,154,197,Verde Claro
+44,154,197,Verde Claro
+44,154,197,Verde Claro
+44,154,197,Verde Claro
+44,154,197,Verde Claro
+45,148,191,Verde Claro
+45,148,191,Verde Claro
+45,148,191,Verde Claro
+45,148,191,Verde Claro
+45,148,191,Verde Claro
+45,148,194,Verde Claro
+45,148,194,Verde Claro
+45,148,194,Verde Claro
+45,148,194,Verde Claro
+45,148,194,Verde Claro
+45,148,197,Verde Claro
+45,148,197,Verde Claro
+45,148,197,Verde Claro
+45,148,197,Verde Claro
+45,148,197,Verde Claro
+45,151,191,Verde Claro
+45,151,191,Verde Claro
+45,151,191,Verde Claro
+45,151,191,Verde Claro
+45,151,191,Verde Claro
+45,151,194,Verde Claro
+45,151,194,Verde Claro
+45,151,194,Verde Claro
+45,151,194,Verde Claro
+45,151,194,Verde Claro
+45,151,197,Verde Claro
+45,151,197,Verde Claro
+45,151,197,Verde Claro
+45,151,197,Verde Claro
+45,151,197,Verde Claro
+45,154,191,Verde Claro
+45,154,191,Verde Claro
+45,154,191,Verde Claro
+45,154,191,Verde Claro
+45,154,191,Verde Claro
+45,154,194,Verde Claro
+45,154,194,Verde Claro
+45,154,194,Verde Claro
+45,154,194,Verde Claro
+45,154,194,Verde Claro
+45,154,197,Verde Claro
+45,154,197,Verde Claro
+45,154,197,Verde Claro
+45,154,197,Verde Claro
+45,154,197,Verde Claro
+46,148,191,Verde Claro
+46,148,191,Verde Claro
+46,148,191,Verde Claro
+46,148,191,Verde Claro
+46,148,191,Verde Claro
+46,148,194,Verde Claro
+46,148,194,Verde Claro
+46,148,194,Verde Claro
+46,148,194,Verde Claro
+46,148,194,Verde Claro
+46,148,197,Verde Claro
+46,148,197,Verde Claro
+46,148,197,Verde Claro
+46,148,197,Verde Claro
+46,148,197,Verde Claro
+46,151,191,Verde Claro
+46,151,191,Verde Claro
+46,151,191,Verde Claro
+46,151,191,Verde Claro
+46,151,191,Verde Claro
+46,151,194,Verde Claro
+46,151,194,Verde Claro
+46,151,194,Verde Claro
+46,151,194,Verde Claro
+46,151,194,Verde Claro
+46,151,197,Verde Claro
+46,151,197,Verde Claro
+46,151,197,Verde Claro
+46,151,197,Verde Claro
+46,151,197,Verde Claro
+46,154,191,Verde Claro
+46,154,191,Verde Claro
+46,154,191,Verde Claro
+46,154,191,Verde Claro
+46,154,191,Verde Claro
+46,154,194,Verde Claro
+46,154,194,Verde Claro
+46,154,194,Verde Claro
+46,154,194,Verde Claro
+46,154,194,Verde Claro
+46,154,197,Verde Claro
+46,154,197,Verde Claro
+46,154,197,Verde Claro
+46,154,197,Verde Claro
+46,154,197,Verde Claro
+9,44,224,Bege
+9,44,224,Bege
+9,44,224,Bege
+9,44,224,Bege
+9,44,224,Bege
+9,44,227,Bege
+9,44,227,Bege
+9,44,227,Bege
+9,44,227,Bege
+9,44,227,Bege
+9,44,230,Bege
+9,44,230,Bege
+9,44,230,Bege
+9,44,230,Bege
+9,44,230,Bege
+9,47,224,Bege
+9,47,224,Bege
+9,47,224,Bege
+9,47,224,Bege
+9,47,224,Bege
+9,47,227,Bege
+9,47,227,Bege
+9,47,227,Bege
+9,47,227,Bege
+9,47,227,Bege
+9,47,230,Bege
+9,47,230,Bege
+9,47,230,Bege
+9,47,230,Bege
+9,47,230,Bege
+9,50,224,Bege
+9,50,224,Bege
+9,50,224,Bege
+9,50,224,Bege
+9,50,224,Bege
+9,50,227,Bege
+9,50,227,Bege
+9,50,227,Bege
+9,50,227,Bege
+9,50,227,Bege
+9,50,230,Bege
+9,50,230,Bege
+9,50,230,Bege
+9,50,230,Bege
+9,50,230,Bege
+10,44,224,Bege
+10,44,224,Bege
+10,44,224,Bege
+10,44,224,Bege
+10,44,224,Bege
+10,44,227,Bege
+10,44,227,Bege
+10,44,227,Bege
+10,44,227,Bege
+10,44,227,Bege
+10,44,230,Bege
+10,44,230,Bege
+10,44,230,Bege
+10,44,230,Bege
+10,44,230,Bege
+10,47,224,Bege
+10,47,224,Bege
+10,47,224,Bege
+10,47,224,Bege
+10,47,224,Bege
+10,47,227,Bege
+10,47,227,Bege
+10,47,227,Bege
+10,47,227,Bege
+10,47,227,Bege
+10,47,230,Bege
+10,47,230,Bege
+10,47,230,Bege
+10,47,230,Bege
+10,47,230,Bege
+10,50,224,Bege
+10,50,224,Bege
+10,50,224,Bege
+10,50,224,Bege
+10,50,224,Bege
+10,50,227,Bege
+10,50,227,Bege
+10,50,227,Bege
+10,50,227,Bege
+10,50,227,Bege
+10,50,230,Bege
+10,50,230,Bege
+10,50,230,Bege
+10,50,230,Bege
+10,50,230,Bege
+11,44,224,Bege
+11,44,224,Bege
+11,44,224,Bege
+11,44,224,Bege
+11,44,224,Bege
+11,44,227,Bege
+11,44,227,Bege
+11,44,227,Bege
+11,44,227,Bege
+11,44,227,Bege
+11,44,230,Bege
+11,44,230,Bege
+11,44,230,Bege
+11,44,230,Bege
+11,44,230,Bege
+11,47,224,Bege
+11,47,224,Bege
+11,47,224,Bege
+11,47,224,Bege
+11,47,224,Bege
+11,47,227,Bege
+11,47,227,Bege
+11,47,227,Bege
+11,47,227,Bege
+11,47,227,Bege
+11,47,230,Bege
+11,47,230,Bege
+11,47,230,Bege
+11,47,230,Bege
+11,47,230,Bege
+11,50,224,Bege
+11,50,224,Bege
+11,50,224,Bege
+11,50,224,Bege
+11,50,224,Bege
+11,50,227,Bege
+11,50,227,Bege
+11,50,227,Bege
+11,50,227,Bege
+11,50,227,Bege
+11,50,230,Bege
+11,50,230,Bege
+11,50,230,Bege
+11,50,230,Bege
+11,50,230,Bege
+10,57,210,Bege
+10,57,210,Bege
+10,57,210,Bege
+10,57,210,Bege
+10,57,210,Bege
+10,57,213,Bege
+10,57,213,Bege
+10,57,213,Bege
+10,57,213,Bege
+10,57,213,Bege
+10,57,216,Bege
+10,57,216,Bege
+10,57,216,Bege
+10,57,216,Bege
+10,57,216,Bege
+10,60,210,Bege
+10,60,210,Bege
+10,60,210,Bege
+10,60,210,Bege
+10,60,210,Bege
+10,60,213,Bege
+10,60,213,Bege
+10,60,213,Bege
+10,60,213,Bege
+10,60,213,Bege
+10,60,216,Bege
+10,60,216,Bege
+10,60,216,Bege
+10,60,216,Bege
+10,60,216,Bege
+10,63,210,Bege
+10,63,210,Bege
+10,63,210,Bege
+10,63,210,Bege
+10,63,210,Bege
+10,63,213,Bege
+10,63,213,Bege
+10,63,213,Bege
+10,63,213,Bege
+10,63,213,Bege
+10,63,216,Bege
+10,63,216,Bege
+10,63,216,Bege
+10,63,216,Bege
+10,63,216,Bege
+11,57,210,Bege
+11,57,210,Bege
+11,57,210,Bege
+11,57,210,Bege
+11,57,210,Bege
+11,57,213,Bege
+11,57,213,Bege
+11,57,213,Bege
+11,57,213,Bege
+11,57,213,Bege
+11,57,216,Bege
+11,57,216,Bege
+11,57,216,Bege
+11,57,216,Bege
+11,57,216,Bege
+11,60,210,Bege
+11,60,210,Bege
+11,60,210,Bege
+11,60,210,Bege
+11,60,210,Bege
+11,60,213,Bege
+11,60,213,Bege
+11,60,213,Bege
+11,60,213,Bege
+11,60,213,Bege
+11,60,216,Bege
+11,60,216,Bege
+11,60,216,Bege
+11,60,216,Bege
+11,60,216,Bege
+11,63,210,Bege
+11,63,210,Bege
+11,63,210,Bege
+11,63,210,Bege
+11,63,210,Bege
+11,63,213,Bege
+11,63,213,Bege
+11,63,213,Bege
+11,63,213,Bege
+11,63,213,Bege
+11,63,216,Bege
+11,63,216,Bege
+11,63,216,Bege
+11,63,216,Bege
+11,63,216,Bege
+12,57,210,Bege
+12,57,210,Bege
+12,57,210,Bege
+12,57,210,Bege
+12,57,210,Bege
+12,57,213,Bege
+12,57,213,Bege
+12,57,213,Bege
+12,57,213,Bege
+12,57,213,Bege
+12,57,216,Bege
+12,57,216,Bege
+12,57,216,Bege
+12,57,216,Bege
+12,57,216,Bege
+12,60,210,Bege
+12,60,210,Bege
+12,60,210,Bege
+12,60,210,Bege
+12,60,210,Bege
+12,60,213,Bege
+12,60,213,Bege
+12,60,213,Bege
+12,60,213,Bege
+12,60,213,Bege
+12,60,216,Bege
+12,60,216,Bege
+12,60,216,Bege
+12,60,216,Bege
+12,60,216,Bege
+12,63,210,Bege
+12,63,210,Bege
+12,63,210,Bege
+12,63,210,Bege
+12,63,210,Bege
+12,63,213,Bege
+12,63,213,Bege
+12,63,213,Bege
+12,63,213,Bege
+12,63,213,Bege
+12,63,216,Bege
+12,63,216,Bege
+12,63,216,Bege
+12,63,216,Bege
+12,63,216,Bege
+
