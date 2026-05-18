@@ -458,61 +458,65 @@
 </head>
 <body>
     <div id="particles"></div>
-    <img src="./logosemfundo.png" class="logo" alt="DaltonSpectra Logo">
-    <p class="subtitulo">Escolha um objeto de sua imagem e descubra sua cor em segundos</p>
 
-    <div class="botoes-container" id="botoes-iniciais">
-        <label for="input-arquivo" class="btn-acao">
-            <i class="fa-solid fa-folder" style="margin-right: 5px;"></i> Galeria
-        </label>
-        <button id="btn-abrir-camera" class="btn-acao">
-            <i class="fa-solid fa-camera" style="margin-right: 5px;"></i> Câmera
-        </button>
-    </div>
+    <div id="app-container">
+        
+        <div id="tela-inicial" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; z-index: 50; padding: 20px; text-align: center;">
+            <img src="./logosemfundo.png" class="logo" alt="DaltonSpectra Logo" style="max-width: 250px; margin-bottom: 20px;">
+            <p class="subtitulo" style="font-size: 1.1rem; color: #ccc; margin-bottom: 40px;">Escolha um objeto de sua imagem e descubra sua cor em segundos</p>
 
-    <input type="file" id="input-arquivo" accept="image/*">
-    
-    <div id="area-imagem">
-        <video id="video-camera" autoplay playsinline></video>
-        <img id="imagem-fundo">
-        <img id="imagem-objeto">
-        <svg id="tela-desenho" preserveAspectRatio="none">
-            <path id="linha-contorno" class="linha-magica"></path>
-        </svg>
+            <div class="botoes-container" id="botoes-iniciais" style="display: flex; gap: 20px;">
+                <label for="input-arquivo" class="btn-acao btn-redondo" style="width: auto; padding: 0 25px; border-radius: 30px; font-size: 1.1rem;">
+                    <i class="fa-solid fa-folder" style="margin-right: 8px;"></i> Galeria
+                </label>
+                <button id="btn-abrir-camera" class="btn-acao btn-redondo" style="width: auto; padding: 0 25px; border-radius: 30px; font-size: 1.1rem;">
+                    <i class="fa-solid fa-camera" style="margin-right: 8px;"></i> Câmera
+                </button>
+            </div>
+            <input type="file" id="input-arquivo" accept="image/*" style="display: none;">
+        </div>
 
-        <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
+        <div id="area-imagem" style="display: none;"> <video id="video-camera" autoplay playsinline></video>
+            <img id="imagem-fundo">
+            <img id="imagem-objeto">
+            
+            <svg id="tela-desenho" preserveAspectRatio="none">
+                <path id="linha-contorno" class="linha-magica"></path>
             </svg>
-        </button>
 
-        <button id="btn-voltar-seta" class="btn-overlay" title="Voltar e escolher outro objeto">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-        </button>
-
-        <div id="controles-inferiores">
-            <button id="btn-flash" title="Ligar/Desligar Flash">
-                <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
-            <button id="btn-capturar-bola" title="Tirar Foto"></button>
-        </div>
-    </div>
-    
-    <div id="resultado-container">
-        <div id="resultado"></div>
-        <button id="btn-corrigir" class="btn-corrigir">A cor está errada?</button>
-    </div>
 
-    <div id="modal-correcao" class="modal">
+            <button id="btn-voltar-seta" class="btn-overlay" title="Voltar e escolher outro objeto">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+
+            <div id="resultado-container" style="display: none;">
+                <div id="resultado"></div>
+                <button id="btn-corrigir" class="btn-corrigir">A cor está errada?</button>
+            </div>
+
+            <div id="controles-inferiores">
+                <button id="btn-flash" class="btn-redondo" title="Ligar/Desligar Flash">
+                    <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </button>
+                <button id="btn-capturar-bola" class="btn-redondo" style="width: 75px; height: 75px; background: white; border: 4px solid #333;" title="Tirar Foto"></button>
+                <div style="width: 60px;"></div> 
+            </div>
+
+        </div> </div> <div id="modal-correcao" class="modal">
         <div class="modal-conteudo">
             <h3>Corrigir Cor</h3>
-            <p>Qual é a cor exata deste objeto?</p>
+            <p style="margin-bottom: 15px; color: #ccc;">Qual é a cor exata deste objeto?</p>
             <input type="text" id="input-cor-correta" placeholder="Ex: Vermelho Escuro" autocomplete="off">
             <div class="modal-botoes">
                 <button id="btn-cancelar" class="btn-cancelar">Cancelar</button>
@@ -521,10 +525,11 @@
         </div>
     </div>
 
-    <div class="footer">
-        <p class="copyright">© DaltonSpectra | IFSC Campus Chapecó | 2026/1</p>
+    <div class="footer" style="position: absolute; bottom: 10px; width: 100%; text-align: center; z-index: 1;">
+        <p class="copyright" style="color: #666; font-size: 0.8rem;">© DaltonSpectra | IFSC Campus Chapecó | 2026/1</p>
     </div>
 
+    <script src="seu_arquivo.js"></script> </body>
 <script>
         // --- Variáveis Globais ---
         const inputArquivo = document.getElementById('input-arquivo');
