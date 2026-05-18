@@ -9,13 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
 <style>
-/* =====================================================================
-   MUNDO 1: COMPUTADOR (O seu design original)
-   Telas maiores que 768px de largura
-===================================================================== */
-@media (min-width: 769px) {
-    
-   /* Reset e Base */
+        /* Reset e Base */
         * { box-sizing: border-box; }
         body { 
             font-family: 'Poppins', sans-serif; 
@@ -92,7 +86,7 @@
             max-width: 100%; width: fit-content; border-radius: 16px; overflow: hidden; 
         }
 
-        #imagem-fundo, #video-camera { width: 100%; height: 45vh ; object-fit: contain; }
+        #imagem-fundo, #video-camera { max-width: 100%; max-height: 53vh; width: auto; height: auto; }
         #imagem-fundo { display: block; transition: filter 1s ease-in-out; }
         #video-camera { display: none; object-fit: cover; }
 
@@ -192,331 +186,65 @@
             transition: transform 0.2s;
         }
         #btn-voltar-seta:active { transform: scale(0.8); }
-
-}
-
-
-/* =====================================================================
-   MUNDO 2: CELULAR (O novo design profissional de App)
-   Telas de até 768px de largura
-===================================================================== */
-@media (max-width: 768px) {
-    
-    /* --- Esconde elementos do PC que não queremos no celular --- */
-    #particles {
-        display: none !important; /* Desliga as partículas no celular para não travar a tela */
-    }
-
-    /* --- 1. RESET E BASE (DARK MODE) --- */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Inter', sans-serif;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    body {
-        background-color: #0d0d0d; 
-        color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        overflow-x: hidden;
-    }
-
-    /* O container principal que simula a tela do app */
-    #app-container {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* --- 2. ÁREA DA IMAGEM E CÂMERA --- */
-    #area-imagem {
-        flex: 1; 
-        position: relative;
-        width: 100%;
-        background-color: #000;
-        border-radius: 0 0 30px 30px; 
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    #imagem-fundo, #video-camera, #imagem-objeto {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; 
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    #tela-desenho {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none; 
-        z-index: 10;
-    }
-
-    /* A linha neon brilhante do SAM 2 */
-    #linha-contorno {
-        fill: rgba(255, 255, 255, 0.1);
-        stroke: #ffffff;
-        stroke-width: 4px;
-        filter: drop-shadow(0 0 8px rgba(255,255,255,0.8)); 
-    }
-
-    .efeito-blur {
-        filter: blur(10px) brightness(0.4);
-        transition: all 0.5s ease;
-    }
-
-    /* --- 3. O RESULTADO (GLASSMORPHISM) --- */
-    #resultado-container {
-        position: absolute;
-        bottom: 40px; 
-        left: 50%;
-        transform: translateX(-50%);
-        width: 85%;
-        z-index: 20;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    #resultado {
-        background: rgba(40, 40, 40, 0.6);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 20px;
-        padding: 20px;
-        text-align: center;
-        width: 100%;
-        font-size: 1.2rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        margin: 0; /* Remove margens antigas se houver */
-    }
-
-    #resultado span {
-        display: block;
-        font-size: 2rem;
-        font-weight: 800;
-        color: #ffffff;
-        margin-top: 5px;
-    }
-
-    /* --- 4. BOTÕES E CONTROLES --- */
-    #controles-inferiores {
-        padding: 20px 30px 40px 30px; 
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #0d0d0d;
-        z-index: 30;
-        width: 100%;
-    }
-
-    .btn-redondo {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        border: none;
-        background: #222;
-        color: white;
-        font-size: 1.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: transform 0.2s, background 0.2s;
-    }
-
-    .btn-redondo:active {
-        transform: scale(0.9);
-        background: #444;
-    }
-
-    #btn-abrir-camera {
-        width: 75px;
-        height: 75px;
-        background: #ffffff;
-        color: #000;
-        border: 4px solid #333;
-    }
-
-    #btn-corrigir {
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: #ccc;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        cursor: pointer;
-        text-transform: none;
-    }
-
-    #btn-voltar-seta, #btn-fechar-x {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        background: rgba(0,0,0,0.5);
-        z-index: 40;
-    }
-
-    input[type="file"] {
-        display: none;
-    }
-
-    /* --- 5. MODAL DE CORREÇÃO (BOTTOM SHEET) --- */
-    #modal-correcao {
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(5px);
-        z-index: 100;
-        display: none; 
-        justify-content: center;
-        align-items: flex-end; 
-    }
-
-    .modal-conteudo {
-        background: #1e1e1e;
-        width: 100%;
-        padding: 30px 20px 50px 20px;
-        border-radius: 30px 30px 0 0; 
-        text-align: center;
-        animation: subirModal 0.3s ease-out;
-    }
-
-    @keyframes subirModal {
-        from { transform: translateY(100%); }
-        to { transform: translateY(0); }
-    }
-
-    .modal-conteudo h3 {
-        margin-bottom: 20px;
-        font-weight: 600;
-        color: white;
-    }
-
-    #input-cor-correta {
-        width: 100%;
-        padding: 15px;
-        border-radius: 12px;
-        border: 1px solid #444;
-        background: #000;
-        color: white;
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-        text-align: center;
-        outline: none;
-    }
-
-    #input-cor-correta:focus {
-        border-color: #007AFF; 
-    }
-
-    .modal-botoes {
-        display: flex;
-        gap: 15px;
-    }
-
-    .modal-botoes button {
-        flex: 1;
-        padding: 15px;
-        border-radius: 12px;
-        border: none;
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    #btn-cancelar {
-        background: #333;
-        color: white;
-    }
-
-    #btn-salvar {
-        background: #007AFF; 
-        color: white;
-    }
-}
-</style>
+    </style>
 </head>
 <body>
     <div id="particles"></div>
+    <img src="./logosemfundo.png" class="logo" alt="DaltonSpectra Logo">
+    <p class="subtitulo">Escolha um objeto de sua imagem e descubra sua cor em segundos</p>
 
-    <div id="app-container">
-        
-        <div id="tela-inicial" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; z-index: 50; padding: 20px; text-align: center;">
-            <img src="./logosemfundo.png" class="logo" alt="DaltonSpectra Logo" style="max-width: 250px; margin-bottom: 20px;">
-            <p class="subtitulo" style="font-size: 1.1rem; color: #ccc; margin-bottom: 40px;">Escolha um objeto de sua imagem e descubra sua cor em segundos</p>
+    <div class="botoes-container" id="botoes-iniciais">
+        <label for="input-arquivo" class="btn-acao">
+            <i class="fa-solid fa-folder" style="margin-right: 5px;"></i> Galeria
+        </label>
+        <button id="btn-abrir-camera" class="btn-acao">
+            <i class="fa-solid fa-camera" style="margin-right: 5px;"></i> Câmera
+        </button>
+    </div>
 
-            <div class="botoes-container" id="botoes-iniciais" style="display: flex; gap: 20px;">
-                <label for="input-arquivo" class="btn-acao btn-redondo" style="width: auto; padding: 0 25px; border-radius: 30px; font-size: 1.1rem;">
-                    <i class="fa-solid fa-folder" style="margin-right: 8px;"></i> Galeria
-                </label>
-                <button id="btn-abrir-camera" class="btn-acao btn-redondo" style="width: auto; padding: 0 25px; border-radius: 30px; font-size: 1.1rem;">
-                    <i class="fa-solid fa-camera" style="margin-right: 8px;"></i> Câmera
-                </button>
-            </div>
-            <input type="file" id="input-arquivo" accept="image/*" style="display: none;">
-        </div>
+    <input type="file" id="input-arquivo" accept="image/*">
+    
+    <div id="area-imagem">
+        <video id="video-camera" autoplay playsinline></video>
+        <img id="imagem-fundo">
+        <img id="imagem-objeto">
+        <svg id="tela-desenho" preserveAspectRatio="none">
+            <path id="linha-contorno" class="linha-magica"></path>
+        </svg>
 
-        <div id="area-imagem" style="display: none;"> <video id="video-camera" autoplay playsinline></video>
-            <img id="imagem-fundo">
-            <img id="imagem-objeto">
-            
-            <svg id="tela-desenho" preserveAspectRatio="none">
-                <path id="linha-contorno" class="linha-magica"></path>
+        <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
+        </button>
 
-            <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
+        <button id="btn-voltar-seta" class="btn-overlay" title="Voltar e escolher outro objeto">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
+
+        <div id="controles-inferiores">
+            <button id="btn-flash" title="Ligar/Desligar Flash">
+                <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg>
             </button>
+            <button id="btn-capturar-bola" title="Tirar Foto"></button>
+        </div>
+    </div>
+    
+    <div id="resultado-container">
+        <div id="resultado"></div>
+        <button id="btn-corrigir" class="btn-corrigir">A cor está errada?</button>
+    </div>
 
-            <button id="btn-voltar-seta" class="btn-overlay" title="Voltar e escolher outro objeto">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-            </button>
-
-            <div id="resultado-container" style="display: none;">
-                <div id="resultado"></div>
-                <button id="btn-corrigir" class="btn-corrigir">A cor está errada?</button>
-            </div>
-
-            <div id="controles-inferiores">
-                <button id="btn-flash" class="btn-redondo" title="Ligar/Desligar Flash">
-                    <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                    </svg>
-                </button>
-                <button id="btn-capturar-bola" class="btn-redondo" style="width: 75px; height: 75px; background: white; border: 4px solid #333;" title="Tirar Foto"></button>
-                <div style="width: 60px;"></div> 
-            </div>
-
-        </div> </div> <div id="modal-correcao" class="modal">
+    <div id="modal-correcao" class="modal">
         <div class="modal-conteudo">
             <h3>Corrigir Cor</h3>
-            <p style="margin-bottom: 15px; color: #ccc;">Qual é a cor exata deste objeto?</p>
+            <p>Qual é a cor exata deste objeto?</p>
             <input type="text" id="input-cor-correta" placeholder="Ex: Vermelho Escuro" autocomplete="off">
             <div class="modal-botoes">
                 <button id="btn-cancelar" class="btn-cancelar">Cancelar</button>
@@ -525,11 +253,10 @@
         </div>
     </div>
 
-    <div class="footer" style="position: absolute; bottom: 10px; width: 100%; text-align: center; z-index: 1;">
-        <p class="copyright" style="color: #666; font-size: 0.8rem;">© DaltonSpectra | IFSC Campus Chapecó | 2026/1</p>
+    <div class="footer">
+        <p class="copyright">© DaltonSpectra | IFSC Campus Chapecó | 2026/1</p>
     </div>
 
-    <script src="seu_arquivo.js"></script> </body>
 <script>
         // --- Variáveis Globais ---
         const inputArquivo = document.getElementById('input-arquivo');
@@ -728,11 +455,11 @@
                 const resposta = await fetch(`${ngrokUrl}/analisar`, { method: "POST", body: formData });
                 const dados = await resposta.json();
                 
-                // CORREÇÃO: Agora o JS pega os dados exatamente como o backend FastApi envia!
-                if (dados.status === "sucesso") {
-                    hAtual = dados.h;
-                    sAtual = dados.s;
-                    vAtual = dados.v;
+                // Salva a memória para uma possível correção
+                if (dados.hsv) {
+                    hAtual = dados.hsv.h;
+                    sAtual = dados.hsv.s;
+                    vAtual = dados.hsv.v;
                 }
 
                 imagemFundo.classList.remove('pulso');
@@ -763,7 +490,7 @@
             }
         });
 
-        // --- SISTEMA DE CORREÇÃO ---
+        // --- SISTEMA DE CORREÇÃO (NOVO) ---
         btnCorrigir.addEventListener('click', () => {
             inputCorCorreta.value = "";
             modalCorrecao.style.display = 'flex';
@@ -834,4 +561,6 @@
             
             container.appendChild(particle);
         }
-</script>
+    </script>
+</body>
+</html>
