@@ -1,347 +1,572 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>DaltonSpectra - Câmera</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaltonSpectra | ColorFinder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon"  href="logosemescrita.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+<style>
+        /* Reset e Base */
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #000000; 
+            color: #ffffff; 
+            margin: 0; 
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden; 
+        }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        #particles {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; 
+            overflow: hidden;
+            pointer-events: none; 
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: floatParticle 8s infinite ease-in-out alternate;
+            filter: blur(2px);
+        }
 
-    body, html {
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      font-family: 'Poppins', sans-serif;
-      overflow: hidden; /* Impede rolagens na tela da câmera */
-    }
+        @keyframes float {
+            0% { opacity: 0.2; transform: translate(0, 0) scale(1); }
+            25% { opacity: 1; }
+            50% { transform: translate(25px, -40px) scale(1.2); }
+            75% { opacity: 0.6; }
+            100% { opacity: 0.2; transform: translate(0, 0) scale(1); }
+        }
 
-    /* =========================
-       ÁREA DE VISUALIZAÇÃO
-    ========================== */
-    #camera-feed, #photo-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover; /* Faz a imagem preencher a tela toda */
-      z-index: 1;
-    }
+        @keyframes logoPulse {
+            0% { filter: brightness(0.9); transform: scale(0.95); }
+            25% { filter: brightness(1.1); transform: scale(1.03); }
+            50% { filter: brightness(1.2); transform: scale(1); }
+            75% { filter: brightness(1.05); transform: scale(1.05); }
+            100% { filter: brightness(0.9); transform: scale(0.95); }
+        }
 
-    #photo-canvas {
-      display: none;
-      z-index: 2;
-    }
+        /* Cabeçalho */
+        h1 { font-weight: 800; font-size: 2rem; margin-bottom: 5px; color: #38bdf8; text-align: center;}
+        p.subtitulo { color: #ffffff; margin-bottom: 20px; font-size: 0.9rem; text-align: center;}
 
-    /* =========================
-       RESULTADO TOP (ESTILO IPHONE)
-    ========================== */
-    .result-badge {
-      position: absolute;
-      top: 50px; /* Espaço para a barra de status/notch */
-      left: 50%;
-      transform: translateX(-50%) translateY(-20px);
-      z-index: 20;
-      padding: 14px 28px;
-      border-radius: 40px;
-      background: rgba(20, 20, 20, 0.45);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
+        /* Área de Botões (Nunca somem) */
+        .botoes-container {
+            display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap; justify-content: center;
+        }
 
-    .result-badge.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
+        .footer {
+            background: transparent; font-size: 0.8rem; text-align: center; position: fixed;
+            bottom: 0; left: 0; width: 100%; z-index: 50;
+        }
 
-    .color-dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: transparent;
-      border: 2px solid rgba(255,255,255,0.8);
-    }
+        input[type="file"] { display: none; }
 
-    /* =========================
-       CONTROLES INFERIORES
-    ========================== */
-    .bottom-controls {
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      z-index: 10;
-      padding: 0 20px;
-    }
+        .btn-acao {
+            background: rgba(8, 32, 82, 0.6); color: white; padding: 12px 24px;
+            border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: none; display: inline-flex; align-items: center; justify-content: center;
+        }
+        .btn-acao:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); }
 
-    /* Botão de Galeria e Flash */
-    .side-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: none;
-      color: #fff;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.2s;
-    }
+        /* O Card (Contêiner da Imagem e do Vídeo) */
+        #area-imagem { 
+            position: relative; display: none; cursor: crosshair; 
+            max-width: 100%; width: fit-content; border-radius: 16px; overflow: hidden; 
+        }
 
-    .side-btn:active {
-      transform: scale(0.9);
-      background: rgba(255, 255, 255, 0.2);
-    }
+        #imagem-fundo, #video-camera { width: 100%; height: 45vh ; object-fit: contain; }
+        #imagem-fundo { display: block; transition: filter 1s ease-in-out; }
+        #video-camera { display: none; object-fit: cover; }
 
-    .side-btn.active-flash {
-      color: #f1c40f; /* Amarelo quando o flash está ligado */
-    }
+        #imagem-objeto { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            pointer-events: none; opacity: 0; transition: opacity 1s ease-in-out; object-fit: contain;
+        }
+        
+        #tela-desenho { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 
-    /* Botão de Obturador (Shutter) Branco */
-    .shutter-btn {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      background: #fff;
-      border: 4px solid transparent;
-      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
-      cursor: pointer;
-      transition: 0.2s;
-      outline: none;
-    }
+        .linha-magica {
+            fill: none; stroke: #ffffff; stroke-width: 4; filter: drop-shadow(0px 0px 6px rgba(56, 189, 248, 0.9));
+            stroke-dasharray: var(--tamanho-caminho); stroke-dashoffset: var(--tamanho-caminho);
+            transition: stroke-dashoffset 1.5s ease-out;
+        }
 
-    .shutter-btn:active {
-      transform: scale(0.92);
-      background: #e0e0e0;
-    }
+        .efeito-blur { filter: blur(8px) brightness(0.3); }
+        .pulso { animation: pulsar 1.5s infinite; filter: brightness(0.6); pointer-events: none; }
+        @keyframes pulsar { 0%, 100% { filter: brightness(0.6); } 50% { filter: brightness(1); } }
+        
+        /* Display de Resultado e Correção */
+        #resultado-container { 
+            margin-top: 30px; margin-bottom: 60px; min-height: 80px; 
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+        }
+        #resultado { 
+            background-color: rgba(8, 32, 82, 0.6); backdrop-filter: blur(10px);
+            padding: 12px 24px; border-radius: 50px; font-size: 1.1rem; font-weight: 600;
+            color: #f8fafc; display: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        #resultado span { color:white }
 
-    /* Botão Fechar / Voltar para Câmera */
-    .close-photo-btn {
-      position: absolute;
-      top: 40px;
-      right: 20px;
-      z-index: 15;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      border: none;
-      color: #fff;
-      font-size: 1.2rem;
-      display: none;
-      cursor: pointer;
-    }
-  </style>
+        /* Botão Novo de Corrigir */
+        .btn-corrigir {
+            background: transparent; border: none; color: #94a3b8; font-size: 0.85rem;
+            text-decoration: underline; cursor: pointer; display: none;
+            transition: color 0.2s; font-family: 'Poppins', sans-serif;
+        }
+        .btn-corrigir:hover { color: #38bdf8; }
+
+        /* Estilos do Modal de Correção */
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+            align-items: center; justify-content: center;
+        }
+        .modal-conteudo {
+            background: #0f172a; padding: 25px; border-radius: 16px; width: 90%; max-width: 350px;
+            border: 1px solid #1e293b; box-shadow: 0 10px 25px rgba(0,0,0,0.5); text-align: center;
+        }
+        .modal-conteudo h3 { color: #38bdf8; margin-top: 0; margin-bottom: 10px; }
+        .modal-conteudo p { font-size: 0.9rem; color: #cbd5e1; margin-bottom: 15px; }
+        .modal-conteudo input {
+            width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #334155;
+            background: #1e293b; color: white; font-family: 'Poppins', sans-serif; outline: none;
+        }
+        .modal-conteudo input:focus { border-color: #38bdf8; }
+        .modal-botoes { display: flex; gap: 10px; }
+        .btn-cancelar { flex: 1; padding: 10px; background: #334155; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500; }
+        .btn-salvar { flex: 1; padding: 10px; background: #38bdf8; color: #000; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
+
+        .logo { width: 100%; max-width: 350px; margin-bottom: -5px; margin-top: -20px; } 
+
+        /* Botões Sobrepostos da Câmera */
+        .btn-overlay {
+            position: absolute; z-index: 1000; display: none; cursor: pointer;
+            border: none; outline: none; background: transparent;
+        }
+
+        #btn-fechar-x {
+            top: 10px; right: 10px; padding: 5px;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8)); transition: transform 0.2s;
+        }
+        #btn-fechar-x:active { transform: scale(0.8); }
+
+       #controles-inferiores {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; display: none; z-index: 1000;
+        }
+
+        #btn-flash {
+            position: absolute; left: 20px; top: 50%; transform: translateY(-50%); padding: 8px;
+            background: transparent; border: none; outline: none; cursor: pointer; display: block;
+        }
+
+        #btn-capturar-bola {
+            position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+            width: 50px; height: 50px; background-color: white; border: 4px solid rgba(255, 255, 255, 0.4); 
+            border-radius: 50%; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.1s ease, background-color 0.1s; padding: 0;
+        }
+        
+        #btn-capturar-bola:active { 
+            transform: translate(-50%, -50%) scale(0.9); background-color: #e0e0e0;
+        }
+        #btn-voltar-seta {
+            top: 10px; left: 10px; padding: 5px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8)); 
+            transition: transform 0.2s;
+        }
+        #btn-voltar-seta:active { transform: scale(0.8); }
+
+        @media (max-width: 768px){
+
+        .logo{
+            max-height: 15vh;
+            object-fit: contain;
+        }
+        }
+    </style>
 </head>
 <body>
+    <div id="particles"></div>
+    <img src="./logosemfundo.png" class="logo" alt="DaltonSpectra Logo">
+    <p class="subtitulo">Escolha um objeto de sua imagem e descubra sua cor em segundos</p>
 
-  <video id="camera-feed" autoplay playsinline></video>
-  <canvas id="photo-canvas"></canvas>
+    <div class="botoes-container" id="botoes-iniciais">
+        <label for="input-arquivo" class="btn-acao">
+            <i class="fa-solid fa-folder" style="margin-right: 5px;"></i> Galeria
+        </label>
+        <button id="btn-abrir-camera" class="btn-acao">
+            <i class="fa-solid fa-camera" style="margin-right: 5px;"></i> Câmera
+        </button>
+    </div>
 
-  <div id="result-badge" class="result-badge">
-    <div id="color-dot" class="color-dot"></div>
-    <span id="result-text">Aguardando...</span>
-  </div>
-
-  <button id="close-photo-btn" class="close-photo-btn">
-    <i class="fas fa-times"></i>
-  </button>
-
-  <div id="bottom-controls" class="bottom-controls">
-    <input type="file" id="gallery-input" accept="image/*" style="display: none;">
+    <input type="file" id="input-arquivo" accept="image/*">
     
-    <button id="gallery-btn" class="side-btn">
-      <i class="fas fa-image"></i>
-    </button>
+    <div id="area-imagem">
+        <video id="video-camera" autoplay playsinline></video>
+        <img id="imagem-fundo">
+        <img id="imagem-objeto">
+        <svg id="tela-desenho" preserveAspectRatio="none">
+            <path id="linha-contorno" class="linha-magica"></path>
+        </svg>
 
-    <button id="shutter-btn" class="shutter-btn"></button>
+        <button id="btn-fechar-x" class="btn-overlay" title="Fechar Câmera">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
 
-    <button id="flash-btn" class="side-btn">
-      <i class="fas fa-bolt"></i>
-    </button>
-  </div>
+        <button id="btn-voltar-seta" class="btn-overlay" title="Voltar e escolher outro objeto">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
 
-  <script>
-    // Referências dos elementos
-    const video = document.getElementById('camera-feed');
-    const canvas = document.getElementById('photo-canvas');
-    const ctx = canvas.getContext('2d');
-    const shutterBtn = document.getElementById('shutter-btn');
-    const flashBtn = document.getElementById('flash-btn');
-    const galleryBtn = document.getElementById('gallery-btn');
-    const galleryInput = document.getElementById('gallery-input');
-    const closePhotoBtn = document.getElementById('close-photo-btn');
-    const bottomControls = document.getElementById('bottom-controls');
+        <div id="controles-inferiores">
+            <button id="btn-flash" title="Ligar/Desligar Flash">
+                <svg id="icon-flash" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+            </button>
+            <button id="btn-capturar-bola" title="Tirar Foto"></button>
+        </div>
+    </div>
     
-    const resultBadge = document.getElementById('result-badge');
-    const resultText = document.getElementById('result-text');
-    const colorDot = document.getElementById('color-dot');
+    <div id="resultado-container">
+        <div id="resultado"></div>
+        <button id="btn-corrigir" class="btn-corrigir">A cor está errada?</button>
+    </div>
 
-    let videoStream = null;
-    let videoTrack = null;
-    let isFlashOn = false;
+    <div id="modal-correcao" class="modal">
+        <div class="modal-conteudo">
+            <h3>Corrigir Cor</h3>
+            <p>Qual é a cor exata deste objeto?</p>
+            <input type="text" id="input-cor-correta" placeholder="Ex: Vermelho Escuro" autocomplete="off">
+            <div class="modal-botoes">
+                <button id="btn-cancelar" class="btn-cancelar">Cancelar</button>
+                <button id="btn-salvar" class="btn-salvar">Ensinar IA</button>
+            </div>
+        </div>
+    </div>
 
-    // Inicializa a Câmera Traseira
-    async function startCamera() {
-      try {
-        videoStream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: 'environment' }
-        });
-        video.srcObject = videoStream;
-        videoTrack = videoStream.getVideoTracks()[0];
-      } catch (err) {
-        console.error("Erro ao acessar a câmera: ", err);
-        alert("Não foi possível acessar a câmera do dispositivo.");
-      }
-    }
+    <div class="footer">
+        <p class="copyright">© DaltonSpectra | IFSC Campus Chapecó | 2026/1</p>
+    </div>
 
-    startCamera();
-
-    // Ligar / Desligar Flash (Lanterna)
-    flashBtn.addEventListener('click', async () => {
-      if (videoTrack && videoTrack.getCapabilities().torch) {
-        isFlashOn = !isFlashOn;
-        try {
-          await videoTrack.applyConstraints({
-            advanced: [{ torch: isFlashOn }]
-          });
-          flashBtn.classList.toggle('active-flash', isFlashOn);
-        } catch (err) {
-          console.error("Erro ao ativar flash: ", err);
-        }
-      } else {
-        alert("O seu dispositivo não suporta o controle do flash pelo navegador.");
-      }
-    });
-
-    // Abrir Galeria
-    galleryBtn.addEventListener('click', () => {
-      galleryInput.click();
-    });
-
-    galleryInput.addEventListener('change', (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const img = new Image();
-          img.onload = () => {
-            showFrozenImage(img);
-          };
-          img.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-
-    // Tirar a foto
-    shutterBtn.addEventListener('click', () => {
-      showFrozenImage(video);
-    });
-
-    // Função para congelar a imagem na tela e habilitar o toque
-    function showFrozenImage(source) {
-      canvas.width = video.clientWidth;
-      canvas.height = video.clientHeight;
-
-      // Se for a câmera, precisamos cortar a imagem para simular o object-fit: cover
-      if (source === video) {
-        const videoRatio = video.videoWidth / video.videoHeight;
-        const canvasRatio = canvas.width / canvas.height;
-        let drawWidth, drawHeight, startX, startY;
-
-        if (videoRatio > canvasRatio) {
-          drawHeight = canvas.height;
-          drawWidth = video.videoWidth * (canvas.height / video.videoHeight);
-          startX = (canvas.width - drawWidth) / 2;
-          startY = 0;
-        } else {
-          drawWidth = canvas.width;
-          drawHeight = video.videoHeight * (canvas.width / video.videoWidth);
-          startX = 0;
-          startY = (canvas.height - drawHeight) / 2;
-        }
-        ctx.drawImage(source, startX, startY, drawWidth, drawHeight);
-      } else {
-        // Se veio da galeria
-        ctx.drawImage(source, 0, 0, canvas.width, canvas.height);
-      }
-
-      // Transição de tela
-      video.style.display = 'none';
-      canvas.style.display = 'block';
-      bottomControls.style.display = 'none';
-      closePhotoBtn.style.display = 'block';
-      
-      showBadge("Toque no objeto", "transparent");
-    }
-
-    // Voltar para a câmera ao vivo
-    closePhotoBtn.addEventListener('click', () => {
-      canvas.style.display = 'none';
-      video.style.display = 'block';
-      closePhotoBtn.style.display = 'none';
-      bottomControls.style.display = 'flex';
-      resultBadge.classList.remove('show');
-    });
-
-    // Evento Tátil na Foto Congelada (Simulação de envio ao Backend)
-    canvas.addEventListener('click', (event) => {
-      const rect = canvas.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-
-      // Exibe estado de carregamento
-      showBadge("Processando IA...", "gray");
-
-      // AQUI VOCÊ FARÁ O FETCH PARA O FASTAPI (SAM 2 + K-MEANS)
-      // fetch('/sua-rota-de-ia', { method: 'POST', body: ... })
-      
-      // Simulação do retorno do backend após 1.5 segundos
-      setTimeout(() => {
-        const fakeColorName = "Vermelho Carmesim";
-        const fakeHex = "#DC143C"; 
+<script>
+        // --- Variáveis Globais ---
+        const inputArquivo = document.getElementById('input-arquivo');
+        const btnAbrirCamera = document.getElementById('btn-abrir-camera');
         
-        showBadge(fakeColorName, fakeHex);
-      }, 1500);
-    });
+        const btnCapturarBola = document.getElementById('btn-capturar-bola');
+        const btnFecharX = document.getElementById('btn-fechar-x');
+        const btnFlash = document.getElementById('btn-flash');
+        const iconFlash = document.getElementById('icon-flash');
+        const btnVoltarSeta = document.getElementById('btn-voltar-seta');
+        const controlesInferiores = document.getElementById('controles-inferiores');
+        
+        const areaImagem = document.getElementById('area-imagem');
+        const videoCamera = document.getElementById('video-camera');
+        const imagemFundo = document.getElementById('imagem-fundo');
+        const imagemObjeto = document.getElementById('imagem-objeto');
+        const telaDesenho = document.getElementById('tela-desenho');
+        const linhaContorno = document.getElementById('linha-contorno');
+        
+        const resultado = document.getElementById('resultado');
+        
+        // Elementos do Modal e Correção
+        const btnCorrigir = document.getElementById('btn-corrigir');
+        const modalCorrecao = document.getElementById('modal-correcao');
+        const btnCancelar = document.getElementById('btn-cancelar');
+        const btnSalvar = document.getElementById('btn-salvar');
+        const inputCorCorreta = document.getElementById('input-cor-correta');
+        
+        let arquivoAtual = null;
+        let streamCameraAtual = null;
+        let flashAtivo = false;
+        
+        // Memória HSV da última cor clicada
+        let hAtual = 0, sAtual = 0, vAtual = 0;
 
-    function showBadge(text, colorHex) {
-      resultText.innerText = text;
-      colorDot.style.backgroundColor = colorHex;
-      colorDot.style.borderColor = colorHex === "transparent" ? "rgba(255,255,255,0.8)" : "#fff";
-      resultBadge.classList.add('show');
-    }
-  </script>
-</body>
-</html>
+        function carregarFotoNoPalco(arquivo) {
+            arquivoAtual = arquivo;
+            areaImagem.style.display = 'inline-block';
+            imagemFundo.src = URL.createObjectURL(arquivoAtual);
+            
+            imagemFundo.style.display = 'block';
+            videoCamera.style.display = 'none';
+            btnFecharX.style.display = 'none';
+            btnVoltarSeta.style.display = 'none'; 
+            controlesInferiores.style.display = 'none';
+            telaDesenho.style.display = 'block';
+            
+            imagemFundo.classList.remove('efeito-blur');
+            imagemObjeto.style.opacity = '0';
+            linhaContorno.style.transition = 'none';
+            linhaContorno.setAttribute("d", ""); 
+            
+            imagemFundo.onload = () => {
+                telaDesenho.setAttribute("viewBox", `0 0 ${imagemFundo.naturalWidth} ${imagemFundo.naturalHeight}`);
+            };
+            
+            resultado.innerText = "Clique em um objeto";
+            resultado.style.display = 'inline-block';
+            btnCorrigir.style.display = 'none'; // Oculta botão de corrigir na nova foto
+        }
+
+        function desligarCamera() {
+            if (streamCameraAtual) {
+                streamCameraAtual.getTracks().forEach(track => track.stop());
+                streamCameraAtual = null;
+            }
+            flashAtivo = false;
+            iconFlash.setAttribute('fill', 'none');
+            iconFlash.setAttribute('stroke', '#ffffff');
+            
+            videoCamera.style.display = 'none';
+            btnFecharX.style.display = 'none';
+            btnVoltarSeta.style.display = 'none'; 
+            controlesInferiores.style.display = 'none';
+        }
+
+        inputArquivo.addEventListener('change', (evento) => {
+            if (evento.target.files[0]) {
+                desligarCamera();
+                carregarFotoNoPalco(evento.target.files[0]);
+            }
+        });
+
+        btnAbrirCamera.addEventListener('click', async () => {
+            try {
+                let streamTemporario = await navigator.mediaDevices.getUserMedia({ video: true });
+                const dispositivos = await navigator.mediaDevices.enumerateDevices();
+                const cameras = dispositivos.filter(d => d.kind === 'videoinput');
+                const camerasTraseiras = cameras.filter(c => c.label.toLowerCase().includes('back'));
+                
+                let idLentePrincipal = null;
+
+                if (camerasTraseiras.length > 0) {
+                    let cameraCerta = camerasTraseiras.find(c => c.label.includes('0'));
+                    if (!cameraCerta) cameraCerta = camerasTraseiras[0];
+                    idLentePrincipal = cameraCerta.deviceId;
+                }
+
+                streamTemporario.getTracks().forEach(track => track.stop());
+
+                const restricoes = idLentePrincipal 
+                    ? { video: { deviceId: { exact: idLentePrincipal } } } 
+                    : { video: { facingMode: 'environment' } }; 
+
+                streamCameraAtual = await navigator.mediaDevices.getUserMedia(restricoes);
+                videoCamera.srcObject = streamCameraAtual;
+                
+                resultado.style.display = 'none';
+                btnCorrigir.style.display = 'none'; // Oculta botão
+                areaImagem.style.display = 'inline-block';
+                imagemFundo.style.display = 'none';
+                imagemObjeto.style.opacity = '0';
+                telaDesenho.style.display = 'none'; 
+                btnVoltarSeta.style.display = 'none'; 
+                
+                videoCamera.style.display = 'block'; 
+                btnFecharX.style.display = 'block'; 
+                controlesInferiores.style.display = 'block'; 
+                
+            } catch (erro) {
+                alert("Não foi possível acessar a câmera. Verifique as permissões.");
+                console.error(erro);
+            }
+        });
+
+        btnFlash.addEventListener('click', async () => {
+            if (!streamCameraAtual) return;
+            const track = streamCameraAtual.getVideoTracks()[0];
+            try {
+                flashAtivo = !flashAtivo;
+                const restricoesAtuais = track.getConstraints();
+                try {
+                    await track.applyConstraints({ ...restricoesAtuais, advanced: [{ torch: flashAtivo }] });
+                } catch (err1) {
+                    if (err1.name === 'OverconstrainedError') {
+                        await track.applyConstraints({ ...restricoesAtuais, torch: flashAtivo });
+                    } else { throw err1; }
+                }
+                iconFlash.setAttribute('fill', flashAtivo ? '#ffffff' : 'none');
+                iconFlash.setAttribute('stroke', '#ffffff');
+            } catch (e) {
+                flashAtivo = !flashAtivo; 
+                alert("Erro ao ligar o flash: " + e.name);
+            }
+        });
+
+        btnFecharX.addEventListener('click', () => {
+            desligarCamera();
+            if (arquivoAtual) {
+                imagemFundo.style.display = 'block';
+                telaDesenho.style.display = 'block';
+                resultado.style.display = 'inline-block';
+            } else {
+                areaImagem.style.display = 'none';
+            }
+        });
+
+        btnCapturarBola.addEventListener('click', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = videoCamera.videoWidth;
+            canvas.height = videoCamera.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(videoCamera, 0, 0, canvas.width, canvas.height);
+
+            canvas.toBlob((blob) => {
+                const arquivoFoto = new File([blob], "foto_camera.jpg", { type: "image/jpeg" });
+                desligarCamera();
+                carregarFotoNoPalco(arquivoFoto); 
+            }, 'image/jpeg', 0.9);
+        });
+
+        // URL MESTRE DO SERVIDOR
+        const ngrokUrl = "https://winking-rinsing-trophy.ngrok-free.dev";
+
+        imagemFundo.addEventListener('click', async (evento) => {
+            if (!arquivoAtual) return;
+
+            btnVoltarSeta.style.display = 'flex'; 
+            btnCorrigir.style.display = 'none'; // Oculta o link de correção enquanto processa
+            imagemFundo.classList.remove('efeito-blur');
+            imagemObjeto.style.opacity = '0';
+            linhaContorno.setAttribute("d", ""); 
+
+            const x = Math.round((evento.offsetX / imagemFundo.clientWidth) * imagemFundo.naturalWidth);
+            const y = Math.round((evento.offsetY / imagemFundo.clientHeight) * imagemFundo.naturalHeight);
+
+            imagemFundo.classList.add('pulso');
+            resultado.innerText = "Processando...";
+
+            const formData = new FormData();
+            formData.append("arquivo", arquivoAtual);
+            formData.append("x", x);
+            formData.append("y", y);
+
+            try {
+                const resposta = await fetch(`${ngrokUrl}/analisar`, { method: "POST", body: formData });
+                const dados = await resposta.json();
+                
+                // CORREÇÃO: Agora o JS pega os dados exatamente como o backend FastApi envia!
+                if (dados.status === "sucesso") {
+                    hAtual = dados.h;
+                    sAtual = dados.s;
+                    vAtual = dados.v;
+                }
+
+                imagemFundo.classList.remove('pulso');
+                resultado.innerHTML = "Cor detectada: <span>" + dados.cor_predominante + "</span>";
+
+                imagemFundo.classList.add('efeito-blur');
+                imagemObjeto.src = "data:image/png;base64," + dados.imagem_resultado;
+                imagemObjeto.style.opacity = '1';
+                
+                linhaContorno.setAttribute("d", dados.caminho_svg); 
+                linhaContorno.style.transition = 'none';
+                const comprimentoLinha = linhaContorno.getTotalLength();
+                linhaContorno.style.setProperty('--tamanho-caminho', comprimentoLinha);
+                linhaContorno.style.strokeDasharray = comprimentoLinha;
+                linhaContorno.style.strokeDashoffset = comprimentoLinha;
+
+                linhaContorno.getBoundingClientRect(); 
+                linhaContorno.style.transition = 'stroke-dashoffset 1.5s ease-out';
+                linhaContorno.style.strokeDashoffset = '0';
+
+                btnVoltarSeta.style.display = 'block';
+                btnCorrigir.style.display = 'inline-block'; // Mostra botão após resultado
+
+            } catch (erro) {
+                imagemFundo.classList.remove('pulso');
+                resultado.innerText = "Erro no servidor.";
+                console.error(erro);
+            }
+        });
+
+        // --- SISTEMA DE CORREÇÃO ---
+        btnCorrigir.addEventListener('click', () => {
+            inputCorCorreta.value = "";
+            modalCorrecao.style.display = 'flex';
+            inputCorCorreta.focus();
+        });
+
+        btnCancelar.addEventListener('click', () => {
+            modalCorrecao.style.display = 'none';
+        });
+
+        btnSalvar.addEventListener('click', async () => {
+            const corDigitada = inputCorCorreta.value.trim();
+            if (!corDigitada) {
+                alert("Por favor, digite o nome da cor.");
+                return;
+            }
+
+            btnSalvar.innerText = "Salvando...";
+
+            const formData = new FormData();
+            formData.append("h", hAtual);
+            formData.append("s", sAtual);
+            formData.append("v", vAtual);
+            formData.append("cor_correta", corDigitada);
+
+            try {
+                const resposta = await fetch(`${ngrokUrl}/corrigir`, { method: "POST", body: formData });
+                const dados = await resposta.json();
+                
+                modalCorrecao.style.display = 'none';
+                resultado.innerHTML = `Cor atualizada: <span>${corDigitada}</span>`;
+                btnCorrigir.style.display = 'none'; // Oculta após corrigir
+                
+                // Confirmação sutil e elegante pro usuário
+                setTimeout(() => alert("A Inteligência Artificial aprendeu esta nova cor!"), 100);
+
+            } catch (erro) {
+                alert("Erro ao conectar com o servidor.");
+                console.error(erro);
+            } finally {
+                btnSalvar.innerText = "Ensinar IA";
+            }
+        });
+
+        btnVoltarSeta.addEventListener('click', () => {
+            btnVoltarSeta.style.display = 'none'; 
+            btnCorrigir.style.display = 'none'; // Oculta ao voltar
+            imagemFundo.classList.remove('efeito-blur');
+            imagemObjeto.style.opacity = '0';
+            linhaContorno.style.transition = 'none';
+            linhaContorno.setAttribute("d", ""); 
+            resultado.innerHTML = "Clique em um objeto";
+        });
+
+        const container = document.getElementById("particles");
+        const colors = ["#ff5f57", "#ffbd2e", "#28c840", "#00c2ff", "#7f5af0", "#ff4ecd"];
+
+        for(let i = 0; i < 60; i++){ 
+            const particle = document.createElement("span");
+            particle.classList.add("particle");
+            const size = Math.random() * 6 + 2;
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            container.appendChild(particle);
+        }
+</script>
